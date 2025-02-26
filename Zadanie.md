@@ -4,7 +4,7 @@
 
 Vytvorte webovú aplikáciu - eshop, ktorá komplexne rieši nižšie definované prípady použitia vo vami zvolenej doméne (napr. elektro, oblečenie, obuv, nábytok). Presný rozsah a konkretizáciu prípadov použitia si dohodnete s vašim vyučujúcim.
 
-## Tím
+## Tím Tepeš
 
 Projekt vypracovávate vo dvojici. Každý z dvojice sa musí podieľať na
 projekte významným dielom (rovnomerné rozdelenie práce). Vypracovanie (takmer) celého projektu len jedným členom tímu je neprípustné. Je potrebné, aby boli obaja členovia tímu oboznámení s celým projektom, vrátane častí, na ktorých sám študent nepracoval. Členovia tímu sú hodnotení rovnakým získaným počtom bodov. Bodové hodnotenie sa viaže na celý tím (každý člen tímu dostane rovnaký počet bodov).
