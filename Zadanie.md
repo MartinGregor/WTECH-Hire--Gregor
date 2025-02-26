@@ -13,7 +13,7 @@ projekte významným dielom (rovnomerné rozdelenie práce). Vypracovanie (takme
 
 Projekt musí mať vytvorený github repozitár. Každý člen tímu odovzdáva príspevok (kód) do projektu do vytvoreného repozitára. Odovzdania kódu v repozitári musia byť rovnomerne rozložené, a teda plnia funkciu "dôkazu", kto a akým podielom prispel do projektu. Je v záujme každého študenta, aby jeho príspevok v projekte reflektovali odovzdania kódu do repozitára. Nízky príspevok do projektu môže byť dôvod na zníženie bodového hodnotenia jednotlivca (až na nulu).
 
-## Autorstvo
+## Autorstvo -
 
 Je zakázané používať programy alebo časti projektov od iných študentov, alebo z minulých rokov. Všetky použité materiály z odbornej literatúry alebo z internetu musia byť citované. Ak použijete cudzí materiál a neuvediete zdroj, práca môže byť považovaná za plagiát. Ak použijete fragmenty kódu z internetu, do komentára stačí uviesť (URL) adresu na zdroj. Projekt nesmie byť kompilátom cudzích zdrojových kódov, musí obsahovať značnú časť kódu vytvoreného (tvorivou činnosťou) členmi tímu.
 
