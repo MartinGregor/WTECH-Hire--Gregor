@@ -169,7 +169,7 @@ Dokumentácia musí obsahovať minimálne tieto časti:
   - s nahrávaním obrázkov
   - zoznam obrázkov s možnosťou odobratia obrázku
 
-#### Dokumentácia (max. 3 body)
+#### Dokumentácia (max. 3 body) -
 
 - zadanie
 - diagram fyzického dátového modelu, v prípade zmien z 2. fázy, zdôvodniť zmenu - 1 bod
