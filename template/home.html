@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - PayPlay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: url('../Pictures/Background.jpg');
+            background-size: cover;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            top: 0;
+        }
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            max-width: 80%;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            border-radius: 50px;
+            font-family: Arial, sans-serif;
+        }
+        .content h1 {
+            font-size: 3em;
+            font-weight: 500;
+            margin-bottom: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            padding: 12px;
+            background-color: #7a5cff;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+        }
+        button:hover {
+            background-color: #654ad1;
+        }
+    </style>
+</head>
+<body>
+
+<iframe src="header.html" style="border: none; width: 100%; height: 100%;"></iframe>
+
+<div class="content">
+    <h1>PayPlay</h1>
+    <p>Welcome to PayPlay, the ultimate destination for every gamer out there! Whether you love epic RPG adventures, heart-racing shooters, or strategic masterpieces, we’ve got the perfect game for you.</p>
+    <button class="btn-scroll" onclick="scrollToSection()">Explore Games</button>
+</div>
+
+</body>
+</html>
