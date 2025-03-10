@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - PayPlay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: linear-gradient(-5deg, white 45%, transparent 46%),
+            url('../Pictures/Background.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px 80px 60px;
+            border-radius: 25px;
+            text-align: center;
+            width: 500px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .logo {
+            position: fixed;
+            top: 10px;
+            left: 50px;
+            font-size: 32px;
+            font-weight: 400;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+        }
+        p {
+            font-size: 12px;
+            color: gray;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .input-container {
+            width: 100%;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .checkbox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            font-size: 12px;
+        }
+        .checkbox input {
+            width: auto;
+            margin-right: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #7a5cff;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+        }
+        button:hover {
+            background-color: #654ad1;
+        }
+        .button-sign {
+            color: white;
+            text-decoration: none;
+            background: none;
+            font-size: 16px;
+            cursor: pointer;
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            border: 2px solid white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            width: auto;
+            display: inline-block;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .button-sign:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+<div class="logo">PayPlay</div>
+
+<a href="login.html" class="button-sign">Sign In</a>
+
+<div class="container">
+    <h2>Sign up to PayPlay</h2>
+    <p>"Unlock New Worlds – The Best Games, All in One Place!"</p>
+
+    <div class="input-container">
+        <label>User Name</label>
+        <label>
+            <input type="text" placeholder="User Name" value="">
+        </label>
+    </div>
+
+    <div class="input-container">
+        <label>Email Address</label>
+        <label>
+            <input type="email" placeholder="Email Address" value="">
+        </label>
+    </div>
+
+    <div class="input-container">
+        <label>Password</label>
+        <label>
+            <input type="password" placeholder="Password" value="">
+        </label>
+    </div>
+
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" checked>
+        </label>
+        <label>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</label>
+    </div>
+
+    <button>Sign Up</button>
+</div>
+</body>
+</html>
