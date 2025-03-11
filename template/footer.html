@@ -2,9 +2,114 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Ensure full height of the page */
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Use flexbox for the entire body */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures body takes full viewport height */
+        }
+
+        /* Content area will grow and push the footer down */
+        .content {
+            flex: 1; /* This allows the content area to grow and push the footer to the bottom */
+        }
+
+        .footer {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: black;
+            color: white;
+            padding: 20px;
+            margin-top: auto; /* Push the footer to the bottom */
+        }
+
+        .footer-column {
+            flex: 1 1 100%;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .footer-right {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .footer-section {
+            flex: 1 1 200px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        /* Responsive styles for larger screens */
+        @media (min-width: 768px) {
+            .footer {
+                justify-content: space-between;
+                flex-wrap: nowrap;
+            }
+            .footer-column {
+                flex: 2;
+                text-align: left;
+            }
+            .footer-right {
+                flex: 3;
+                justify-content: flex-end;
+            }
+            .footer-section {
+                text-align: left;
+            }
+        }
+    </style>
 </head>
 <body>
 
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-column">
+        <h1>PayPlay</h1>
+        <p>"Where Gamers Shop, Legends Are Made!"</p>
+        <p>"From Classics to New Releases – We’ve Got Your Game!"</p>
+    </div>
+    <div class="footer-column footer-right">
+        <div class="footer-section">
+            <h2>Discovery</h2>
+            <p>New Games</p>
+            <p>Cheapest Way</p>
+            <p>Most Selled</p>
+        </div>
+        <div class="footer-section">
+            <h2>About</h2>
+            <p>Help</p>
+            <p>Shipping</p>
+            <p>Center</p>
+        </div>
+        <div class="footer-section">
+            <h2>Info</h2>
+            <p>Contact Us</p>
+            <p>Privacy Policies</p>
+            <p>Terms & Conditions</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
