@@ -3,80 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - PayPlay</title>
+    <title>Home - PayPlay</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: Poppins, sans-serif;
         }
         body {
-            background: url('../Pictures/Background.jpg');
+            background: url('../Pictures/BGSP.jpg');
             background-size: cover;
+            background-attachment: fixed;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             position: relative;
+            padding-top: 10px;
         }
-        iframe {
-            border: none;
+
+        .game-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the game gallery */
             width: 100%;
-            height: 30px;
-            position: absolute;
-            top: 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
         }
-        .content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
+
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-top: 10px;
+            position: relative;
             text-align: center;
-            max-width: 80%;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-            border-radius: 50px;
-            font-family: Arial, sans-serif;
-        }
-        .content h1 {
-            font-size: 3em;
-            font-weight: 500;
-            margin-bottom: 20px;
-            font-family: Arial, sans-serif;
-        }
-        .content p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            font-family: Arial, sans-serif;
-        }
-        button {
-            padding: 12px;
-            background-color: #7a5cff;
+            font-size: 32px;
+            font-weight: normal;
             color: white;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 16px;
+            font-family: Poppins, sans-serif;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 10px;
+            color: white;
+            font-family: Poppins, sans-serif;
+        }
+
+        .game-item {
+            position: relative;
+        }
+
+        .logo-overlay {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 45px; /* Adjust the size of the logo */
+            z-index: 10; /* Ensure the logo is on top of the image */
+            background: white;
+            border-radius: 25px 25px 25px 25px;
+            padding: 10px;
+        }
+
+        .price-overlay {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 10;
+            background: white;
+            border-radius: 25px 25px 25px 25px;
+            padding: 10px;
+            width: 70px;
+            font-family: Poppins, sans-serif;
+            color: black;
             font-weight: bold;
-            font-family: 'Poppins', sans-serif;
         }
-        button:hover {
-            background-color: #654ad1;
+
+        .row a img {
+            width: 200px; /* Image width */
+            height: 200px; /* Image height */
+            object-fit: cover; /* Maintain aspect ratio */
+            border-radius: 75px;
         }
+
+        iframe {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: 9999;
+        }
+
+        .text-box {
+            background-color: rgba(0, 0, 0, 0.6); /* Darkened background for a sleek look */
+            padding: 5px 20px;
+            border-radius: 100px;
+            text-align: center;
+            width: max-content;
+            margin: 140px auto 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+
+
     </style>
 </head>
 <body>
 
-<iframe src="header.html" style="border: none; width: 100%; height: 100%;"></iframe>
+<iframe src="header.html" style="border: none;top: 0; width: 100%; height: 100%; position: fixed"></iframe>
 
-<div class="content">
-    <h1>PayPlay</h1>
-    <p>Welcome to PayPlay, the ultimate destination for every gamer out there! Whether you love epic RPG adventures, heart-racing shooters, or strategic masterpieces, we’ve got the perfect game for you.</p>
-    <button class="btn-scroll" onclick="scrollToSection()">Explore Games</button>
+<div class="text-box">
+    <h2>New Adventures</h2>
+    <p>New worlds waiting to be discovered.</p>
 </div>
+<div class="game-gallery">
+    <div class="row">
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="home.html">
+                <img src="../Pictures/bg1.jpg" alt="Game 1">
+                <div class="price-overlay">$49.99</div>
+            </a>
+        </div>
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="#">
+                <img src="../Pictures/bg1.jpg" alt="Game 2">
+                <div class="price-overlay">$39.99</div>
+            </a>
+        </div>
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="#">
+                <img src="../Pictures/bg1.jpg" alt="Game 3">
+                <div class="price-overlay">$59.99</div>
+            </a>
+        </div>
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="#">
+                <img src="../Pictures/bg1.jpg" alt="Game 4">
+                <div class="price-overlay">$44.99</div>
+            </a>
+        </div>
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="#">
+                <img src="../Pictures/bg1.jpg" alt="Game 5">
+                <div class="price-overlay">$34.99</div>
+            </a>
+        </div>
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="home.html">
+                <img src="../Pictures/bg1.jpg" alt="Game 1">
+                <div class="price-overlay">$49.99</div>
+            </a>
+        </div>
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="#">
+                <img src="../Pictures/bg1.jpg" alt="Game 2">
+                <div class="price-overlay">$39.99</div>
+            </a>
+        </div>
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="#">
+                <img src="../Pictures/bg1.jpg" alt="Game 3">
+                <div class="price-overlay">$59.99</div>
+            </a>
+        </div>
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="#">
+                <img src="../Pictures/bg1.jpg" alt="Game 4">
+                <div class="price-overlay">$44.99</div>
+            </a>
+        </div>
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="#">
+                <img src="../Pictures/bg1.jpg" alt="Game 5">
+                <div class="price-overlay">$34.99</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="text-box">
+    <h2>Most Popular</h2>
+    <p>Worlds loved by many Gamers.</p>
+</div>
+
+<div class="game-gallery">
+    <div class="row">
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="home.html">
+                <img src="../Pictures/bg1.jpg" alt="Game 1">
+                <div class="price-overlay">$49.99</div>
+            </a>
+        </div>
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="#">
+                <img src="../Pictures/bg1.jpg" alt="Game 2">
+                <div class="price-overlay">$39.99</div>
+            </a>
+        </div>
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="#">
+                <img src="../Pictures/bg1.jpg" alt="Game 3">
+                <div class="price-overlay">$59.99</div>
+            </a>
+        </div>
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="#">
+                <img src="../Pictures/bg1.jpg" alt="Game 4">
+                <div class="price-overlay">$44.99</div>
+            </a>
+        </div>
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="#">
+                <img src="../Pictures/bg1.jpg" alt="Game 5">
+                <div class="price-overlay">$34.99</div>
+            </a>
+        </div>
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="home.html">
+                <img src="../Pictures/bg1.jpg" alt="Game 1">
+                <div class="price-overlay">$49.99</div>
+            </a>
+        </div>
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="#">
+                <img src="../Pictures/bg1.jpg" alt="Game 2">
+                <div class="price-overlay">$39.99</div>
+            </a>
+        </div>
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="#">
+                <img src="../Pictures/bg1.jpg" alt="Game 3">
+                <div class="price-overlay">$59.99</div>
+            </a>
+        </div>
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="#">
+                <img src="../Pictures/bg1.jpg" alt="Game 4">
+                <div class="price-overlay">$44.99</div>
+            </a>
+        </div>
+        <div class="game-item">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="logo-overlay" alt="Logo">
+            <a href="#">
+                <img src="../Pictures/bg1.jpg" alt="Game 5">
+                <div class="price-overlay">$34.99</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
 
 </body>
 </html>
