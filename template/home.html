@@ -10,6 +10,8 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
+      background: url('../Pictures/BGSP.jpg') no-repeat center center fixed;
+      background-size: cover;
     }
     .navbar-brand {
       font-size: 2rem;
@@ -24,6 +26,7 @@
     }
     .card {
       border:none;
+      background: none;
     }
     .overlay-img {
       position: absolute;
@@ -34,6 +37,20 @@
       padding: 5px;
       border-radius: 50px;
       background: white;
+      box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    }
+    .price-tag
+    {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: auto; /* Adjust as needed */
+      height: auto;
+      padding: 8px;
+      font-weight: bold;
+      border-radius: 50px;
+      background: white;
+      box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
     }
   </style>
 </head>
@@ -50,78 +67,424 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Search</a>
+          <a class="nav-link active" aria-current="page" href="search.html">Search</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Cart</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Account</a>
+          <a class="nav-link active" aria-current="page" href="register.html">Account</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 
-<div class="container mt-4">
-  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3">
-    <div class="col">
-      <a href="https://www.example.com" target="_blank"> <!-- Replace the URL with your desired destination -->
+<div class="container my-5 d-flex justify-content-center align-items-center" style="height: 80vh;">
+  <div class="container my-5 d-flex justify-content-center align-items-center" style="background: none; max-width: 800px; border-radius: 80px">
+  <div class="text-center">
+    <h1 class="mb-3" style="color: white;">PayPlay</h1>
+    <h5 class="mb-3" style="color: white;">Welcome to PayPlay, the ultimate destination for every gamer out there!
+      Whether you love epic RPG adventures,
+      heart-racing shooters, or strategic masterpieces, we’ve got the perfect game for you.</h5>
+    <button type="button" class="btn btn-light mb-2" style="border-radius: 80px">
+      <a href="#newAdventures" class="text-decoration-none text-black">Unlock New Worlds</a>
+    </button>
+  </div>
+  </div>
+</div>
+
+
+
+<div id="newAdventures" class="container my-5 d-flex justify-content-center align-items-center" style="height: 10vh; scroll-margin-top: 100px;">
+  <div class="text-center">
+    <h2 class="mb-3" style="color: white; font-weight: bold">New Adventures</h2>
+    <h5 class="mb-3" style="color: white;">New worlds waiting to be discovered</h5>
+  </div>
+</div>
+
+<div class="container mt-5 px-lg-5">
+  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-1 g-4">
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
         <div class="card h-100">
           <img src="../Pictures/Games/CBP.png" class="card-img-top" alt="...">
           <div class="card-img-overlay">
             <img src="../Pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
           </div>
         </div>
       </a>
     </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="../Pictures/Games/CBP.png" class="card-img-top" alt="...">
-      </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/NFS.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
     </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="../Pictures/Games/CBP.png" class="card-img-top" alt="...">
-      </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/NHL.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
     </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="../Pictures/Games/CBP.png" class="card-img-top" alt="...">
-      </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/NBA.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
     </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="../Pictures/Games/CBP.png" class="card-img-top" alt="...">
-      </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/RDR.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
     </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="../Pictures/Games/CBP.png" class="card-img-top" alt="...">
-      </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/MAD.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
     </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="../Pictures/Games/CBP.png" class="card-img-top" alt="...">
-      </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/NFS.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
     </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="../Pictures/Games/CBP.png" class="card-img-top" alt="...">
-      </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/FMS.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
     </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="../Pictures/Games/CBP.png" class="card-img-top" alt="...">
-      </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/F1.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
     </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="../Pictures/Games/CBP.png" class="card-img-top" alt="...">
-      </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/FC.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/FC.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/FC.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </div>
+
+<div class="container my-5 d-flex justify-content-center align-items-center" style="height: 10vh; padding-top: 100px">
+  <div class="text-center">
+    <h2 class="mb-3" style="color: white; font-weight: bold">Our Recommendations</h2>
+    <h5 class="mb-3" style="color: white;">Games Recommended by us</h5>
+  </div>
+</div>
+
+<div class="container mt-5 px-lg-5">
+  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-1 g-4">
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/AC1.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/AC2.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/AC3.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/AC4.png" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/ACS.png" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/ACU.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="container my-5 d-flex justify-content-center align-items-center" style="height: 10vh; padding-top: 100px;">
+  <div class="text-center">
+    <h2 class="mb-3" style="color: white; font-weight: bold">Most Popular Worlds</h2>
+    <h5 class="mb-3" style="color: white;">Worlds entered by most players</h5>
+  </div>
+</div>
+
+
+<div class="container mt-5 px-lg-5">
+  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-1 g-4">
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/CBP.png" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/NFS.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/NHL.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/NBA.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/RDR.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/MAD.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/NFS.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/FMS.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/F1.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/FC.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/FC.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+      <a href="https://www.example.com" target="_blank">
+        <div class="card h-100">
+          <img src="../Pictures/Games/FC.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <img src="../Pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
+            <div class="price-tag">59.99 €</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="" style="padding-top: 100px">
+  <div class="bg-dark">
+    <div class="container">
+      <footer class="py-4 bg-dark" style="padding-top: 150px">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-light">About</a></li>
+        </ul>
+        <p class="text-center text-light">© 2024 Company, Inc</p>
+      </footer>
+    </div>
+  </div>
+</div>
+
 
 </body>
 </html>
