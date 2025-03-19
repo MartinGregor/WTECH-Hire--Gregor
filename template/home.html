@@ -12,6 +12,10 @@
       font-family: 'Poppins', sans-serif;
       background: url('../Pictures/BGSP.jpg') no-repeat center center fixed;
       background-size: cover;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
     .navbar-brand {
       font-size: 2rem;
@@ -52,9 +56,14 @@
       background: white;
       box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
     }
+    main {
+      flex-grow: 1; /* Pushes the footer down */
+    }
   </style>
+
 </head>
 <body>
+<main>
 <nav class="navbar sticky-top navbar-expand-md bg-body-tertiary shadow-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">PayPlay</a>
@@ -106,7 +115,7 @@
 <div class="container mt-5 px-lg-5">
   <div class="row row-cols-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-1 g-4">
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/CBP.png" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -117,7 +126,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/NFS.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -128,7 +137,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/NHL.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -139,7 +148,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/NBA.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -150,7 +159,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/RDR.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -161,7 +170,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/MAD.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -172,7 +181,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/NFS.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -183,7 +192,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/FMS.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -194,7 +203,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/F1.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -205,7 +214,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/FC.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -216,7 +225,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/WUK.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -227,7 +236,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/ZLD.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -250,7 +259,7 @@
 <div class="container mt-5 px-lg-5">
   <div class="row row-cols-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-1 g-4">
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/AC1.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -261,7 +270,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/AC2.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -272,7 +281,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/AC3.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -283,7 +292,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/AC4.png" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -294,7 +303,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/ACS.png" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -305,7 +314,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/ACU.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -334,7 +343,7 @@
 <div class="container mt-5 px-lg-5">
   <div class="row row-cols-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-1 g-4">
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/CBP.png" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -345,7 +354,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/NFS.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -356,7 +365,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/NHL.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -367,7 +376,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/NBA.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -378,7 +387,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/RDR.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -389,7 +398,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/MAD.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -400,7 +409,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/NFS.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -411,7 +420,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/FMS.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -422,7 +431,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/F1.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -433,7 +442,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/FC.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -444,7 +453,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/FHZ.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -455,7 +464,7 @@
       </a>
     </div>
     <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-      <a href="product.html" target="_blank">
+      <a href="product.html" target="">
         <div class="card h-100">
           <img src="../Pictures/Games/PUBG.jpg" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -467,11 +476,12 @@
     </div>
   </div>
 </div>
+</main>
 
-<div class="" style="padding-top: 100px">
+<footer class="py-0 my-4 mb-0">
   <div class="bg-dark">
     <div class="container">
-      <footer class="py-4 bg-dark" style="padding-top: 150px">
+      <footer class="py-4 bg-dark" style="padding-top: 20px">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
           <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
@@ -483,7 +493,7 @@
       </footer>
     </div>
   </div>
-</div>
+</footer>
 
 
 </body>

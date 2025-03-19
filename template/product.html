@@ -12,6 +12,10 @@
             font-family: 'Poppins', sans-serif;
             background: url('../Pictures/BGSP.jpg') no-repeat center center fixed;
             background-size: cover;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         .navbar-brand {
             font-size: 2rem;
@@ -52,9 +56,14 @@
             background: white;
             box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
         }
+        main {
+            flex-grow: 1; /* Pushes the footer down */
+        }
     </style>
+
 </head>
 <body>
+<main>
 <nav class="navbar sticky-top navbar-expand-md bg-body-tertiary shadow-lg">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">PayPlay</a>
@@ -142,12 +151,12 @@
         © Cyberpunk 2077
     </div>
 </div>
+</main>
 
-
-<div class="" style="padding-top: 100px">
+<footer class="py-0 my-4 mb-0">
     <div class="bg-dark">
         <div class="container">
-            <footer class="py-4 bg-dark" style="padding-top: 150px">
+            <footer class="py-4 bg-dark" style="padding-top: 20px">
                 <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                     <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
                     <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
@@ -159,7 +168,7 @@
             </footer>
         </div>
     </div>
-</div>
+</footer>
 
 
 </body>

@@ -12,6 +12,10 @@
       font-family: 'Poppins', sans-serif;
       background: url('../Pictures/BGSP.jpg') no-repeat center center fixed;
       background-size: cover;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
     .navbar-brand {
       font-size: 2rem;
@@ -34,7 +38,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 30%;
+      width: 40px;
       height: auto;
       padding: 5px;
       border-radius: 50px;
@@ -55,15 +59,19 @@
       border-top: 2px solid lightgray;
       padding: 40px;
     }
+    main {
+      flex-grow: 1; /* Pushes the footer down */
+    }
   </style>
 </head>
 <body>
 
+<main>
 <div>
   <a class="navbar-brand" href="home.html" style="color: white; position: relative; top: 20px; left: 30px;">PayPlay</a>
-  <div class="container my-5 d-flex justify-content-center flex-column flex-lg-row" style="gap: 20px;">
+  <div class="container my-5 d-flex justify-content-center flex-column flex-lg-row">
 
-    <div class="tab col-12 col-lg-6" style="padding: 20px;">
+    <div class="tab col-12 col-lg-6" style="padding: 20px; border-radius: 40px 0 0 40px">
       <div style="justify-items: center">
         <nav style="margin-top: 20px; --bs-breadcrumb-divider: url('data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%278%27 height=%278%27><path d=%27M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z%27 fill=%27%236c757d%27/></svg>');" aria-label="breadcrumb">
           <ol class="breadcrumb">
@@ -117,7 +125,7 @@
       </div>
     </div>
 
-    <div class="tab col-12 col-lg-6" style="padding: 20px;">
+    <div class="tab col-12 col-lg-6" style="padding: 20px; border-radius: 0 40px 40px 0">
       <div style="display: flex; margin-bottom: 15px;">
         <div class="card">
           <img src="../Pictures/Games/CBP.png" class="card-img-top" alt="...">
@@ -125,14 +133,6 @@
             <img src="../Pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
           </div>
         </div>
-        <div style="width: 50%; padding: 20px;">
-          <span class="ms-4" style="font-size: 25px; font-weight: bold; display: block;">Cyberpunk 2077</span>
-          <span class="ms-4" style="font-size: 19px; font-weight: bold; display: block; margin-top: 15px">59.99 €</span>
-        </div>
-      </div>
-      <div class="shelf d-flex align-items-center" style="width: 100%">
-        <input class="form-control me-2" type="search" placeholder="Coupon Code" aria-label="Code" style="width: 75%;">
-        <button class="btn btn-light" type="submit" style="border-radius: 30px; width: 25%;">Add Code</button>
       </div>
       <div class="shelf" style="width: 100%">
         <div class="d-flex justify-content-between" style="width: 100%;">
@@ -151,11 +151,12 @@
     </div>
   </div>
 </div>
+</main>
 
-<div class="" style="padding-top: 100px">
+<footer class="py-0 my-4 mb-0">
   <div class="bg-dark">
     <div class="container">
-      <footer class="py-4 bg-dark" style="padding-top: 150px">
+      <footer class="py-4 bg-dark" style="padding-top: 20px">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
           <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
@@ -167,7 +168,7 @@
       </footer>
     </div>
   </div>
-</div>
+</footer>
 
 </body>
 </html>
