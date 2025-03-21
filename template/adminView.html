@@ -83,12 +83,11 @@
         </div>
     </nav>
 
-    <div class="container d-flex justify-content-center align-items-center" style="margin-top: 5vh; background: white; padding: 20px; border-radius: 50px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <div class="row g-2">
-            <div class="col">
-                <div class="input-group" style="min-width: 250px;">
-                    <span class="input-group-text">Platform</span>
+    <div class="container d-flex justify-content-center align-items-center" style="margin-top: 5vh; background: white; padding: 20px; border-radius: 50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <div class="row g-2 w-100">
+            <div class="col-12 col-sm-6 col-md-2">
+                <div class="input-group">
+                    <span class="input-group-text bg-dark text-light">Platform</span>
                     <select class="form-select" aria-label="Default select example">
                         <option selected>ALL</option>
                         <option value="1">X-BOX</option>
@@ -99,9 +98,9 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                 </div>
             </div>
 
-            <div class="col">
-                <div class="input-group" style="min-width: 250px;">
-                    <span class="input-group-text">Category</span>
+            <div class="col-12 col-sm-6 col-md-2">
+                <div class="input-group">
+                    <span class="input-group-text bg-dark text-light">Category</span>
                     <select class="form-select" aria-label="Default select example">
                         <option selected>ALL</option>
                         <option value="1">Sport</option>
@@ -112,20 +111,32 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                 </div>
             </div>
 
-            <div class="col">
-                <div class="input-group" style="min-width: 250px;">
-                    <span class="input-group-text">Price</span>
-                    <input class="form-control me-0" type="search" placeholder="0.00" aria-label="Search" style="min-width: 80px;">
-                    <span class="input-group-text">-</span>
-                    <input class="form-control me-0" type="search" placeholder="59.99" aria-label="Search" style="min-width: 80px;">
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="input-group">
+                    <span class="input-group-text bg-dark text-light">Price</span>
+                    <input class="form-control me-0" type="search" placeholder="0.00" aria-label="Search">
+                    <span class="input-group-text bg-dark text-light">-</span>
+                    <input class="form-control me-0" type="search" placeholder="59.99" aria-label="Search">
                 </div>
             </div>
 
-            <div class="col d-flex justify-content-end">
-                <form class="d-flex ms-auto" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Game Title" aria-label="Search" style="min-width: 300px;">
-                    <button class="btn btn-light" type="submit" style="border-radius: 30px">Search</button>
-                </form>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="input-group">
+                    <input class="form-control me-0" type="search" placeholder="Game Title" aria-label="Search">
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-1">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Price ⇧</option>
+                    <option value="1">Price ⇩</option>
+                    <option value="2">Age ⇧</option>
+                    <option value="3">Age ⇩</option>
+                </select>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-1 d-flex justify-content-center align-items-center">
+                <button class="btn btn-light w-100" type="submit" style="border-radius: 30px">Search</button>
             </div>
 
         </div>
@@ -289,7 +300,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
         </nav>
         <a href="adminProduct.html" class="btn btn-light btn-md text-black px-4 py-2 mt-5 mt-lg-0 ms-lg-auto"
            style="border-radius: 50px; text-decoration: none; color: inherit; width: 20%; min-width: 200px; max-height: 40px;">
-            Add New Product
+            Add New Product +
         </a>
     </div>
 </main>
