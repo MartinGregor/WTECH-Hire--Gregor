@@ -25,9 +25,33 @@
       margin-left: 2.5rem;
       font-size: 1.25rem
     }
-    .form-info {
+    .double-basic-button{
+      border-radius: 80px;
+      width: 45%;
+    }
+    .admin-product-box{
+      top: 75px;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      margin-bottom: 50px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 50px
+    }
+    .no-display{
+      display:none;
+    }
+    .text-area{
+      height: 220px;
+      resize: vertical;
       padding: 10px;
       margin-bottom: 20px;
+    }
+    .double-form{
+      justify-content: center;
+      gap: 5%;
+    }
+    .top-offset{
+      padding-top: 20px;
     }
     main {
       flex-grow: 1;
@@ -56,7 +80,7 @@
 </nav>
 
 <main>
-  <div class="container mt-5 px-lg-5" style="top: 75px; padding-top: 25px; padding-bottom: 25px;margin-bottom: 50px; background: rgba(0, 0, 0, 0.7); border-radius: 50px">
+  <div class="container mt-5 px-lg-5 admin-product-box">
     <div class="row">
       <div class="col-lg-7">
         <div id="carouselExampleIndicators" class="carousel slide">
@@ -105,7 +129,7 @@
           <input type="text" class="form-control" placeholder="youtube video link..." aria-label="Example text with button addon" aria-describedby="button-addon1">
         </div>
         <div class="input-group align-items-right">
-          <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" style="display:none;">
+          <input type="file" class="form-control no-display" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
           <button class="btn btn-outline-light" type="button" id="inputGroupFileAddon04" onclick="document.getElementById('inputGroupFile04').click()">Upload File +</button>
         </div>
       </div>
@@ -166,13 +190,13 @@
               <option value="5">Action</option>
             </select>
           </div>
-          <textarea class="form-info form-control me-2" placeholder="Game Description" aria-label="Code" style="height: 220px; resize: vertical;">Cyberpunk 2077 is an open-world, action-adventure RPG set in the dark future of Night City — a dangerous megalopolis obsessed with power, glamor, and ceaseless body modification.</textarea>
+          <textarea class="form-control me-2 text-area" placeholder="Game Description" aria-label="Code">Cyberpunk 2077 is an open-world, action-adventure RPG set in the dark future of Night City — a dangerous megalopolis obsessed with power, glamor, and ceaseless body modification.</textarea>
         </div>
-        <div class="d-flex" style="justify-content: center; gap: 5%">
-          <a href="adminView.html" class="btn btn-dark btn-md text-white px-4 py-2" style="border-radius: 50px; width: 45%">
+        <div class="d-flex double-form">
+          <a href="adminView.html" class="btn btn-dark btn-md text-white px-4 py-2 double-basic-button">
             Delete Game
           </a>
-          <a href="adminView.html" class="btn btn-light btn-md text-black px-4 py-2" style="border-radius: 50px; width: 45%">
+          <a href="adminView.html" class="btn btn-light btn-md text-black px-4 py-2 double-basic-button">
             Save Changes
           </a>
         </div>
@@ -185,7 +209,7 @@
 <footer class="py-0 my-4 mb-0">
   <div class="bg-dark">
     <div class="container">
-      <footer class="py-4 bg-dark" style="padding-top: 20px">
+      <footer class="py-4 bg-dark top-offset">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
           <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>

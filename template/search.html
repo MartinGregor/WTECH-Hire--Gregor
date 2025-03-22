@@ -24,6 +24,16 @@
             margin-left: 2.5rem;
             font-size: 1.25rem
         }
+        .search-bar{
+            margin-top: 5vh;
+            background: white;
+            padding: 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .basic-button{
+            border-radius: 80px;
+        }
         .card-img-top {
             border-radius: 150px;
             border: none;
@@ -36,7 +46,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 40px; /* Adjust as needed */
+            width: 40px;
             height: auto;
             padding: 5px;
             border-radius: 50px;
@@ -48,7 +58,7 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            width: auto; /* Adjust as needed */
+            width: auto;
             height: auto;
             padding: 8px;
             font-weight: bold;
@@ -56,8 +66,19 @@
             background: white;
             box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
         }
+        .button-prev{
+            border-bottom-left-radius: 25px;
+            border-top-left-radius: 25px;
+        }
+        .button-next{
+            border-bottom-right-radius: 25px;
+            border-top-right-radius: 25px;
+        }
+        .top-offset{
+            padding-top: 20px;
+        }
         main {
-            flex-grow: 1; /* Pushes the footer down */
+            flex-grow: 1;
         }
     </style>
 </head>
@@ -89,7 +110,7 @@
     </div>
 </nav>
 
-    <div class="container d-flex justify-content-center align-items-center" style="margin-top: 5vh; background: white; padding: 20px; border-radius: 50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <div class="container d-flex justify-content-center align-items-center search-bar">
         <div class="row g-2 w-100">
             <div class="col-12 col-sm-6 col-md-2">
                 <div class="input-group">
@@ -142,7 +163,7 @@
             </div>
 
             <div class="col-12 col-sm-6 col-md-1 d-flex justify-content-center align-items-center">
-                <button class="btn btn-light w-100" type="submit" style="border-radius: 30px">Search</button>
+                <button class="btn btn-light w-100 basic-button" type="submit">Search</button>
             </div>
 
         </div>
@@ -286,11 +307,11 @@
     </div>
 </div>
 
-<div class="container mt-5 px-lg-5 d-flex justify-content-center" style="padding-top: 20px">
+<div class="container mt-5 px-lg-5 d-flex justify-content-center top-offset">
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
             <li class="page-item">
-                <a class="page-link text-black" style="border-bottom-left-radius: 25px; border-top-left-radius: 25px" href="#" aria-label="Previous">
+                <a class="page-link text-black button-prev" href="#" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
@@ -298,7 +319,7 @@
             <li class="page-item text-black"><a class="page-link text-black" href="#">2</a></li>
             <li class="page-item text-black"><a class="page-link text-black" href="#">3</a></li>
             <li class="page-item">
-                <a class="page-link text-black" style="border-bottom-right-radius: 25px; border-top-right-radius: 25px" href="#" aria-label="Next">
+                <a class="page-link text-black button-next" href="#" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>
@@ -310,7 +331,7 @@
 <footer class="py-0 my-4 mb-0">
     <div class="bg-dark">
         <div class="container">
-            <footer class="py-4 bg-dark" style="padding-top: 20px">
+            <footer class="py-4 bg-dark top-offset">
                 <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                     <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
                     <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>

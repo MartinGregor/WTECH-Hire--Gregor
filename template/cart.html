@@ -34,8 +34,39 @@
     .cart-header {
       border-radius: 50px;
     }
+    .cart-item-image{
+      max-width: 100px;
+      border-radius: 100px;
+      margin-left: 20px;
+      margin-right: 20px;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .cart-item-platform{
+      max-width: 50px;
+      padding:5px ;
+      margin: 20px;
+    }
+    .text-black-bold{
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .auto-width{
+      width: auto;
+    }
+    .quantity-field{
+      max-width: 50px;
+    }
+    .text-underlined{
+      text-decoration: underline;
+    }
+    .top-offset{
+      padding-top: 20px;
+    }
+    .basic-button{
+      border-radius: 80px;
+    }
     main {
-      flex-grow: 1; /* Pushes the footer down */
+      flex-grow: 1;
     }
   </style>
 </head>
@@ -79,90 +110,90 @@
 
     <div class="row align-items-center cart-item">
       <div class="col-md-6 d-flex align-items-center">
-        <img src="../pictures/Games/GTA.jpg" class="img-fluid" style="max-width: 100px; border-radius: 100px; margin-left: 20px; margin-right: 20px; box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);" alt="Game Image">
-        <img src="../pictures/Logos/xbox-logo.png" class="img-fluid" style="max-width: 50px; border-radius: 0; padding:5px ;margin: 20px" alt="Game Logo">
-        <span class="ms-4" style="font-size: 16px; font-weight: bold;">GTA VI</span>
+        <img src="../pictures/Games/GTA.jpg" class="img-fluid cart-item-image" alt="Game Image">
+        <img src="../pictures/Logos/xbox-logo.png" class="img-fluid cart-item-platform" alt="Game Logo">
+        <span class="ms-4 text-black-bold">GTA VI</span>
       </div>
       <div class="col-md-2 text-center">
-        <span style="font-size: 16px; font-weight: bold;">59.99 €</span>
+        <span class="text-black-bold">59.99 €</span>
       </div>
       <div class="col-md-2 d-flex justify-content-center align-items-center">
-        <div class="input-group d-flex align-items-center" style="width: auto;">
+        <div class="input-group d-flex align-items-center auto-width">
           <button class="btn btn-outline-dark">
             <i class="bi bi-trash"></i>
           </button>
           <button class="btn btn-outline-dark">-</button>
-          <input type="text" class="form-control text-center" value="2" style="max-width: 50px; font-size: 16px; font-weight: bold;">
+          <input type="text" class="form-control text-center quantity-field text-black-bold" value="2">
           <button class="btn btn-outline-dark">+</button>
         </div>
       </div>
       <div class="col-md-2 text-center">
-        <span style="font-size: 16px; font-weight: bold;">119.98 €</span>
+        <span class="text-black-bold">119.98 €</span>
       </div>
     </div>
 
     <div class="row align-items-center cart-item">
       <div class="col-md-6 d-flex align-items-center">
-        <img src="../pictures/Games/F1.jpg" class="img-fluid" style="max-width: 100px; border-radius: 100px; margin-left: 20px; margin-right: 20px; box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);" alt="Game Image">
-        <img src="../pictures/Logos/playstation-logotype.png" class="img-fluid" style="max-width: 50px; border-radius: 0; padding:5px ;margin: 20px" alt="Game Logo">
-        <span class="ms-4" style="font-size: 16px; font-weight: bold;">F1 2024</span>
+        <img src="../pictures/Games/F1.jpg" class="img-fluid cart-item-image" alt="Game Image">
+        <img src="../pictures/Logos/playstation-logotype.png" class="img-fluid cart-item-platform" alt="Game Logo">
+        <span class="ms-4 text-black-bold">F1 2024</span>
       </div>
       <div class="col-md-2 text-center">
-        <span style="font-size: 16px; font-weight: bold;">59.99 €</span>
+        <span class="text-black-bold">59.99 €</span>
       </div>
       <div class="col-md-2 d-flex justify-content-center align-items-center">
-        <div class="input-group d-flex align-items-center" style="width: auto;">
+        <div class="input-group d-flex align-items-center auto-width">
           <button class="btn btn-outline-dark">
             <i class="bi bi-trash"></i>
           </button>
           <button class="btn btn-outline-dark">-</button>
-          <input type="text" class="form-control text-center" value="2" style="max-width: 50px; font-size: 16px; font-weight: bold;">
+          <input type="text" class="form-control text-center quantity-field text-black-bold" value="2">
           <button class="btn btn-outline-dark">+</button>
         </div>
       </div>
       <div class="col-md-2 text-center">
-        <span style="font-size: 16px; font-weight: bold;">119.98 €</span>
+        <span class="text-black-bold">119.98 €</span>
       </div>
     </div>
 
     <div class="row align-items-center cart-item">
       <div class="col-md-6 d-flex align-items-center">
-        <img src="../pictures/Games/CBP.png" class="img-fluid" style="max-width: 100px; border-radius: 100px; margin-left: 20px; margin-right: 20px; box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);" alt="Game Image">
-        <img src="../pictures/Logos/nintendo-switch.png" class="img-fluid" style="max-width: 50px; border-radius: 0; padding:5px ;margin: 20px" alt="Game Logo">
-        <span class="ms-4" style="font-size: 16px; font-weight: bold;">Cyberpunk 2077</span>
+        <img src="../pictures/Games/CBP.png" class="img-fluid cart-item-image" alt="Game Image">
+        <img src="../pictures/Logos/nintendo-switch.png" class="img-fluid cart-item-platform" alt="Game Logo">
+        <span class="ms-4 text-black-bold">Cyberpunk 2077</span>
       </div>
       <div class="col-md-2 text-center">
-        <span style="font-size: 16px; font-weight: bold;">59.99 €</span>
+        <span class="text-black-bold">59.99 €</span>
       </div>
       <div class="col-md-2 d-flex justify-content-center align-items-center">
-        <div class="input-group d-flex align-items-center" style="width: auto;">
+        <div class="input-group d-flex align-items-center auto-width">
           <button class="btn btn-outline-dark">
             <i class="bi bi-trash"></i>
           </button>
           <button class="btn btn-outline-dark">-</button>
-          <input type="text" class="form-control text-center" value="2" style="max-width: 50px; font-size: 16px; font-weight: bold;">
+          <input type="text" class="form-control text-center quantity-field text-black-bold" value="2">
           <button class="btn btn-outline-dark">+</button>
         </div>
       </div>
       <div class="col-md-2 text-center">
-        <span style="font-size: 16px; font-weight: bold;">119.98 €</span>
+        <span class="text-black-bold">119.98 €</span>
       </div>
     </div>
   </div>
 
-  <div class="container mt-4" style="padding-top: 20px;">
-    <div class="row bg-dark p-3 mt-4 shadow" style="border-radius: 50px">
+  <div class="container mt-4 top-offset">
+    <div class="row bg-dark p-3 mt-4 shadow basic-button">
       <div class="col-md-6 text-start fw-bold text-white">Sub-total</div>
       <div class="col-md-6 text-end fw-bold text-white">359.94 €</div>
     </div>
     <div class="row mt-2">
       <div class="col-md-12 text-end text-white">
-        <small style="text-decoration: underline;">Price without tax and shipping payments</small>
+        <small class="text-underlined">Price without tax and shipping payments</small>
       </div>
     </div>
     <div class="row mt-3">
       <div class="col-md-12 text-end">
-        <a href="details.html" class="btn btn-light btn-lg text-black px-4 py-2" style="border-radius: 50px; text-decoration: none; color: inherit;">
+        <a href="details.html" class="btn btn-light btn-lg text-black px-4 py-2 basic-button">
           Checkout
         </a>
       </div>
@@ -175,7 +206,7 @@
 <footer class="py-0 my-4 mb-0">
     <div class="bg-dark">
       <div class="container">
-        <footer class="py-4 bg-dark" style="padding-top: 20px">
+        <footer class="py-4 bg-dark top-offset">
           <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
