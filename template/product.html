@@ -24,40 +24,66 @@
             margin-left: 2.5rem;
             font-size: 1.25rem
         }
-        .card-img-top {
-            border-radius: 150px;
-            border: none;
+        .product-box{
+            top: 75px;
+            padding-top: 25px;
+            margin-bottom: 50px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50px
         }
-        .card {
-            border:none;
-            background: none;
+        .product-image{
+            border-radius: 20px;
         }
-        .overlay-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 40px; /* Adjust as needed */
-            height: auto;
+        .game-title{
             padding: 5px;
+            margin-bottom:20px ;
+            margin-top:10px ;
             border-radius: 50px;
-            background: white;
-            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+            text-align: center;
         }
-        .price-tag
-        {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: auto; /* Adjust as needed */
-            height: auto;
-            padding: 8px;
-            font-weight: bold;
-            border-radius: 50px;
+        .bottom-gap{
+            margin-bottom: 20px;
+        }
+        .bottom-gap-large{
+            margin-bottom: 50px;
+        }
+        .gap{
+            padding: 10px 30px;
+        }
+        .basic-button{
+            border-radius: 80px;
+        }
+        .bottom-offset{
+            padding-bottom: 10px;
+        }
+        .top-offset{
+            padding-top: 20px;
+        }
+        .platform{
+            height: 40px;
             background: white;
-            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+            padding: 5px;
+            margin-left: 10px;
+            border-radius: 100px;
+        }
+        .full-width{
+            max-width: 100%;
+        }
+        .text-black-bold{
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .width-50{
+            max-width: 50px;
+        }
+        .product-mark{
+            border-radius: 30px;
+            margin-top: 100px !important;
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 10px;
         }
         main {
-            flex-grow: 1; /* Pushes the footer down */
+            flex-grow: 1;
         }
     </style>
 
@@ -89,7 +115,7 @@
     </div>
 </nav>
 
-<div class="container mt-5 px-lg-5" style="top: 75px; padding-top: 25px; margin-bottom: 50px; background: rgba(0, 0, 0, 0.7); border-radius: 50px">
+<div class="container mt-5 px-lg-5 product-box">
     <div class="row">
         <div class="col-lg-7">
             <div id="carouselExampleIndicators" class="carousel slide">
@@ -101,17 +127,17 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="../pictures/Games%20Desc/CP1.jpg" class="d-block w-100" style="border-radius: 20px" alt="...">
+                        <img src="../pictures/Games%20Desc/CP1.jpg" class="d-block w-100 product-image" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="../pictures/Games%20Desc/CP2.jpg" class="d-block w-100" style="border-radius: 20px" alt="...">
+                        <img src="../pictures/Games%20Desc/CP2.jpg" class="d-block w-100 product-image" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="../pictures/Games%20Desc/CP3.jpg" class="d-block w-100" style="border-radius: 20px" alt="...">
+                        <img src="../pictures/Games%20Desc/CP3.jpg" class="d-block w-100 product-image" alt="...">
                     </div>
                     <div class="carousel-item">
                         <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/8X2kIfS6fb8" title="YouTube video" style="border-radius: 20px" allowfullscreen></iframe>
+                            <iframe class="product-image" src="https://www.youtube.com/embed/8X2kIfS6fb8" title="YouTube video" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -127,27 +153,26 @@
         </div>
 
         <div class="col-lg-5 d-flex flex-column justify-content-center">
-            <h2 class="fw-bold bg-white" style="padding: 5px; margin-bottom:20px ;margin-top:10px ;border-radius: 50px; text-align: center">Cyberpunk 2077</h2>
-            <p class="text-white" style="margin-bottom: 50px">Cyberpunk 2077 is an open-world, action-adventure RPG set in the dark future of Night City —
+            <h2 class="fw-bold bg-white game-title">Cyberpunk 2077</h2>
+            <p class="text-white bottom-gap-large">Cyberpunk 2077 is an open-world, action-adventure RPG set in the dark future of Night City —
                 a dangerous megalopolis obsessed with power, glamor, and ceaseless body modification.</p>
-            <div class="d-flex align-items-center" style="padding-bottom: 10px">
+            <div class="d-flex align-items-center bottom-offset">
                 <h5 class="text-white mb-0 me-2">Platform: Playstation</h5>
-                <img src="../pictures/Logos/playstation-logotype.png" alt="Platform Logo" style="height: 40px; background: white; padding: 5px; margin-left: 10px;border-radius: 100px">
+                <img class="platform" src="../pictures/Logos/playstation-logotype.png" alt="Platform Logo">
             </div>
-            <h5 class="text-white" style="margin-bottom: 20px">Categories: Adventure, Action, RPG</h5>
+            <h5 class="text-white bottom-gap">Categories: Adventure, Action, RPG</h5>
             <h5 class="text-white">Price: 59.99 €</h5>
-            <div class="d-flex align-items-center justify-content-between" style="width: 100%;">
+            <div class="d-flex align-items-center justify-content-between full-width">
                 <div class="d-flex align-items-center">
                     <button class="btn btn-outline-light">-</button>
-                    <input type="text" class="form-control text-center mx-1" value="1" style="max-width: 50px; font-size: 16px; font-weight: bold;">
+                    <input type="text" class="form-control text-center mx-1 text-black-bold width-50" value="1">
                     <button class="btn btn-outline-light">+</button>
                 </div>
-                <button class="btn btn-light btn-lg text-black px-4 py-2" style="padding: 10px 30px; border-radius: 50px;">Add to Cart</button>
+                <button class="btn btn-light btn-lg text-black px-4 py-2 gap basic-button">Add to Cart</button>
             </div>
         </div>
     </div>
-    <div class="position-relative bottom-0 start-50 translate-middle-x text-white fw-bold py-2 px-4 d-inline-block text-center"
-         style="border-radius: 30px; margin-top: 100px !important; background: rgba(255, 255, 255, 0.1); margin-bottom: 10px;">
+    <div class="position-relative bottom-0 start-50 translate-middle-x text-white fw-bold py-2 px-4 d-inline-block text-center product-mark">
         © Cyberpunk 2077
     </div>
 </div>
@@ -156,7 +181,7 @@
 <footer class="py-0 my-4 mb-0">
     <div class="bg-dark">
         <div class="container">
-            <footer class="py-4 bg-dark" style="padding-top: 20px">
+            <footer class="py-4 bg-dark top-offset">
                 <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                     <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
                     <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>

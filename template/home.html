@@ -24,6 +24,28 @@
       margin-left: 2.5rem;
       font-size: 1.25rem
     }
+    .intro{
+      height: 80vh;
+      max-width: 800px;
+    }
+    .white-text{
+      color: white;
+    }
+    .white-text-bold{
+      color: white;
+      font-weight: bold;
+    }
+    .basic-button{
+      border-radius: 80px;
+    }
+    .scroll-caption-area{
+      height: 20vh;
+      scroll-margin-top: 100px;
+    }
+    .caption-area{
+      height: 20vh;
+      margin-top: 100px;
+    }
     .card-img-top {
       border-radius: 150px;
       border: none;
@@ -36,7 +58,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 40px; /* Adjust as needed */
+      width: 40px;
       height: auto;
       padding: 5px;
       border-radius: 50px;
@@ -48,7 +70,7 @@
       position: absolute;
       bottom: 0;
       right: 0;
-      width: auto; /* Adjust as needed */
+      width: auto;
       height: auto;
       padding: 8px;
       font-weight: bold;
@@ -56,8 +78,11 @@
       background: white;
       box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
     }
+    .top-offset{
+      padding-top: 20px;
+    }
     main {
-      flex-grow: 1; /* Pushes the footer down */
+      flex-grow: 1;
     }
   </style>
 
@@ -89,26 +114,24 @@
   </div>
 </nav>
 
-<div class="container my-5 d-flex justify-content-center align-items-center" style="height: 80vh;">
-  <div class="container my-5 d-flex justify-content-center align-items-center" style="background: none; max-width: 800px; border-radius: 80px">
+<div class="intro container my-5 d-flex justify-content-center align-items-center">
   <div class="text-center">
-    <h1 class="mb-3" style="color: white;">PayPlay</h1>
-    <h5 class="mb-3" style="color: white;">Welcome to PayPlay, the ultimate destination for every gamer out there!
+    <h1 class="mb-3 white-text">PayPlay</h1>
+    <h5 class="mb-3 white-text">Welcome to PayPlay, the ultimate destination for every gamer out there!
       Whether you love epic RPG adventures,
       heart-racing shooters, or strategic masterpieces, we’ve got the perfect game for you.</h5>
-    <button type="button" class="btn btn-light btn-lg text-black px-4 py-2" style="border-radius: 80px">
+    <button type="button" class="btn btn-light btn-lg text-black px-4 py-2 basic-button">
       <a href="#newAdventures" class="text-decoration-none text-black">Unlock New Worlds</a>
     </button>
-  </div>
   </div>
 </div>
 
 
 
-<div id="newAdventures" class="container my-5 d-flex justify-content-center align-items-center" style="height: 20vh; scroll-margin-top: 100px;">
+<div id="newAdventures" class="container my-5 d-flex justify-content-center align-items-center scroll-caption-area">
   <div class="text-center">
-    <h2 class="mb-3" style="color: white; font-weight: bold">New Adventures</h2>
-    <h5 class="mb-3" style="color: white;">New worlds waiting to be discovered</h5>
+    <h2 class="mb-3 white-text-bold">New Adventures</h2>
+    <h5 class="mb-3 white-text">New worlds waiting to be discovered</h5>
   </div>
 </div>
 
@@ -249,10 +272,10 @@
   </div>
 </div>
 
-<div class="container my-5 d-flex justify-content-center align-items-center" style="height: 20vh; padding-top: 100px">
+<div class="container my-5 d-flex justify-content-center align-items-center caption-area">
   <div class="text-center">
-    <h2 class="mb-3" style="color: white; font-weight: bold">Our Recommendations</h2>
-    <h5 class="mb-3" style="color: white;">Games Recommended by us</h5>
+    <h2 class="mb-3 white-text-bold">Our Recommendations</h2>
+    <h5 class="mb-3 white-text">Games Recommended by us</h5>
   </div>
 </div>
 
@@ -332,10 +355,10 @@
 
 
 
-<div class="container my-5 d-flex justify-content-center align-items-center" style="height: 20vh; padding-top: 100px;">
+<div class="container my-5 d-flex justify-content-center align-items-center caption-area">
   <div class="text-center">
-    <h2 class="mb-3" style="color: white; font-weight: bold">Most Popular Worlds</h2>
-    <h5 class="mb-3" style="color: white;">Worlds entered by most players</h5>
+    <h2 class="mb-3 white-text-bold">Most Popular Worlds</h2>
+    <h5 class="mb-3 white-text">Worlds entered by most players</h5>
   </div>
 </div>
 
@@ -481,7 +504,7 @@
 <footer class="py-0 my-4 mb-0">
   <div class="bg-dark">
     <div class="container">
-      <footer class="py-4 bg-dark" style="padding-top: 20px">
+      <footer class="py-4 bg-dark top-offset">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
           <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
