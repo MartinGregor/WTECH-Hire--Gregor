@@ -25,13 +25,17 @@
       margin-left: 2.5rem;
       font-size: 1.25rem;
     }
+    .payPlay-logo {
+      color: white;
+      position: relative;
+      top: 20px;
+      left: 30px;
+    }
     .card-img-top {
       border-radius: 150px;
-      border: none;
     }
     .card {
       border: none;
-      background: none;
       width: 30%;
       max-width: 500px;
     }
@@ -46,22 +50,51 @@
       background: white;
       box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
     }
-    .tab {
+    .tab-left {
       background-color: white;
       padding: 20px;
-      /*border-radius: 70px;*/
+      border-radius: 40px 0 0 40px;
       margin-bottom: 20px;
+    }
+    .tab-right {
+      background-color: white;
+      padding: 20px;
+      border-radius: 0 40px 40px 0;
+      margin-bottom: 20px;
+    }
+    .bread-crumbs{
+      margin-top: 20px;
+      --bs-breadcrumb-divider: url('data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%278%27 height=%278%27><path d=%27M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z%27 fill=%27%236c757d%27/></svg>');
+    }
+    .previous-info{
+      border: solid 1px lightgray;
+      border-radius: 5px;
+      margin-left: 20px;
+      margin-right: 20px
     }
     .shelf {
       border-top: 2px solid lightgray;
       padding: 40px;
     }
-    main {
-      flex-grow: 1; /* Pushes the footer down */
+    .double-info{
+      width: calc(50% - 8px)
     }
-    .form-info {
-      padding: 10px;
-      margin-bottom: 20px;
+    .radio-choice {
+      border: 1px solid lightgray;
+      margin-top: 15px;
+      border-radius: 5px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .blue{
+      color: cornflowerblue
+    }
+    .double-button{
+      border-radius: 80px;
+      width: 45%;
+    }
+    main {
+      flex-grow: 1;
     }
   </style>
 </head>
@@ -69,12 +102,12 @@
 
 <main>
 <div>
-  <a class="navbar-brand" href="home.html" style="color: white; position: relative; top: 20px; left: 30px;">PayPlay</a>
+  <a class="navbar-brand payPlay-logo" href="home.html">PayPlay</a>
   <div class="container my-5 d-flex justify-content-center flex-column flex-lg-row">
 
-    <div class="tab col-12 col-lg-6" style="padding: 20px; border-radius: 40px 0 0 40px">
-      <div style="justify-items: center">
-        <nav style="margin-top: 20px; --bs-breadcrumb-divider: url('data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%278%27 height=%278%27><path d=%27M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z%27 fill=%27%236c757d%27/></svg>');" aria-label="breadcrumb">
+    <div class="tab-left col-12 col-lg-6">
+      <div class="d-flex justify-content-center">
+        <nav class="bread-crumbs">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="cart.html" class="text-decoration-none">Cart</a></li>
             <li class="breadcrumb-item"><a href="details.html" class="text-decoration-none">Details</a></li>
@@ -84,61 +117,60 @@
         </nav>
       </div>
       <div>
-        <div style="border: solid 1px lightgray; border-radius: 5px; margin-left: 20px; margin-right: 20px">
-          <div class="d-flex" style="width: 100%; margin: 10px 0 10px 0">
-            <span style="margin-left: 10px; width: 15%; font-size: 16px; font-weight: bold; color: cornflowerblue">Contact</span>
-            <span style="margin-left: 10px; font-size: 16px">Joe.Doe@gmail.com</span>
+        <div class="previous-info">
+          <div class="d-flex my-2">
+            <span class="ms-2 fs-6 fw-bold blue">Contact</span>
+            <span class="ms-5 fs-6">Joe.Doe@gmail.com</span>
           </div>
-          <div class="d-flex" style="width: 100%; margin: 10px 0 10px 0">
-            <span style="margin-left: 10px; width: 15%; font-size: 16px; font-weight: bold; color: cornflowerblue">Ship to</span>
-            <span style="margin-left: 10px; font-size: 16px">Bratislava, 32 Štrby, Slovakia</span>
+          <div class="d-flex my-2">
+            <span class="ms-2 fs-6 fw-bold blue">Ship to&nbsp&nbsp</span>
+            <span class="ms-5 fs-6">Bratislava, 32 Štrby, Slovakia</span>
           </div>
-          <div class="d-flex" style="width: 100%; margin: 10px 0 10px 0">
-            <span style="margin-left: 10px; width: 15%; font-size: 16px; font-weight: bold; color: cornflowerblue">Method</span>
-            <span style="margin-left: 10px; font-size: 16px">Standard Shipping - FREE</span>
+          <div class="d-flex my-2">
+            <span class="ms-2 fs-6 fw-bold blue">Method</span>
+            <span class="ms-5 fs-6">Standard Shipping - FREE</span>
           </div>
         </div>
         <div>
-          <div style="margin-top: 20px;">
-            <span class="ms-4" style="font-size: 16px; font-weight: bold; display: inline-block;">Payment Method</span>
+          <div class="mt-4">
+            <span class="ms-4 fs-6 fw-bold">Payment Method</span>
           </div>
 
-          <div style="padding-left: 20px; padding-right: 20px; margin-top: 20px; margin-bottom: 20px">
+          <div class="px-4 my-4">
             <ul class="nav nav-tabs d-flex" id="myTab" role="tablist">
-              <li style="margin: 0; width: 50%" class="nav-item" role="presentation" >
-                <button style="margin: 0; width: 50%" class="nav-link active w-100" id="card-tab" data-bs-toggle="tab" data-bs-target="#card" type="button" role="tab" aria-controls="card" aria-selected="true">Credit Card</button>
+              <li class="m-0 w-50 nav-item" role="presentation" >
+                <button class="m-0 w-50 nav-link active w-100" id="card-tab" data-bs-toggle="tab" data-bs-target="#card" type="button" role="tab" aria-controls="card" aria-selected="true">Credit Card</button>
               </li>
-              <li style="margin: 0; width: 50%" class="nav-item" role="presentation">
-                <button style="margin: 0; width: 50%" class="nav-link w-100" id="cash-tab" data-bs-toggle="tab" data-bs-target="#cash" type="button" role="tab" aria-controls="cash" aria-selected="false">Cash</button>
+              <li class="m-0 w-50 nav-item" role="presentation">
+                <button class="m-0 w-50 nav-link w-100" id="cash-tab" data-bs-toggle="tab" data-bs-target="#cash" type="button" role="tab" aria-controls="cash" aria-selected="false">Cash</button>
               </li>
             </ul>
 
-            <!-- Tab Content -->
-            <div class="tab-content mt-3" id="myTabContent">
+            <div class="tab-content mt-2" id="myTabContent">
               <div class="tab-pane fade show active" id="card" role="tabpanel" aria-labelledby="card-tab">
-                <div class="d-flex align-items-center" style="width: 100%">
-                  <input class="form-info form-control me-2" type="search" placeholder="Card Number" aria-label="Code" style="width: 100%;">
+                <div class="d-flex align-items-center mb-2">
+                  <input class="form-info form-control me-2" type="search" placeholder="Card Number" aria-label="Code">
                 </div>
-                <div class="d-flex align-items-center" style="width: 100%">
-                  <input class="form-info form-control me-2" type="search" placeholder="Holder's Name (Optional)" aria-label="Code" style="width: 100%;">
+                <div class="d-flex align-items-center mb-2">
+                  <input class="form-info form-control me-2" type="search" placeholder="Holder's Name (Optional)" aria-label="Code">
                 </div>
-                <div class="d-flex align-items-center" style="width: 100%">
-                  <input class="form-info form-control me-2" type="search" placeholder="Expiration (MM/YY)" aria-label="Code" style="width: calc(50% - 8px);">
-                  <input class="form-info form-control me-2" type="search" placeholder="CVV" aria-label="Code" style="width: calc(50% - 8px);">
+                <div class="d-flex align-items-center">
+                  <input class="form-info form-control me-2 double-info" type="search" placeholder="Expiration (MM/YY)" aria-label="Code">
+                  <input class="form-info form-control me-2 double-info" type="search" placeholder="CVV" aria-label="Code">
                 </div>
               </div>
-              <div class="tab-pane fade" id="cash" role="tabpanel" aria-labelledby="cash-tab" style="padding: 20px">
+              <div class="tab-pane fade p-4" id="cash" role="tabpanel" aria-labelledby="cash-tab">
                 <span>You have selected to pay in cash. Please have the exact amount ready upon delivery or at the counter. Thank you!</span>
               </div>
             </div>
           </div>
 
 
-          <div class="d-flex" style="width: 100%; margin-top: 10px; justify-content: center; gap: 5%">
-            <a href="shipping.html" class="btn btn-light btn-md text-black px-4 py-2" style="border-radius: 50px; text-decoration: none; color: inherit; width: 45%">
+          <div class="d-flex justify-content-center mt-3 gap-4">
+            <a href="shipping.html" class="btn btn-light btn-md text-black double-button">
               Back to Shipping
             </a>
-            <a href="#" class="btn btn-light btn-md text-black px-4 py-2" style="border-radius: 50px; text-decoration: none; color: inherit;; width: 45%">
+            <a href="#" class="btn btn-light btn-md text-black double-button">
               Pay Now
             </a>
           </div>
@@ -146,8 +178,8 @@
       </div>
     </div>
 
-    <div class="tab col-12 col-lg-6" style="padding: 20px; border-radius: 0 40px 40px 0">
-      <div style="display: flex; margin-bottom: 15px;">
+    <div class="tab-right col-12 col-lg-6">
+      <div class="mb-3">
         <div class="card">
           <img src="../pictures/Games/CBP.png" class="card-img-top" alt="...">
           <div class="card-img-overlay">
@@ -155,19 +187,19 @@
           </div>
         </div>
       </div>
-      <div class="shelf" style="width: 100%">
-        <div class="d-flex justify-content-between" style="width: 100%;">
-          <span class="ms-4" style="font-size: 16px; font-weight: bold;">Subtotal</span>
-          <span class="me-4" style="font-size: 16px; font-weight: bold;">59.99 €</span>
+      <div class="shelf px-4">
+        <div class="d-flex justify-content-between">
+          <span class="ms-4 fs-6 fw-bold">Subtotal</span>
+          <span class=" fs-6 fw-bold">59.99 €</span>
         </div>
-        <div class="d-flex justify-content-between" style="width: 100%;">
-          <span class="ms-4" style="font-size: 16px; font-weight: bold; display: block;">Shipping</span>
-          <span class="ms-4" style="margin-right: 22px; font-size: 15px; display: block;">Calculated at the next step</span>
+        <div class="d-flex justify-content-between">
+          <span class="ms-4 fs-6 fw-bold">Shipping</span>
+          <span class="ms-4 fs-6">Calculated at the next step</span>
         </div>
       </div>
-      <div class="shelf d-flex justify-content-between" style="width: 100%">
-        <span class="ms-4" style="font-size: 20px; font-weight: bold; display: block;">Total</span>
-        <span class="ms-4" style="font-size: 20px; font-weight: bold; display: block; margin-right: 22px;">59.99 €</span>
+      <div class="shelf d-flex justify-content-between">
+        <span class="ms-3 fs-4 fw-bold">Total</span>
+        <span class="fs-4 fw-bold">59.99 €</span>
       </div>
     </div>
   </div>
@@ -177,7 +209,7 @@
 <footer class="py-0 my-4 mb-0">
   <div class="bg-dark">
     <div class="container">
-      <footer class="py-4 bg-dark" style="padding-top: 20px">
+      <footer class="py-4 bg-dark">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
           <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
