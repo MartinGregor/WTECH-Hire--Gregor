@@ -1,0 +1,158 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('../pictures/BGSP.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex-grow: 1;
+}
+
+/* Header */
+.navbar-brand {
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+.nav-link {
+    margin-left: 2.5rem;
+    font-size: 1.25rem;
+}
+
+/* Products */
+.card-img-top {
+    border-radius: 150px;
+    border: none;
+}
+.card {
+    border:none;
+    background: none;
+}
+.overlay-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: auto;
+    padding: 5px;
+    border-radius: 50px;
+    background: white;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+.price-tag
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    padding: 8px;
+    font-weight: bold;
+    border-radius: 50px;
+    background: white;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Cart */
+.cart-item {
+    background-color: white;
+    padding: 10px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+}
+.cart-header {
+    border-radius: 50px;
+}
+.cart-item-image{
+    max-width: 100px;
+    border-radius: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.cart-item-platform{
+    max-width: 50px;
+    padding:5px ;
+    margin: 20px;
+}
+
+/* Product detail */
+.product-box{
+    top: 75px;
+    padding-top: 25px;
+    margin-bottom: 50px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50px
+}
+.product-image{
+    border-radius: 20px;
+}
+.game-title{
+    padding: 5px;
+    margin-bottom:20px ;
+    margin-top:10px ;
+    border-radius: 50px;
+    text-align: center;
+}
+.platform{
+    height: 40px;
+    background: white;
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 100px;
+}
+.text-black-bold{
+    font-size: 16px;
+    font-weight: bold;
+}
+.width-50{
+    max-width: 50px;
+}
+.product-mark{
+    border-radius: 30px;
+    margin-top: 100px !important;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px;
+}
+
+/* Home scroll */
+.intro{
+    height: 80vh;
+    max-width: 800px;
+}
+.scroll-caption-area{
+    height: 20vh;
+    scroll-margin-top: 100px;
+}
+.caption-area{
+    height: 20vh;
+    margin-top: 100px;
+}
+
+/* Search bar */
+.search-bar{
+    margin-top: 5vh;
+    background: white;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.admin-product-box {
+    top: 75px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-bottom: 50px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50px;
+}
+.no-display {
+    display: none;
+}
+.text-area {
+    height: 220px;
+    resize: vertical;
+    padding: 10px;
+    margin-bottom: 20px;
+}

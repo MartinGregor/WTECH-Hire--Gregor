@@ -7,76 +7,9 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: url('../pictures/BGSP.jpg') no-repeat center center fixed;
-      background-size: cover;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    .navbar-brand {
-      font-size: 2rem;
-    }
-    .nav-link {
-      margin-left: 2.5rem;
-      font-size: 1.25rem
-    }
-    .intro{
-      height: 80vh;
-      max-width: 800px;
-    }
-    .basic-button{
-      border-radius: 80px;
-    }
-    .scroll-caption-area{
-      height: 20vh;
-      scroll-margin-top: 100px;
-    }
-    .caption-area{
-      height: 20vh;
-      margin-top: 100px;
-    }
-    .card-img-top {
-      border-radius: 150px;
-      border: none;
-    }
-    .card {
-      border:none;
-      background: none;
-    }
-    .overlay-img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 40px;
-      height: auto;
-      padding: 5px;
-      border-radius: 50px;
-      background: white;
-      box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-    }
-    .price-tag
-    {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: auto;
-      height: auto;
-      padding: 8px;
-      font-weight: bold;
-      border-radius: 50px;
-      background: white;
-      box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-    }
-    main {
-      flex-grow: 1;
-    }
-  </style>
-
+  <link rel="stylesheet" href="../styles/styles.css">
 </head>
+
 <body>
 <main>
 <nav class="navbar sticky-top navbar-expand-md bg-body-tertiary shadow-lg">
@@ -110,9 +43,11 @@
     <h5 class="mb-3 text-white">Welcome to PayPlay, the ultimate destination for every gamer out there!
       Whether you love epic RPG adventures,
       heart-racing shooters, or strategic masterpieces, we’ve got the perfect game for you.</h5>
-    <button type="button" class="btn btn-light btn-lg text-black px-4 py-2 basic-button">
-      <a href="#newAdventures" class="text-decoration-none text-black">Unlock New Worlds</a>
-    </button>
+    <a href="#newAdventures">
+      <button type="button" class="btn btn-light btn-lg text-black px-4 py-2 rounded-pill">
+        Unlock New Worlds
+      </button>
+    </a>
   </div>
 </div>
 

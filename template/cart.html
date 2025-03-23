@@ -8,58 +8,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: url('../pictures/BGSP.jpg') no-repeat center center fixed;
-      background-size: cover;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    .navbar-brand {
-      font-size: 2rem;
-    }
-    .nav-link {
-      margin-left: 2.5rem;
-      font-size: 1.25rem
-    }
-    .cart-item {
-      background-color: white;
-      padding: 10px;
-      border-radius: 100px;
-      margin-bottom: 20px;
-    }
-    .cart-header {
-      border-radius: 50px;
-    }
-    .cart-item-image{
-      max-width: 100px;
-      border-radius: 100px;
-      margin-left: 20px;
-      margin-right: 20px;
-      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    }
-    .cart-item-platform{
-      max-width: 50px;
-      padding:5px ;
-      margin: 20px;
-    }
-    .auto-width{
-      width: auto;
-    }
-    .quantity-field{
-      max-width: 50px;
-    }
-    .basic-button{
-      border-radius: 80px;
-    }
-    main {
-      flex-grow: 1;
-    }
-  </style>
+  <link rel="stylesheet" href="../styles/styles.css">
 </head>
+
 <body>
 <nav class="navbar sticky-top navbar-expand-md bg-body-tertiary shadow-lg">
   <div class="container-fluid">
@@ -108,12 +59,12 @@
         <span class="fs-6 fw-bold">59.99 €</span>
       </div>
       <div class="col-md-2 d-flex justify-content-center align-items-center">
-        <div class="input-group d-flex align-items-center auto-width">
+        <div class="input-group d-flex align-items-center w-auto">
           <button class="btn btn-outline-dark">
             <i class="bi bi-trash"></i>
           </button>
           <button class="btn btn-outline-dark">-</button>
-          <input type="text" class="form-control text-center quantity-field fs-6 fw-bold" value="2">
+          <input type="text" class="form-control text-center col-1 fs-6 fw-bold" value="2">
           <button class="btn btn-outline-dark">+</button>
         </div>
       </div>
@@ -132,12 +83,12 @@
         <span class="fs-6 fw-bold">59.99 €</span>
       </div>
       <div class="col-md-2 d-flex justify-content-center align-items-center">
-        <div class="input-group d-flex align-items-center auto-width">
+        <div class="input-group d-flex align-items-center w-auto">
           <button class="btn btn-outline-dark">
             <i class="bi bi-trash"></i>
           </button>
           <button class="btn btn-outline-dark">-</button>
-          <input type="text" class="form-control text-center quantity-field fs-6 fw-bold" value="2">
+          <input type="text" class="form-control text-center col-1 fs-6 fw-bold" value="2">
           <button class="btn btn-outline-dark">+</button>
         </div>
       </div>
@@ -156,12 +107,12 @@
         <span class="fs-6 fw-bold">59.99 €</span>
       </div>
       <div class="col-md-2 d-flex justify-content-center align-items-center">
-        <div class="input-group d-flex align-items-center auto-width">
+        <div class="input-group d-flex align-items-center w-auto">
           <button class="btn btn-outline-dark">
             <i class="bi bi-trash"></i>
           </button>
           <button class="btn btn-outline-dark">-</button>
-          <input type="text" class="form-control text-center quantity-field fs-6 fw-bold" value="2">
+          <input type="text" class="form-control text-center col-1 fs-6 fw-bold" value="2">
           <button class="btn btn-outline-dark">+</button>
         </div>
       </div>
@@ -172,7 +123,7 @@
   </div>
 
   <div class="container mt-5">
-    <div class="row bg-dark p-3 mt-4 shadow basic-button">
+    <div class="row bg-dark p-3 mt-4 shadow rounded-pill">
       <div class="col-md-6 text-start fw-bold text-white">Sub-total</div>
       <div class="col-md-6 text-end fw-bold text-white">359.94 €</div>
     </div>
@@ -183,7 +134,7 @@
     </div>
     <div class="row mt-3">
       <div class="col-md-12 text-end">
-        <a href="details.html" class="btn btn-light btn-lg fs-6 fw-bold px-4 py-2 basic-button">
+        <a href="details.html" class="btn btn-light btn-lg fs-6 fw-bold px-4 py-2 rounded-pill">
           Checkout
         </a>
       </div>
