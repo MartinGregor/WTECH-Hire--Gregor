@@ -1,0 +1,9 @@
+LINK FOR GIT REPOSITORY
+https://github.com/MartinGregor/WTECH-Hire--Gregor.git
+
+HASH OF LAST COMMIT
+58cb8188eebdff246617010c807f0307f7a2a1b9
+
+NUMBER OF COMMITS
+Martin Gregor - 27
+Filip Híreš - 11
