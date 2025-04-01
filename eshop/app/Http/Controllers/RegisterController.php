@@ -17,7 +17,7 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        return view('auth.register');
+        return view('register');
     }
 
     /**
@@ -48,6 +48,6 @@ class RegisterController extends Controller
 
         auth()->login($user);
 
-        return redirect()->route('home');
+        return redirect()->route('home'); // Môžete upravit, kam bude užívateľ presmerovaný po registrácii
     }
 }

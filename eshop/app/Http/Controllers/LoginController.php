@@ -17,7 +17,7 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        return view('auth.login'); // Tento riadok zobrazuje vašu Blade šablónu pre prihlásenie
+        return view('login'); // Tento riadok zobrazuje vašu Blade šablónu pre prihlásenie
     }
 
     /**
@@ -48,7 +48,7 @@ class LoginController extends Controller
         }
 
         // Ak sa prihlasenie nepodarí
-        return Redirect::back()->withErrors(['email' => 'Invalid credentials'])->withInput();
+        return Redirect::back()->withErrors(['email' => 'Invalid email'])->withInput();
     }
 
     /**
