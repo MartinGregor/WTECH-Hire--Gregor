@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Game extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'publisher',
+        'release_date',
+        'price',
+        'description',
+        'platform',
+    ];
+
+    public function genres()
+    {
+        return $this->belongsToMany(Genre::class, 'game_genres');
+    }
+
+    public function purchases()
+    {
+        return $this->belongsToMany(Purchase::class, 'game_purchases');
+    }
+}
