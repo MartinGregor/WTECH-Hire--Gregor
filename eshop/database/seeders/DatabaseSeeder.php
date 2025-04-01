@@ -5,8 +5,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 use App\Models\Game;
+use App\Models\User;
 
 Game::factory()->count(10)->create();
+User::factory()->count(10)->create();
 
 
 class DatabaseSeeder extends Seeder
