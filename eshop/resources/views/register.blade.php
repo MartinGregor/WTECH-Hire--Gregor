@@ -23,7 +23,7 @@
             <label for="username">User Name</label>
             <input type="text" id="username" name="username" placeholder="User Name" value="{{ old('username') }}" required>
             @error('username')
-            <div class="error-message">{{ $message }}</div>
+            <div class="error">{{ $message }}</div>
             @enderror
         </div>
 
@@ -31,7 +31,7 @@
             <label for="email">Email Address</label>
             <input type="email" id="email" name="email" placeholder="Email Address" value="{{ old('email') }}" required>
             @error('email')
-            <div class="error-message">{{ $message }}</div>
+            <div class="error">{{ $message }}</div>
             @enderror
         </div>
 
@@ -39,7 +39,7 @@
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Password" required>
             @error('password')
-            <div class="error-message">{{ $message }}</div>
+            <div class="error">{{ $message }}</div>
             @enderror
         </div>
 

@@ -2,42 +2,29 @@
 
 namespace App\Models;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
-
-class User extends Model
+class User extends Authenticatable
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
 
     protected $fillable = [
         'role',
         'username',
         'email',
-        'password_hash',
+        'password', // Zmenil som 'password_hash' na 'password'
     ];
 
-    /**
-     * Get the purchases for the user.
-     */
-    public function purchases()
-    {
-        return $this->hasMany(Purchase::class);
-    }
+    protected $hidden = [
+        'password', // Laravel očakáva tento názov
+        'remember_token',
+    ];
 
-    /**
-     * Get the games that belong to the user (through the cart).
-     */
-    public function cartGames()
-    {
-        return $this->belongsToMany(Game::class, 'cart');
-    }
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 
-    /**
-     * Get the games that belong to the user (through the game_purchases).
-     */
-    public function purchasedGames()
-    {
-        return $this->belongsToMany(Game::class, 'game_purchases');
-    }
+
 }

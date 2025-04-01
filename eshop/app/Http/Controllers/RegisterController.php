@@ -10,22 +10,12 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
-    /**
-     * Show the registration form.
-     *
-     * @return \Illuminate\View\View
-     */
+
     public function showRegistrationForm()
     {
         return view('register');
     }
 
-    /**
-     * Handle a registration request for the application.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -42,12 +32,12 @@ class RegisterController extends Controller
             'role' => 'customer',
             'username' => $request->username,
             'email' => $request->email,
-            'password_hash' => Hash::make($request->password),
+            'password' => Hash::make($request->password),
         ]);
 
 
         auth()->login($user);
 
-        return redirect()->route('home'); // Môžete upravit, kam bude užívateľ presmerovaný po registrácii
+        return redirect()->route('login');
     }
 }
