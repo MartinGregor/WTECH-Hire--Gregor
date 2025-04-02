@@ -6,14 +6,13 @@ use Illuminate\Support\Facades\Hash;
 
 use App\Models\Game;
 use App\Models\User;
-
-Game::factory()->count(30)->create();
-
+use App\Models\Image;
 
 class DatabaseSeeder extends Seeder
 {
     public function run()
     {
+        // Vytvorenie admin a customer používateľov
         DB::table('users')->insert([
             'role' => 'admin',
             'username' => 'admin_user',
@@ -27,6 +26,16 @@ class DatabaseSeeder extends Seeder
             'email' => 'customer@gmail.com',
             'password' => Hash::make('password123'),
         ]);
+
+        // Vygeneruj hry
+        $games = Game::factory()->count(30)->create();  // 30 hier
+
+        // Pre každú hru vytvor 3 obrázky
+        foreach ($games as $game) {
+            // Vytvorenie obrázkov a priradenie ku hre
+            Image::factory(3)->create([
+                'game_id' => $game->id,  // priradenie game_id ku každému obrázku
+            ]);
+        }
     }
 }
-

@@ -24,7 +24,7 @@ return new class extends Migration
             $table->date('release_date')->nullable();
             $table->decimal('price', 10, 2);
             $table->text('description')->nullable();
-            $table->enum('platform', ['PC', 'Play Station', 'Xbox', 'Wii']);
+            $table->enum('platform', ['PC', 'Play Station', 'Xbox', 'Nintendo', 'Wii']);
             $table->string('logo')->nullable();
             $table->timestamps();
         });
@@ -43,7 +43,8 @@ return new class extends Migration
 
         Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->string('image_url')->unique();
+            $table->foreignId('game_id')->constrained('games')->onDelete('cascade');
+            $table->string('image_url');
             $table->timestamps();
         });
 

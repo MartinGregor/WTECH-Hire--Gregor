@@ -27,4 +27,9 @@ class Game extends Model
     {
         return $this->belongsToMany(Purchase::class, 'game_purchases');
     }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
 }
