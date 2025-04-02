@@ -21,7 +21,7 @@ class UserFactory extends Factory
             'role' => $this->faker->randomElement(['customer']),
             'username' => $this->faker->unique()->userName,
             'email' => $this->faker->unique()->safeEmail,
-            'password_hash' => bcrypt('password'), // You can change the password logic
+            'password' => bcrypt('password'), // You can change the password logic
         ];
     }
 }

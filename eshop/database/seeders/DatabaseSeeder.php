@@ -19,14 +19,14 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin',
             'username' => 'admin_user',
             'email' => 'admin@gmail.com',
-            'password_hash' => Hash::make('password123'),
+            'password' => Hash::make('password123'),
         ]);
 
         DB::table('users')->insert([
             'role' => 'customer',
             'username' => 'customer_user',
             'email' => 'customer@gmail.com',
-            'password_hash' => Hash::make('password123'),
+            'password' => Hash::make('password123'),
         ]);
 
         DB::table('games')->insert([

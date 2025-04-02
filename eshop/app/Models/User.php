@@ -14,7 +14,7 @@ class User extends Authenticatable
         'role',
         'username',
         'email',
-        'password', // Zmenil som 'password_hash' na 'password'
+        'password',
     ];
 
     protected $hidden = [
