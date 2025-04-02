@@ -7,8 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\Game;
 use App\Models\User;
 
-Game::factory()->count(10)->create();
-User::factory()->count(10)->create();
+Game::factory()->count(30)->create();
 
 
 class DatabaseSeeder extends Seeder
@@ -27,15 +26,6 @@ class DatabaseSeeder extends Seeder
             'username' => 'customer_user',
             'email' => 'customer@gmail.com',
             'password' => Hash::make('password123'),
-        ]);
-
-        DB::table('games')->insert([
-            'title' => 'Cyberpunk 2077',
-            'publisher' => 'CD Projekt Red',
-            'release_date' => '2020-12-10',
-            'price' => 59.99,
-            'description' => 'Futuristická RPG hra.',
-            'platform' => 'PC',
         ]);
     }
 }

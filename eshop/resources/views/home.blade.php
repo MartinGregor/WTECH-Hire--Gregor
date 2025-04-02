@@ -60,142 +60,23 @@
         </div>
     </div>
 
-    <div class="container mt-5 px-lg-5">
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-1 g-4">
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/CBP.png" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/NFS.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/NHL.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/NBA.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/RDR.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/MAD.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/NFS.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/FMS.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/F1.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/FC.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/WUK.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/ZLD.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
+{{--    <div class="container mt-5 px-lg-5">--}}
+{{--        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-1 g-4">--}}
+{{--            @foreach ($games as $game)--}}
+{{--                <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">--}}
+{{--                    <a href="{{ route('game.show', $game->id) }}">
+{{--                        <div class="card h-100">--}}
+{{--                            <img src="{{ $game->logo_url }}" class="card-img-top" alt="{{ $game->title }}">--}}
+{{--                            <div class="card-img-overlay">--}}
+{{--                                <img src="{{ asset('path/to/logos/' . ($game->platform === 'Play Station' ? 'playstation-logotype.png' : 'xbox-logo.png')) }}" class="overlay-img" alt="Platform Logo">--}}
+{{--                                <div class="price-tag">{{ number_format($game->price, 2) }} €</div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--            @endforeach--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
     <div class="container my-5 d-flex justify-content-center align-items-center caption-area">
         <div class="text-center">
@@ -206,79 +87,19 @@
 
     <div class="container mt-5 px-lg-5">
         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-1 g-4">
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
+            @foreach($games as $game)
+                <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
                     <div class="card h-100">
-                        <img src="../pictures/Games/AC1.jpg" class="card-img-top" alt="...">
+                        <img src="{{ $game->logo ?? asset('pictures/Games/default.jpg') }}" class="card-img-top" alt="{{ $game->title }}">
                         <div class="card-img-overlay">
-                            <img src="../pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
+                            <img src="{{ asset('pictures/Logos/' . ($game->platform == 'Play Station' ? 'playstation-logotype.png' : ($game->platform == 'Xbox' ? 'xbox-logo.png' : 'default-logo.png'))) }}" class="overlay-img" alt="Platform Logo">
+                            <div class="price-tag">{{ number_format($game->price, 2) }} €</div>
                         </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/AC2.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/AC3.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/AC4.png" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/ACS.png" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/ACU.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                </div>
+            @endforeach
         </div>
     </div>
-
-
-
-
-
 
     <div class="container my-5 d-flex justify-content-center align-items-center caption-area">
         <div class="text-center">
@@ -290,138 +111,17 @@
 
     <div class="container mt-5 px-lg-5">
         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-1 g-4">
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
+            @foreach($games2 as $game)
+                <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
                     <div class="card h-100">
-                        <img src="../pictures/Games/CBP.png" class="card-img-top" alt="...">
+                        <img src="{{ $game->logo ?? asset('pictures/Games/default.jpg') }}" class="card-img-top" alt="{{ $game->title }}">
                         <div class="card-img-overlay">
-                            <img src="../pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
+                            <img src="{{ asset('pictures/Logos/' . ($game->platform == 'Play Station' ? 'playstation-logotype.png' : ($game->platform == 'Xbox' ? 'xbox-logo.png' : 'default-logo.png'))) }}" class="overlay-img" alt="Platform Logo">
+                            <div class="price-tag">{{ number_format($game->price, 2) }} €</div>
                         </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/NFS.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/NHL.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/NBA.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/RDR.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/MAD.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/NFS.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/FMS.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/F1.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/FC.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/xbox-logo.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/FHZ.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="product.html" target="">
-                    <div class="card h-100">
-                        <img src="../pictures/Games/PUBG.jpg" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/nintendo-switch.png" class="overlay-img" alt="Overlay Image">
-                            <div class="price-tag">59.99 €</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                </div>
+            @endforeach
         </div>
     </div>
 </main>
