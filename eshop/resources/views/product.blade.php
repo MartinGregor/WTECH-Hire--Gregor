@@ -44,14 +44,27 @@
                         @foreach ($game->images as $index => $image)
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}" aria-current="{{ $index == 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
                         @endforeach
+                        @foreach ($game->videos as $index => $video)
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index + count($game->images) }}" class="{{ $index == 0 && count($game->images) == 0 ? 'active' : '' }}" aria-label="Video {{ $index + 1 }}"></button>
+                        @endforeach
                     </div>
+
                     <div class="carousel-inner">
                         @foreach ($game->images as $index => $image)
                             <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                                <img src="{{ asset('storage/' . $image->image_url) }}" class="d-block w-100 product-image" alt="...">
+                                <img src="{{ asset($image->image_url) }}" class="d-block w-100 product-image" alt="...">
+                            </div>
+                        @endforeach
+                        @foreach ($game->videos as $index => $video)
+                            <div class="carousel-item">
+                                <div class="ratio ratio-16x9">
+                                    <iframe class="product-image" src="{{ $video->video_url }}" title="YouTube video" allowfullscreen></iframe>
+                                </div>
                             </div>
                         @endforeach
                     </div>
+
+
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
@@ -75,12 +88,16 @@
                         ($game->platform == 'PC' ? 'computer.png' :
                         ($game->platform == 'Wii' ? 'wii.png' : 'computer.png')))))) }}" alt="Platform Logo">
                 </div>
-                <h5 class="text-white mb-3">Categories: Adventure, Action, RPG</h5>
+                <h5 class="text-white mb-3">Categories:
+                    @foreach ($game->genres as $genre)
+                        {{ $genre->name }}@if(!$loop->last), @endif
+                    @endforeach
+                </h5>
                 <h5 class="text-white">Price: {{ number_format($game->price, 2) }} €</h5>
                 <div class="d-flex align-items-center justify-content-between">
                     <div class="d-flex align-items-center">
                         <button class="btn btn-outline-light">-</button>
-                        <input type="text" class="form-control text-center mx-1 text-black-bold width-50" value="1">
+                        <input type="text" id="quantity-input" class="form-control text-center mx-1 text-black-bold width-50" value="1">
                         <button class="btn btn-outline-light">+</button>
                     </div>
                     <button class="btn btn-dark btn-outline-light btn-md px-4 py-2 rounded-pill">Add to Cart</button>
@@ -88,7 +105,7 @@
             </div>
         </div>
         <div class="position-relative bottom-0 start-50 translate-middle-x text-white fw-bold py-2 px-4 d-inline-block text-center product-mark">
-            © {{ $game->title }}
+            © {{ $game->publisher }}
         </div>
     </div>
 </main>
@@ -111,3 +128,19 @@
 </footer>
 </body>
 </html>
+
+<script>
+    document.querySelector('.btn-outline-light:first-of-type').addEventListener('click', function() {
+        let quantityInput = document.getElementById('quantity-input');
+        let currentValue = parseInt(quantityInput.value);
+        if (currentValue > 1) {
+            quantityInput.value = currentValue - 1;
+        }
+    });
+
+    document.querySelector('.btn-outline-light:last-of-type').addEventListener('click', function() {
+        let quantityInput = document.getElementById('quantity-input');
+        let currentValue = parseInt(quantityInput.value);
+        quantityInput.value = currentValue + 1;
+    });
+</script>

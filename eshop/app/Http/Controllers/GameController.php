@@ -13,7 +13,7 @@ class GameController extends Controller
     public function show($id)
     {
         // Fetch the game with its related images and videos
-        $game = Game::with(['images', 'videos'])->findOrFail($id);
+        $game = Game::with(['images', 'videos', 'genres'])->findOrFail($id);
 
         // Return the product view with the game data
         return view('product', compact('game'));

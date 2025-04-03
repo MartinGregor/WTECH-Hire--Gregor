@@ -14,8 +14,11 @@ class VideoFactory extends Factory
         // Define an array of example YouTube video URLs
         $videos = [
             'https://www.youtube.com/embed/8X2kIfS6fb8?si=6lsrGnsYLwTRUKEm',
-            'https://www.youtube.com/embed/kJQP7kiw5Fk?si=5BXiV9GH2xEgs7zP',
-            'https://www.youtube.com/embed/tgbNymZ7vqY?si=2bS9_rN3f1sN-Ezp',
+            'https://www.youtube.com/embed/NnyCWsA6KSI?si=kuUDHybquJqFJn4U',
+            'https://www.youtube.com/embed/QdBZY2fkU-0?si=MU4QooBUEHgsz6QJ',
+            'https://www.youtube.com/embed/_q51LZ2HpbE?si=lCH8AYkET-aOvYX_',
+
+
         ];
 
         return [

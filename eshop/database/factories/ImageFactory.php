@@ -15,6 +15,11 @@ class ImageFactory extends Factory
             'images/game_screens/CP1.jpg',
             'images/game_screens/CP2.jpg',
             'images/game_screens/CP3.jpg',
+            'images/game_screens/BF1.png',
+            'images/game_screens/BF2.png',
+            'images/game_screens/F1.png',
+            'images/game_screens/FH5.png',
+            'images/game_screens/RDR.png',
         ];
 
         return [

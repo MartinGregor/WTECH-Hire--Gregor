@@ -95,13 +95,21 @@
         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-1 g-4">
             @foreach($games2 as $game)
                 <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card h-100">
-                        <img src="{{ $game->logo ?? asset('pictures/Games/default.jpg') }}" class="card-img-top" alt="{{ $game->title }}">
-                        <div class="card-img-overlay">
-                            <img src="{{ asset('pictures/Logos/' . ($game->platform == 'Play Station' ? 'playstation-logotype.png' : ($game->platform == 'Xbox' ? 'xbox-logo.png' : 'default-logo.png'))) }}" class="overlay-img" alt="Platform Logo">
-                            <div class="price-tag">{{ number_format($game->price, 2) }} €</div>
+                    <a href="{{ route('game.show', ['id' => $game->id]) }}">
+                        <div class="card h-100">
+                            <img src="{{ $game->logo }}" class="card-img-top" alt="{{ $game->title }}">
+                            <div class="card-img-overlay">
+                                <img src="{{ asset('images/Logos/' .
+                                ($game->platform == 'Play Station' ? 'playstation-logotype.png' :
+                                ($game->platform == 'Xbox' ? 'xbox-logo.png' :
+                                ($game->platform == 'Nintendo' ? 'nintendo-switch.png' :
+                                ($game->platform == 'PC' ? 'computer.png' :
+                                ($game->platform == 'Wii' ? 'wii.png' : 'computer.png')))))) }}"
+                                     class="overlay-img" alt="Platform Logo">
+                                <div class="price-tag">{{ number_format($game->price, 2) }} €</div>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             @endforeach
         </div>
@@ -119,13 +127,21 @@
         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-1 g-4">
             @foreach($games3 as $game)
                 <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card h-100">
-                        <img src="{{ $game->logo ?? asset('pictures/Games/default.jpg') }}" class="card-img-top" alt="{{ $game->title }}">
-                        <div class="card-img-overlay">
-                            <img src="{{ asset('pictures/Logos/' . ($game->platform == 'Play Station' ? 'playstation-logotype.png' : ($game->platform == 'Xbox' ? 'xbox-logo.png' : 'default-logo.png'))) }}" class="overlay-img" alt="Platform Logo">
-                            <div class="price-tag">{{ number_format($game->price, 2) }} €</div>
+                    <a href="{{ route('game.show', ['id' => $game->id]) }}">
+                        <div class="card h-100">
+                            <img src="{{ $game->logo }}" class="card-img-top" alt="{{ $game->title }}">
+                            <div class="card-img-overlay">
+                                <img src="{{ asset('images/Logos/' .
+                                ($game->platform == 'Play Station' ? 'playstation-logotype.png' :
+                                ($game->platform == 'Xbox' ? 'xbox-logo.png' :
+                                ($game->platform == 'Nintendo' ? 'nintendo-switch.png' :
+                                ($game->platform == 'PC' ? 'computer.png' :
+                                ($game->platform == 'Wii' ? 'wii.png' : 'computer.png')))))) }}"
+                                     class="overlay-img" alt="Platform Logo">
+                                <div class="price-tag">{{ number_format($game->price, 2) }} €</div>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             @endforeach
         </div>
