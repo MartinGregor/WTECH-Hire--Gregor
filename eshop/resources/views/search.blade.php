@@ -82,7 +82,7 @@
             <!-- Game Title -->
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="input-group">
-                    <input class="form-control" type="text" name="title" value="{{ request('title') }}" placeholder="Game Title">
+                    <input class="form-control" type="text" name="title" value="{{ request('title') }}" placeholder="Search...">
                 </div>
             </div>
 

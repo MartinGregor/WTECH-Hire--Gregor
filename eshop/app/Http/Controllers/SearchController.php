@@ -33,7 +33,14 @@ class SearchController extends Controller
 
         // Filter by game title
         if ($request->filled('title')) {
-            $query->where('title', 'like', '%' . $request->title . '%');
+            $query->where(function ($q) use ($request) {
+                $q->whereRaw('LOWER(title) LIKE ?', ['%' . strtolower($request->title) . '%'])
+                    ->orWhereRaw('LOWER(description) LIKE ?', ['%' . strtolower($request->title) . '%'])
+                    ->orWhereHas('genres', function ($q) use ($request) {
+                        $q->whereRaw('LOWER(name) LIKE ?', ['%' . strtolower($request->title) . '%']);
+                    })
+                    ->orWhereRaw('LOWER(platform) LIKE ?', ['%' . strtolower($request->title) . '%']);
+            });
         }
 
         // Sorting
