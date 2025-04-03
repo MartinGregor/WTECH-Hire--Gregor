@@ -3,16 +3,16 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-
 use App\Models\Game;
 use App\Models\User;
 use App\Models\Image;
+use App\Models\Genre;
 
 class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        // Vytvorenie admin a customer používateľov
+        // Seed users
         DB::table('users')->insert([
             'role' => 'admin',
             'username' => 'admin_user',
@@ -27,15 +27,27 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password123'),
         ]);
 
-        // Vygeneruj hry
-        $games = Game::factory()->count(30)->create();  // 30 hier
+        $genreNames = [
+            'Action', 'Adventure', 'RPG', 'Horror', 'Strategy',
+            'Simulation', 'Sports', 'Racing', 'Fighting', 'Puzzle'
+        ];
 
-        // Pre každú hru vytvor 3 obrázky
+        // Insert genres into database
+        $genres = collect();
+        foreach ($genreNames as $name) {
+            $genres->push(Genre::create(['name' => $name]));
+        }
+
+        // Seed games
+        $games = Game::factory()->count(100)->create();
+
+        // Assign 3 random genres to each game
         foreach ($games as $game) {
-            // Vytvorenie obrázkov a priradenie ku hre
-            Image::factory(3)->create([
-                'game_id' => $game->id,  // priradenie game_id ku každému obrázku
-            ]);
+            $randomGenres = $genres->random(3)->pluck('id');
+            $game->genres()->attach($randomGenres);
+
+            // Seed images
+            Image::factory(3)->create(['game_id' => $game->id]);
         }
     }
 }

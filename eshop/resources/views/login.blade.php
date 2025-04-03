@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/reglog.css') }}">
 </head>
 <body>
-<a class="logo" href="{{ url('home') }}">PayPlay</a>
+<a class="logo" href="{{ url('/') }}">PayPlay</a>
 
 <a href="{{ route('register') }}" class="button-sign">Sign Up</a>
 

@@ -2,7 +2,7 @@
 
 namespace database\factories;
 
-class GenresFactory
+class VideoFactory
 {
 
 }

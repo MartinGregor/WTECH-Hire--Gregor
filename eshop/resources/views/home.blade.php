@@ -24,13 +24,13 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="search.html">Search</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('search') }}">Search</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="cart.html">Cart</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="register.html">Account</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Account</a>
                     </li>
                 </ul>
             </div>
