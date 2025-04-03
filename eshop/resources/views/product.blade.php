@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Product</title>
+    <title>{{ $game->title }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/styles.css">
-
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 <body>
 <main>
@@ -21,16 +20,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="search.html">Search</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('search') }}">Search</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="cart.html">Cart</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="register.html">Account</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Account</a>
                     </li>
                 </ul>
             </div>
@@ -42,26 +41,16 @@
             <div class="col-lg-7">
                 <div id="carouselExampleIndicators" class="carousel slide">
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        @foreach ($game->images as $index => $image)
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}" aria-current="{{ $index == 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
+                        @endforeach
                     </div>
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="../pictures/Games%20Desc/CP1.jpg" class="d-block w-100 product-image" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../pictures/Games%20Desc/CP2.jpg" class="d-block w-100 product-image" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../pictures/Games%20Desc/CP3.jpg" class="d-block w-100 product-image" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <div class="ratio ratio-16x9">
-                                <iframe class="product-image" src="https://www.youtube.com/embed/8X2kIfS6fb8" title="YouTube video" allowfullscreen></iframe>
+                        @foreach ($game->images as $index => $image)
+                            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                <img src="{{ asset('storage/' . $image->image_url) }}" class="d-block w-100 product-image" alt="...">
                             </div>
-                        </div>
+                        @endforeach
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -75,15 +64,19 @@
             </div>
 
             <div class="col-lg-5 d-flex flex-column justify-content-center">
-                <h2 class="fw-bold bg-white game-title">Cyberpunk 2077</h2>
-                <p class="text-white mb-5">Cyberpunk 2077 is an open-world, action-adventure RPG set in the dark future of Night City —
-                    a dangerous megalopolis obsessed with power, glamor, and ceaseless body modification.</p>
+                <h2 class="fw-bold bg-white game-title">{{ $game->title }}</h2>
+                <p class="text-white mb-5">{{ $game->description ?? 'No description available.' }}</p>
                 <div class="d-flex align-items-center pb-2">
-                    <h5 class="text-white mb-0 me-2">Platform: Playstation</h5>
-                    <img class="platform" src="../pictures/Logos/playstation-logotype.png" alt="Platform Logo">
+                    <h5 class="text-white mb-0 me-2">Platform: {{ $game->platform }}</h5>
+                    <img class="platform" src="{{ asset('images/Logos/' .
+                        ($game->platform == 'Play Station' ? 'playstation-logotype.png' :
+                        ($game->platform == 'Xbox' ? 'xbox-logo.png' :
+                        ($game->platform == 'Nintendo' ? 'nintendo-switch.png' :
+                        ($game->platform == 'PC' ? 'computer.png' :
+                        ($game->platform == 'Wii' ? 'wii.png' : 'computer.png')))))) }}" alt="Platform Logo">
                 </div>
                 <h5 class="text-white mb-3">Categories: Adventure, Action, RPG</h5>
-                <h5 class="text-white">Price: 59.99 €</h5>
+                <h5 class="text-white">Price: {{ number_format($game->price, 2) }} €</h5>
                 <div class="d-flex align-items-center justify-content-between">
                     <div class="d-flex align-items-center">
                         <button class="btn btn-outline-light">-</button>
@@ -95,7 +88,7 @@
             </div>
         </div>
         <div class="position-relative bottom-0 start-50 translate-middle-x text-white fw-bold py-2 px-4 d-inline-block text-center product-mark">
-            © Cyberpunk 2077
+            © {{ $game->title }}
         </div>
     </div>
 </main>
@@ -116,7 +109,5 @@
         </div>
     </div>
 </footer>
-
-
 </body>
 </html>

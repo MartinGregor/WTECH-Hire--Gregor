@@ -48,9 +48,10 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('trailers', function (Blueprint $table) {
+        Schema::create('videos', function (Blueprint $table) {
             $table->id();
-            $table->string('trailer_url')->unique();
+            $table->foreignId('game_id')->constrained('games')->onDelete('cascade');
+            $table->string('video_url');
             $table->timestamps();
         });
 

@@ -21,16 +21,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Search</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('search') }}">Search</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="cart.html">Cart</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="register.html">Account</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Account</a>
                     </li>
                 </ul>
             </div>

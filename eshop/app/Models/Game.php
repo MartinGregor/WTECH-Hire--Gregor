@@ -32,4 +32,9 @@ class Game extends Model
     {
         return $this->hasMany(Image::class);
     }
+
+    public function videos()
+    {
+        return $this->hasMany(Video::class);
+    }
 }

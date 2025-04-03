@@ -7,6 +7,7 @@ use App\Models\Game;
 use App\Models\User;
 use App\Models\Image;
 use App\Models\Genre;
+use App\Models\Video;
 
 class DatabaseSeeder extends Seeder
 {
@@ -48,6 +49,9 @@ class DatabaseSeeder extends Seeder
 
             // Seed images
             Image::factory(3)->create(['game_id' => $game->id]);
+
+            // Seed videos
+            Video::factory(2)->create(['game_id' => $game->id]);
         }
     }
 }

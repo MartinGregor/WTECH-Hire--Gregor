@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ShowGameController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\GameController;
 
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
@@ -12,9 +13,11 @@ Route::post('/register', [RegisterController::class, 'register']);
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 
-Route::get('/games', [ShowGameController::class, 'index'])->name('game.index');
 
+
+Route::get('/games', [ShowGameController::class, 'index'])->name('game.index');
 Route::get('/search', [SearchController::class, 'index'])->name('search');
+Route::get('/game/{id}', [GameController::class, 'show'])->name('game.show');
 
 Route::resource('/', ShowGameController::class);
 
