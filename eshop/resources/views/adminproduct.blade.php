@@ -32,9 +32,25 @@
                             </button>
                         </form>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="register.html">Account</a>
-                    </li>
+                    @auth
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ Auth::user()->username }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item">Log Out</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Log In</a>
+                        </li>
+                    @endauth
                 </ul>
             </div>
         </div>

@@ -17,6 +17,9 @@ class VideoFactory extends Factory
             'https://www.youtube.com/embed/NnyCWsA6KSI?si=kuUDHybquJqFJn4U',
             'https://www.youtube.com/embed/QdBZY2fkU-0?si=MU4QooBUEHgsz6QJ',
             'https://www.youtube.com/embed/_q51LZ2HpbE?si=lCH8AYkET-aOvYX_',
+            'https://www.youtube.com/embed/FYH9n37B7Yw?si=o1eHRuRLQikL1WgP',
+            'https://www.youtube.com/embed/WTBbwgsyxvg?si=R6zKCFGpG98kK0TV',
+            'https://www.youtube.com/embed/xzCEdSKMkdU?si=HEFBOmCgjN2Q4QNQ',
 
 
         ];
