@@ -35,12 +35,16 @@ class LoginController extends Controller
             return Redirect::back()->withErrors(['password' => 'Incorrect password'])->withInput();
         }
 
-        return redirect('/home');
+        if (Auth::user()->role == 'admin') {
+            return redirect('/admin-dashboard');
+        }
+
+        return redirect('/');
     }
 
     public function logout()
     {
         Auth::logout();
-        return redirect('/');
+        return redirect('/login');
     }
 }
