@@ -28,7 +28,6 @@ class GameFactory extends Factory
             'images/game_logos/FHZ.jpg',
             'images/game_logos/FMS.jpg',
             'images/game_logos/GTA.jpg',
-            'images/game_logos/NBA.jpg',
             'images/game_logos/NHL.jpg',
             'images/game_logos/ZLD.jpg',
             'images/game_logos/FC.jpg',
@@ -38,6 +37,8 @@ class GameFactory extends Factory
             'images/game_logos/PUBG.jpg',
             'images/game_logos/RDR.jpg',
             'images/game_logos/WUK.jpg',
+            'images/game_logos/STB2.jpg',
+            'images/game_logos/STB.jpg',
         ];
 
         return [

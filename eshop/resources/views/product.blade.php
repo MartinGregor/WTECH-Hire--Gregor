@@ -58,28 +58,50 @@
             <div class="col-lg-7">
                 <div id="carouselExampleIndicators" class="carousel slide">
                     <div class="carousel-indicators">
+                        <!-- Logo indicator -->
+                        @if ($game->logo)
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Logo"></button>
+                        @endif
+
+                        <!-- Image indicators -->
                         @foreach ($game->images as $index => $image)
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}" aria-current="{{ $index == 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index + ($game->logo ? 1 : 0) }}" class="{{ $index == 0 && !$game->logo ? 'active' : '' }}" aria-current="{{ $index == 0 && !$game->logo ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
                         @endforeach
+
+                        <!-- Video indicators -->
                         @foreach ($game->videos as $index => $video)
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index + count($game->images) }}" class="{{ $index == 0 && count($game->images) == 0 ? 'active' : '' }}" aria-label="Video {{ $index + 1 }}"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index + count($game->images) + ($game->logo ? 1 : 0) }}" class="{{ $index == 0 && count($game->images) == 0 && !$game->logo ? 'active' : '' }}" aria-label="Video {{ $index + 1 }}"></button>
                         @endforeach
                     </div>
 
                     <div class="carousel-inner">
+                        <!-- Logo -->
+                        @if ($game->logo)
+                            <div class="carousel-item active">
+                                <div class="aspect-ratio-box">
+                                    <img src="{{ asset($game->logo) }}" class="logo-img" alt="Game Logo">
+                                </div>
+                            </div>
+                        @endif
+
+                        <!-- Images -->
                         @foreach ($game->images as $index => $image)
-                            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                                <img src="{{ asset($image->image_url) }}" class="d-block w-100 product-image" alt="...">
+                            <div class="carousel-item {{ $index == 0 && !$game->logo ? 'active' : '' }}">
+                                <img src="{{ asset($image->image_url) }}" class="d-block w-100 product-image" alt="Image {{ $index + 1 }}">
                             </div>
                         @endforeach
+
+                        <!-- Videos -->
                         @foreach ($game->videos as $index => $video)
                             <div class="carousel-item">
                                 <div class="ratio ratio-16x9">
-                                    <iframe class="product-image" src="{{ $video->video_url }}" title="YouTube video" allowfullscreen></iframe>
+                                    <iframe class="product-image" src="{{ $video->video_url }}" title="Video {{ $index + 1 }}" allowfullscreen></iframe>
                                 </div>
                             </div>
                         @endforeach
                     </div>
+
+
 
 
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

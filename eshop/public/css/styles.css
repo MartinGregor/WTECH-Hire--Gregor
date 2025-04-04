@@ -151,8 +151,33 @@ main {
     display: none;
 }
 .text-area {
-    height: 220px;
+    height: 150px;
     resize: vertical;
     padding: 10px;
     margin-bottom: 20px;
+}
+
+/* Delete button */
+.btn-on-top {
+    z-index: 10;
+}
+
+/* logo game for editing */
+.aspect-ratio-box {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    background-color: #000; /* Optional: background for contrast */
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.logo-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
 }

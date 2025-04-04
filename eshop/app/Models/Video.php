@@ -11,6 +11,7 @@ class Video extends Model
 
     protected $fillable = [
         'video_url',
+        'game_id',
     ];
 
     public function game()

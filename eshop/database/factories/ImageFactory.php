@@ -12,14 +12,12 @@ class ImageFactory extends Factory
     public function definition(): array
     {
         $images = [
-            'images/game_screens/CP1.jpg',
-            'images/game_screens/CP2.jpg',
-            'images/game_screens/CP3.jpg',
+            'images/game_screens/CBP1.png',
+            'images/game_screens/FH5.png',
             'images/game_screens/BF1.png',
             'images/game_screens/BF2.png',
-            'images/game_screens/F1.png',
-            'images/game_screens/FH5.png',
-            'images/game_screens/RDR.png',
+            'images/game_screens/F1_1.png',
+            'images/game_screens/F1_2.png',
         ];
 
         return [

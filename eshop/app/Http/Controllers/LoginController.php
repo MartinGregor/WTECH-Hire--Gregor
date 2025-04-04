@@ -36,7 +36,7 @@ class LoginController extends Controller
         }
 
         if (Auth::user()->role == 'admin') {
-            return redirect('/admin-dashboard');
+            return redirect()->route('admin');  // Use the correct route name 'admin'
         }
 
         return redirect('/');
