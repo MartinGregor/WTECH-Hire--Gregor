@@ -39,8 +39,8 @@ class Game extends Model
         return $this->hasMany(Video::class);
     }
 
-    public function cart()
+    public function carts()
     {
-        return $this->belongsToMany(Genre::class, 'game_cart');
+        return $this->belongsToMany(Cart::class, 'game_cart')->withPivot('quantity');
     }
 }

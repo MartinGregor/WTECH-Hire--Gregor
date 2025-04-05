@@ -10,16 +10,16 @@ class Game_Cart extends Model
     use HasFactory;
 
     protected $fillable = [
-        'quantity'
+        'quantity',
     ];
 
     public function cart()
     {
-        return $this->belongsTo(Genre::class, 'cart');
+        return $this->belongsTo(Cart::class);
     }
 
-    public function games()
+    public function game()
     {
-        return $this->belongsTo(Genre::class, 'games');
+        return $this->belongsTo(Game::class);
     }
 }

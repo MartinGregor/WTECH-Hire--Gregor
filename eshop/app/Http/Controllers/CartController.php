@@ -3,38 +3,46 @@
 namespace App\Http\Controllers;
 
 use App\Models\Game;
-use App\Models\User;
 use App\Models\Cart;
-use App\Models\Game_Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
-    public function insertToCart(Request $request) {
-        $request->validate([
-            'game_id' => 'required|exists:games,id',
-            'quantity' => 'required|integer|min:1',
+    public function insertToCart(Request $request)
+    {
+        // Get the authenticated user
+        $user = Auth::user();
+
+        // Get the user's cart, or create a new one if it doesn't exist
+        $cart = $user->cart()->firstOrCreate([
+            'user_id' => $user->id,
+            'added_date' => now(),
         ]);
 
-        $game = Game::findOrFail($request->game_id);
+        // Get the game ID and quantity from the request
+        $gameId = $request->input('game_id');
+        $quantity = $request->input('quantity');
 
-        $game_cart = session()->get('game_cart', []);
-        $cart = Cart::where('user_id', $request->user_id);
+        // Find the game
+        $game = Game::findOrFail($gameId);
 
-        if (isset($game_cart[$game->id])) {
-            // If the item is already in the cart, update the quantity
-            $game_cart[$game->id]['quantity'] += $request->quantity;
-        } else {
-            // Otherwise, add it to the cart
-            $game_cart = Game_Cart::create([
-                'game_id' => $game->id,
-                'cart_id' => 1,
-                'quantity' => $request->quantity,
+        // Check if the game is already in the cart
+        $existingGame = $cart->games()->where('game_id', $gameId)->first();
+
+        if ($existingGame) {
+            // If the game already exists in the cart, update the quantity
+            $newQuantity = $existingGame->pivot->quantity + $quantity;
+            $cart->games()->updateExistingPivot($gameId, [
+                'quantity' => $newQuantity
             ]);
+        } else {
+            // If the game is not in the cart, add it with the given quantity
+            $cart->games()->attach($gameId, ['quantity' => $quantity]);
         }
 
-        session()->put('cart', $cart);
-
-        return redirect()->back()->with('success', 'Game added to cart!');
+        // Redirect or return a response (you can modify this to your needs)
+        return redirect()->route('game.show', ['id' => $game->id])
+            ->with('success', 'Game added to cart successfully!');
     }
 }

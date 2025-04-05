@@ -142,7 +142,6 @@
                             <button type="button" class="btn btn-outline-light" onclick="changeQuantity(1)">+</button>
                         </div>
                         <input type="hidden" name="game_id" value="{{ $game->id }}">
-                        <input type="hidden" name="user_id" value=" {{ Auth::user()->id }}">
                         <button type="submit" class="btn btn-dark btn-outline-light btn-md px-4 py-2 rounded-pill">Add to Cart</button>
                     </div>
                 </form>

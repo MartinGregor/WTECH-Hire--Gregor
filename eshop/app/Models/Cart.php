@@ -15,11 +15,11 @@ class Cart extends Model
 
     public function games()
     {
-        return $this->belongsToMany(Genre::class, 'game_cart');
+        return $this->belongsToMany(Game::class, 'game_cart')->withPivot('quantity');
     }
 
-    public function users()
+    public function user()
     {
-        return $this->belongsTo(Genre::class, 'users');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

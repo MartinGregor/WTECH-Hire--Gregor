@@ -26,5 +26,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function cart()
+    {
+        return $this->hasOne(Cart::class, 'user_id'); // Assuming each user has only one cart
+    }
+
 
 }
