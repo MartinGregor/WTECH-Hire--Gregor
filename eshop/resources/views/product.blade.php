@@ -133,14 +133,19 @@
                     @endforeach
                 </h5>
                 <h5 class="text-white">Price: {{ number_format($game->price, 2) }} €</h5>
-                <div class="d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-center">
-                        <button class="btn btn-outline-light">-</button>
-                        <input type="text" id="quantity-input" class="form-control text-center mx-1 text-black-bold width-50" value="1">
-                        <button class="btn btn-outline-light">+</button>
+                <form action="{{ route('insert.game.to.cart') }}" method="POST">
+                    @csrf
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <button type="button" class="btn btn-outline-light" onclick="changeQuantity(-1)">-</button>
+                            <input type="text" id="quantity-input" name="quantity" class="form-control text-center mx-1 text-black-bold width-50" value="1">
+                            <button type="button" class="btn btn-outline-light" onclick="changeQuantity(1)">+</button>
+                        </div>
+                        <input type="hidden" name="game_id" value="{{ $game->id }}">
+                        <input type="hidden" name="user_id" value=" {{ Auth::user()->id }}">
+                        <button type="submit" class="btn btn-dark btn-outline-light btn-md px-4 py-2 rounded-pill">Add to Cart</button>
                     </div>
-                    <button class="btn btn-dark btn-outline-light btn-md px-4 py-2 rounded-pill">Add to Cart</button>
-                </div>
+                </form>
             </div>
         </div>
         <div class="position-relative bottom-0 start-50 translate-middle-x text-white fw-bold py-2 px-4 d-inline-block text-center product-mark">

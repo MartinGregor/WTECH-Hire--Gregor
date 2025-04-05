@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
@@ -20,6 +21,8 @@ Route::get('/search', [SearchController::class, 'index'])->name('search');
 Route::get('/game/{id}', [GameController::class, 'show'])->name('game.show');
 
 Route::resource('/', ShowGameController::class);
+
+Route::post('/product', [CartController::class, 'insertToCart'])->name('insert.game.to.cart');
 
 //admin
 Route::get('/admin', [ShowAdminController::class, 'index'])->name('admin');
