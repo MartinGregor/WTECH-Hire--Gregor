@@ -57,5 +57,23 @@ class DatabaseSeeder extends Seeder
             // Seed videos
             Video::factory(2)->create(['game_id' => $game->id]);
         }
+
+        DB::table('game_cart')->insert([
+            'game_id' => 1,
+            'cart_id' => 1,
+            'quantity' => 4,
+        ]);
+
+        DB::table('game_cart')->insert([
+            'game_id' => 2,
+            'cart_id' => 1,
+            'quantity' => 1,
+        ]);
+
+        DB::table('game_cart')->insert([
+            'game_id' => 3,
+            'cart_id' => 1,
+            'quantity' => 1,
+        ]);
     }
 }
