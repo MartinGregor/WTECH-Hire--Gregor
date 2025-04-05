@@ -38,4 +38,9 @@ class Game extends Model
     {
         return $this->hasMany(Video::class);
     }
+
+    public function cart()
+    {
+        return $this->belongsToMany(Genre::class, 'game_cart');
+    }
 }

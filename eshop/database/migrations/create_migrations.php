@@ -71,18 +71,24 @@ return new class extends Migration
             $table->primary(['purchase_id', 'game_id']);
         });
 
-        Schema::create('cart', function (Blueprint $table) {
+        Schema::create('carts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('game_id')->constrained('games')->onDelete('cascade');
             $table->dateTime('added_date')->nullable();
             $table->timestamps();
+        });
+
+        Schema::create('game_cart', function (Blueprint $table) {
+            $table->foreignId('game_id')->constrained('games')->onDelete('cascade');
+            $table->foreignId('cart_id')->constrained('carts')->onDelete('cascade');
+            $table->integer('quantity');
+            $table->primary(['game_id', 'cart_id']);
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('cart');
+        Schema::dropIfExists('carts');
         Schema::dropIfExists('game_purchases');
         Schema::dropIfExists('purchases');
         Schema::dropIfExists('trailers');

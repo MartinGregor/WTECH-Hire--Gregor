@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cart;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -35,6 +36,9 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        $cart = Cart::create([
+            'user_id' => $user->id,
+        ]);
 
         auth()->login($user);
 

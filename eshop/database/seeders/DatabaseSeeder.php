@@ -28,6 +28,10 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password123'),
         ]);
 
+        DB::table('carts')->insert([
+            'user_id' => 2,
+        ]);
+
         $genreNames = [
             'Action', 'Adventure', 'RPG', 'Horror', 'Strategy',
             'Simulation', 'Sports', 'Racing', 'Fighting', 'Puzzle'
