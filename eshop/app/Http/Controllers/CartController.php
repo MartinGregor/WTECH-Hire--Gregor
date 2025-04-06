@@ -51,9 +51,14 @@ class CartController extends Controller
 
             if ($existingGame) {
                 $newQuantity = $existingGame->pivot->quantity + $quantity;
-                $cart->games()->updateExistingPivot($gameId, [
-                    'quantity' => $newQuantity
-                ]);
+                if ($newQuantity == 0) {
+                    $this->destroy($request);
+                }
+                else {
+                    $cart->games()->updateExistingPivot($gameId, [
+                        'quantity' => $newQuantity
+                    ]);
+                }
             } else {
                 $cart->games()->attach($gameId, ['quantity' => $quantity]);
             }
@@ -63,6 +68,9 @@ class CartController extends Controller
 
             if (isset($cart[$gameId])) {
                 $cart[$gameId]['quantity'] += $quantity;
+                if ($cart[$gameId]['quantity'] == 0) {
+                    unset($cart[$gameId]);
+                }
             } else {
                 $cart[$gameId] = [
                     'game_id' => $gameId,
@@ -75,5 +83,30 @@ class CartController extends Controller
 
         return redirect()->route('cart')
             ->with('success', 'Game added to cart successfully!');
+    }
+
+    public function destroy(Request $request)
+    {
+        $gameId = $request->input('game_id');
+        $game = Game::findOrFail($gameId);
+
+        if (Auth::check()) {
+            $user = Auth::user();
+            $cart = $user->cart()->firstOrCreate([
+                'user_id' => $user->id,
+            ]);
+
+            $existingGame = $cart->games()->where('game_id', $gameId)->first();
+            $cart->games()->detach($gameId);
+        } else {
+            $cart = session()->get('cart', []);
+
+            if (isset($cart[$gameId])) {
+                unset($cart[$gameId]);
+            }
+
+            session()->put('cart', $cart);
+        }
+        return redirect()->route('cart')->with('message', 'Game removed from cart!');
     }
 }

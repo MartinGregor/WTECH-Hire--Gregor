@@ -24,6 +24,7 @@ Route::resource('/', ShowGameController::class);
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('/cart/add', [CartController::class, 'insertToCart'])->name('insert.game.to.cart');
+Route::delete('/cart', [CartController::class, 'destroy'])->name('cart.delete');
 
 //admin
 Route::get('/admin', [ShowAdminController::class, 'index'])->name('admin');

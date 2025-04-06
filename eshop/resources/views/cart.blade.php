@@ -86,13 +86,30 @@
                     </div>
                     <div class="col-md-2 d-flex justify-content-center align-items-center">
                         <div class="input-group d-flex align-items-center w-auto">
-                            <button class="btn btn-outline-dark">
-                                <i class="bi bi-trash"></i>
-                            </button>
-                            <button class="btn btn-outline-dark">-</button>
+                            <form action="{{ route('cart.delete') }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <input type="hidden" name="game_id" value="{{ $item->id }}">
+                                <button type="submit" class="btn btn-outline-dark">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </form>
+                            <form action="{{ route('insert.game.to.cart') }}" method="POST">
+                                @csrf
+                                @method('POST')
+                                <input type="hidden" name="game_id" value="{{ $item->id }}">
+                                <input type="hidden" name="quantity" value="{{-1}}">
+                                <button type="submit" class="btn btn-outline-dark">+</button>
+                            </form>
                             <input type="text" class="form-control text-center col-1 fs-6 fw-bold"
-                                   value={{$item->pivot->quantity}}>
-                            <button class="btn btn-outline-dark">+</button>
+                                   value="{{ $item->pivot->quantity }}" readonly>
+                            <form action="{{ route('insert.game.to.cart') }}" method="POST">
+                                @csrf
+                                @method('POST')
+                                <input type="hidden" name="game_id" value="{{ $item->id }}">
+                                <input type="hidden" name="quantity" value="{{1}}">
+                                <button type="submit" class="btn btn-outline-dark">+</button>
+                            </form>
                         </div>
                     </div>
                     <div class="col-md-2 text-center">
@@ -119,12 +136,29 @@
                     </div>
                     <div class="col-md-2 d-flex justify-content-center align-items-center">
                         <div class="input-group d-flex align-items-center w-auto">
-                            <button class="btn btn-outline-dark">
-                                <i class="bi bi-trash"></i>
-                            </button>
-                            <button class="btn btn-outline-dark">-</button>
-                            <input type="text" class="form-control text-center col-1 fs-6 fw-bold" value={{ $item['quantity'] }}>
-                            <button class="btn btn-outline-dark">+</button>
+                            <form action="{{ route('cart.delete') }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <input type="hidden" name="game_id" value="{{ $item['game_id'] }}">
+                                <button type="submit" class="btn btn-outline-dark">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </form>
+                            <form action="{{ route('insert.game.to.cart') }}" method="POST">
+                                @csrf
+                                @method('POST')
+                                <input type="hidden" name="game_id" value="{{ $item['game_id'] }}">
+                                <input type="hidden" name="quantity" value="{{-1}}">
+                                <button type="submit" class="btn btn-outline-dark">-</button>
+                            </form>
+                            <input type="text" class="form-control text-center col-1 fs-6 fw-bold" value="{{ $item['quantity'] }}" readonly>
+                            <form action="{{ route('insert.game.to.cart') }}" method="POST">
+                                @csrf
+                                @method('POST')
+                                <input type="hidden" name="game_id" value="{{ $item['game_id'] }}">
+                                <input type="hidden" name="quantity" value="{{1}}">
+                                <button type="submit" class="btn btn-outline-dark">+</button>
+                            </form>
                         </div>
                     </div>
                     <div class="col-md-2 text-center">
