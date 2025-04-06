@@ -1,10 +1,11 @@
-@php use Illuminate\Support\Facades\Auth; @endphp
-    <!DOCTYPE html>
+@php use App\Models\Game;use Illuminate\Support\Facades\Auth; @endphp
+        <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
@@ -70,12 +71,18 @@
             @foreach(Auth::user()->cart->games as $item)
                 <div class="row align-items-center cart-item">
                     <div class="col-md-6 d-flex align-items-center">
-                        <img src="../pictures/Games/GTA.jpg" class="img-fluid cart-item-image" alt="Game Image">
-                        <img src="../pictures/Logos/xbox-logo.png" class="img-fluid cart-item-platform" alt="Game Logo">
-                        <span class="ms-4 fs-6 fw-bold">GTA VI</span>
+                        <img src="{{ $item->logo }}" class="img-fluid cart-item-image" alt="Game Image">
+                        <img src="{{ asset('images/Logos/' .
+                                ($item->platform == 'Play Station' ? 'playstation-logotype.png' :
+                                ($item->platform == 'Xbox' ? 'xbox-logo.png' :
+                                ($item->platform == 'Nintendo' ? 'nintendo-switch.png' :
+                                ($item->platform == 'PC' ? 'computer.png' :
+                                ($item->platform == 'Wii' ? 'wii.png' : 'computer.png')))))) }}"
+                             class="img-fluid cart-item-platform" alt="Game Logo">
+                        <span class="ms-4 fs-6 fw-bold">{{ $item->title }}</span>
                     </div>
                     <div class="col-md-2 text-center">
-                        <span class="fs-6 fw-bold">59.99 €</span>
+                        <span class="fs-6 fw-bold">{{ $item->price }} €</span>
                     </div>
                     <div class="col-md-2 d-flex justify-content-center align-items-center">
                         <div class="input-group d-flex align-items-center w-auto">
@@ -83,12 +90,13 @@
                                 <i class="bi bi-trash"></i>
                             </button>
                             <button class="btn btn-outline-dark">-</button>
-                            <input type="text" class="form-control text-center col-1 fs-6 fw-bold" value="2">
+                            <input type="text" class="form-control text-center col-1 fs-6 fw-bold"
+                                   value={{$item->pivot->quantity}}>
                             <button class="btn btn-outline-dark">+</button>
                         </div>
                     </div>
                     <div class="col-md-2 text-center">
-                        <span class="fs-6 fw-bold">119.98 €</span>
+                        <span class="fs-6 fw-bold">{{ $item->price * $item->pivot->quantity }} €</span>
                     </div>
                 </div>
             @endforeach
@@ -96,12 +104,18 @@
             @foreach(session()->get('cart', []) as $item)
                 <div class="row align-items-center cart-item">
                     <div class="col-md-6 d-flex align-items-center">
-                        <img src="../pictures/Games/GTA.jpg" class="img-fluid cart-item-image" alt="Game Image">
-                        <img src="../pictures/Logos/xbox-logo.png" class="img-fluid cart-item-platform" alt="Game Logo">
-                        <span class="ms-4 fs-6 fw-bold">GTA VI</span>
+                        <img src="{{ Game::find($item['game_id'])->logo }}" class="img-fluid cart-item-image" alt="Game Image">
+                        <img src="{{ asset('images/Logos/' .
+                                (Game::find($item['game_id'])->logo  == 'Play Station' ? 'playstation-logotype.png' :
+                                (Game::find($item['game_id'])->logo  == 'Xbox' ? 'xbox-logo.png' :
+                                (Game::find($item['game_id'])->logo  == 'Nintendo' ? 'nintendo-switch.png' :
+                                (Game::find($item['game_id'])->logo  == 'PC' ? 'computer.png' :
+                                (Game::find($item['game_id'])->logo  == 'Wii' ? 'wii.png' : 'computer.png')))))) }}"
+                             class="img-fluid cart-item-platform" alt="Game Logo">
+                        <span class="ms-4 fs-6 fw-bold">{{ Game::find($item['game_id'])->title }}</span>
                     </div>
                     <div class="col-md-2 text-center">
-                        <span class="fs-6 fw-bold">59.99 €</span>
+                        <span class="fs-6 fw-bold">{{ Game::find($item['game_id'])->price }} €</span>
                     </div>
                     <div class="col-md-2 d-flex justify-content-center align-items-center">
                         <div class="input-group d-flex align-items-center w-auto">
@@ -109,12 +123,12 @@
                                 <i class="bi bi-trash"></i>
                             </button>
                             <button class="btn btn-outline-dark">-</button>
-                            <input type="text" class="form-control text-center col-1 fs-6 fw-bold" value="2">
+                            <input type="text" class="form-control text-center col-1 fs-6 fw-bold" value={{ $item['quantity'] }}>
                             <button class="btn btn-outline-dark">+</button>
                         </div>
                     </div>
                     <div class="col-md-2 text-center">
-                        <span class="fs-6 fw-bold">119.98 €</span>
+                        <span class="fs-6 fw-bold">{{ Game::find($item['game_id'])->price * $item['quantity'] }} €</span>
                     </div>
                 </div>
             @endforeach
@@ -124,7 +138,9 @@
     <div class="container mt-5">
         <div class="row bg-dark p-3 mt-4 shadow rounded-pill">
             <div class="col-md-6 text-start fw-bold text-white">Sub-total</div>
-            <div class="col-md-6 text-end fw-bold text-white">359.94 €</div>
+            <div class="col-md-6 text-end fw-bold text-white">
+                {{ number_format($total, 2) }} €
+            </div>
         </div>
         <div class="row mt-2">
             <div class="col-md-12 text-end text-white">

@@ -11,7 +11,27 @@ class CartController extends Controller
 {
     public function index()
     {
-        return view('cart');
+        $total = $this->getCartTotal();
+        return view('cart', compact('total'));
+    }
+
+    public function getCartTotal()
+    {
+        $total = 0;
+        if (Auth::check()) {
+            foreach (Auth::user()->cart->games as $item) {
+                $total += $item->price * $item->pivot->quantity;
+            }
+        } else {
+            $cart = session()->get('cart', []);
+            foreach ($cart as $item) {
+                $game = Game::find($item['game_id']);
+                if ($game) {
+                    $total += $game->price * $item['quantity'];
+                }
+            }
+        }
+        return $total;
     }
 
     public function insertToCart(Request $request)
