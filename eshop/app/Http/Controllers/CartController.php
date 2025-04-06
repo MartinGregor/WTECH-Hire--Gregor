@@ -113,7 +113,8 @@ class CartController extends Controller
     public function startPayment()
     {
         if ($this->getCartTotal() > 0) {
-            return view('details');
+            $total = $this->getCartTotal();
+            return view('details', compact('total'));
         } else {
             return redirect()->back()->with('error', 'Your cart is empty.');
         }

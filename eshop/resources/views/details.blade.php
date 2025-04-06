@@ -1,3 +1,4 @@
+@php use App\Models\Game;use Illuminate\Support\Facades\Auth; @endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,18 +71,27 @@
             </div>
 
             <div class="tab-right col-12 col-lg-6">
-                <div class="mb-3">
-                    <div class="card">
-                        <img src="../pictures/Games/CBP.png" class="card-img-top" alt="...">
-                        <div class="card-img-overlay">
-                            <img src="../pictures/Logos/playstation-logotype.png" class="overlay-img" alt="Overlay Image">
-                        </div>
-                    </div>
+                <div class="mb-3 d-flex" style="flex-wrap: nowrap; overflow: visible;">
+                    @auth
+                        @foreach(Auth::user()->cart->games as $item)
+                            <div class="card">
+                                <img src="{{ $item->logo }}" class="card-img-top" alt="...">
+                            </div>
+                        @endforeach
+                    @else
+                        @foreach(session()->get('cart', []) as $item)
+                            <div class="card">
+                                <img src="{{ Game::find($item['game_id'])->logo }}" class="card-img-top" alt="...">
+                            </div>
+                        @endforeach
+                    @endauth
                 </div>
+
+
                 <div class="shelf px-4">
                     <div class="d-flex justify-content-between">
                         <span class="ms-4 fs-6 fw-bold">Subtotal</span>
-                        <span class=" fs-6 fw-bold">59.99 €</span>
+                        <span class=" fs-6 fw-bold">{{$total}} €</span>
                     </div>
                     <div class="d-flex justify-content-between">
                         <span class="ms-4 fs-6 fw-bold">Shipping</span>
@@ -90,7 +100,7 @@
                 </div>
                 <div class="shelf d-flex justify-content-between">
                     <span class="ms-3 fs-4 fw-bold">Total</span>
-                    <span class="fs-4 fw-bold">59.99 €</span>
+                    <span class="fs-4 fw-bold">{{$total}} €</span>
                 </div>
             </div>
         </div>

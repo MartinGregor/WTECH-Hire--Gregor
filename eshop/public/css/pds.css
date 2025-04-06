@@ -29,11 +29,13 @@ main {
 }
 .card-img-top {
     border-radius: 150px;
+    object-fit: cover;
 }
 .card {
     border: none;
     width: 30%;
     max-width: 500px;
+    background: none;
 }
 .overlay-img {
     position: absolute;
