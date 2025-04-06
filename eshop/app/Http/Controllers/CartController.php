@@ -119,4 +119,19 @@ class CartController extends Controller
             return redirect()->back()->with('error', 'Your cart is empty.');
         }
     }
+
+    public function goToShipping(Request $request)
+    {
+        $total = $this->getCartTotal();
+        session()->put('contact', $request->input('contact'));
+        session()->put('city', $request->input('city'));
+        session()->put('postal_code', $request->input('postal_code'));
+        session()->put('address', $request->input('address'));
+        session()->put('country', $request->input('country'));
+        session()->put('name', $request->input('name'));
+        session()->put('last_name', $request->input('last_name'));
+        session()->put('phone_number', $request->input('phone_number'));
+        session()->put('shipping_note', $request->input('shipping_note'));
+        return view('shipping', compact('total',));
+    }
 }

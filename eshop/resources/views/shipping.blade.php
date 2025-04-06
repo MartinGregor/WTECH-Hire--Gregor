@@ -1,9 +1,9 @@
 @php use App\Models\Game;use Illuminate\Support\Facades\Auth; @endphp
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Details</title>
+    <title>Shipping</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
@@ -21,56 +21,68 @@
                     <nav class="bread-crumbs" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('cart') }}" class="text-decoration-none">Cart</a></li>
-                            <li class="breadcrumb-item active fw-bold text-black" aria-current="page">Details</li>
-                            <li class="breadcrumb-item text-secondary">Shipping</li>
+                            <li class="breadcrumb-item"><a href="{{ route('payment.details') }}" class="text-decoration-none">Details</a></li>
+                            <li class="breadcrumb-item active fw-bold text-black" aria-current="page">Shipping</li>
                             <li class="breadcrumb-item text-secondary">Payment</li>
                         </ol>
                     </nav>
                 </div>
-                <form method="POST" action="{{ route('payment.shipping') }}">
-                    @csrf
                 <div>
-                    <div class="mt-4">
-                        <span class="ms-4 fs-6 fw-bold">Contact</span>
+                    <div class="previous-info">
+                        <div class="d-flex my-2">
+                            <span class="ms-2 fs-6 fw-bold blue">Contact</span>
+                            <span class="ms-5 fs-6">{{session()->get('contact')}}</span>
+                        </div>
+                        <div class="d-flex my-2">
+                            <span class="ms-2 fs-6 fw-bold blue">Ship to&nbsp&nbsp</span>
+                            <span class="ms-5 fs-6">{{session()->get('city')}}, {{session()->get('postal_code')}}, {{session()->get('address')}}, {{session()->get('country')}}</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mt-4">
+                            <span class="ms-4 fs-6 fw-bold">Shipping Method</span>
+                        </div>
                         <div class="px-4">
-                            <input class="p-2 mb-3 single-info form-control me-2" id="contact" name="contact" type="search" placeholder="Email" aria-label="Code" value="{{session()->get('contact')}}">
+                            <div class="form-check d-flex justify-content-between align-items-center radio-choice">
+                                <div>
+                                    <input class="ms-1 form-check-input" type="radio" name="exampleRadios" id="standardShipping" value="option1" checked>
+                                    <label class="form-check-label ms-2" for="standardShipping">
+                                        Standard Shipping
+                                    </label>
+                                </div>
+                                <span class="me-2 fs-6 fw-bold">FREE</span>
+                            </div>
+
+                            <div class="form-check d-flex justify-content-between align-items-center radio-choice">
+                                <div>
+                                    <input class="ms-1 form-check-input" type="radio" name="exampleRadios" id="fragileShipping" value="option2">
+                                    <label class="form-check-label ms-2" for="fragileShipping">
+                                        Fragile Shipping
+                                    </label>
+                                </div>
+                                <span class="me-2 fs-6 fw-bold">9.99 €</span>
+                            </div>
+
+                            <div class="form-check d-flex justify-content-between align-items-center radio-choice">
+                                <div>
+                                    <input class="ms-1 form-check-input" type="radio" name="exampleRadios" id="expressShipping" value="option3">
+                                    <label class="form-check-label ms-2" for="expressShipping">
+                                        Express Shipping
+                                    </label>
+                                </div>
+                                <span class="me-2 fs-6 fw-bold">19.99 €</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="mt-4">
-                        <span class="ms-4 fs-6 fw-bold">Shipping Address</span>
-                    </div>
-                    <div class="px-4">
-                        <div class="d-flex align-items-center">
-                            <input class="p-2 mb-3 double-info form-control me-2" id="name" name="name" type="search" placeholder="Name" aria-label="Code" value="{{session()->get('name')}}">
-                            <input class="p-2 mb-3 double-info form-control me-2" id="last_name" name="last_name" type="search" placeholder="Last Name" aria-label="Code" value="{{session()->get('last_name')}}">
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <input class="p-2 mb-3 form-control me-2" id="phone_number" name="phone_number" type="search" placeholder="Phone Number" aria-label="Code" value="{{session()->get('phone_number')}}">
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <input class="p-2 mb-3 form-control me-2" id="shipping_note" name="shipping_note" type="search" placeholder="Shipping Note" aria-label="Code" value="{{session()->get('shipping_note')}}">
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <input class="p-2 mb-3 triple-info form-control me-2" id="city" name="city" type="search" placeholder="City" aria-label="Code" value="{{session()->get('city')}}">
-                            <input class="p-2 mb-3 triple-info form-control me-2" id="postal_code" name="postal_code" type="search" placeholder="PostalCode" aria-label="Code" value="{{session()->get('postal_code')}}">
-                            <input class="p-2 mb-3 triple-info form-control me-2" id="address" name="address" type="search" placeholder="Address" aria-label="Code" value="{{session()->get('address')}}">
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <input class="p-2 mb-3 form-control me-2" id="country" name="country" type="search" placeholder="Country" aria-label="Code" value="{{session()->get('country')}}">
-                        </div>
-                        <div class="d-flex justify-content-center mt-2 gap-4">
-                            <a href="{{ route('cart') }}" class="btn btn-light btn-md text-black double-button">
-                                Back to Cart
+                        <div class="d-flex justify-content-center mt-3 gap-4">
+                            <a href="{{ route('payment.details') }}" class="btn btn-light btn-md text-black double-button">
+                                Back to Details
                             </a>
-                            <button type="submit" class="btn btn-light btn-md text-black double-button">
-                                Go to Shipping
-                            </button>
+                            <a href="payment.html" class="btn btn-light btn-md text-black double-button">
+                                Go to Payment
+                            </a>
                         </div>
                     </div>
                 </div>
-                </form>
             </div>
 
             <div class="tab-right col-12 col-lg-6">

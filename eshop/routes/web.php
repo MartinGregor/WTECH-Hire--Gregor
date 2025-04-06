@@ -27,6 +27,7 @@ Route::post('/cart/add', [CartController::class, 'insertToCart'])->name('insert.
 Route::delete('/cart', [CartController::class, 'destroy'])->name('cart.delete');
 
 Route::get('/details', [CartController::class, 'startPayment'])->name('payment.details');
+Route::post('/shipping', [CartController::class, 'goToShipping'])->name('payment.shipping');
 
 //admin
 Route::get('/admin', [ShowAdminController::class, 'index'])->name('admin');
