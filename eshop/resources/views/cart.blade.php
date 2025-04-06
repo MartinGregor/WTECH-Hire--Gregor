@@ -106,11 +106,11 @@
                     <div class="col-md-6 d-flex align-items-center">
                         <img src="{{ Game::find($item['game_id'])->logo }}" class="img-fluid cart-item-image" alt="Game Image">
                         <img src="{{ asset('images/Logos/' .
-                                (Game::find($item['game_id'])->logo  == 'Play Station' ? 'playstation-logotype.png' :
-                                (Game::find($item['game_id'])->logo  == 'Xbox' ? 'xbox-logo.png' :
-                                (Game::find($item['game_id'])->logo  == 'Nintendo' ? 'nintendo-switch.png' :
-                                (Game::find($item['game_id'])->logo  == 'PC' ? 'computer.png' :
-                                (Game::find($item['game_id'])->logo  == 'Wii' ? 'wii.png' : 'computer.png')))))) }}"
+                                (Game::find($item['game_id'])->platform  == 'Play Station' ? 'playstation-logotype.png' :
+                                (Game::find($item['game_id'])->platform  == 'Xbox' ? 'xbox-logo.png' :
+                                (Game::find($item['game_id'])->platform  == 'Nintendo' ? 'nintendo-switch.png' :
+                                (Game::find($item['game_id'])->platform  == 'PC' ? 'computer.png' :
+                                (Game::find($item['game_id'])->platform  == 'Wii' ? 'wii.png' : 'computer.png')))))) }}"
                              class="img-fluid cart-item-platform" alt="Game Logo">
                         <span class="ms-4 fs-6 fw-bold">{{ Game::find($item['game_id'])->title }}</span>
                     </div>
