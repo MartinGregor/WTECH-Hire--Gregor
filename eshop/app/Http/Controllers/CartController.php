@@ -11,26 +11,41 @@ class CartController extends Controller
 {
     public function insertToCart(Request $request)
     {
-        $user = Auth::user();
-
-        $cart = $user->cart()->firstOrCreate([
-            'user_id' => $user->id,
-        ]);
-
         $gameId = $request->input('game_id');
         $quantity = $request->input('quantity');
-
         $game = Game::findOrFail($gameId);
 
-        $existingGame = $cart->games()->where('game_id', $gameId)->first();
-
-        if ($existingGame) {
-            $newQuantity = $existingGame->pivot->quantity + $quantity;
-            $cart->games()->updateExistingPivot($gameId, [
-                'quantity' => $newQuantity,
+        if (Auth::check()) {
+            // Logged-in user logic
+            $user = Auth::user();
+            $cart = $user->cart()->firstOrCreate([
+                'user_id' => $user->id,
             ]);
+
+            $existingGame = $cart->games()->where('game_id', $gameId)->first();
+
+            if ($existingGame) {
+                $newQuantity = $existingGame->pivot->quantity + $quantity;
+                $cart->games()->updateExistingPivot($gameId, [
+                    'quantity' => $newQuantity
+                ]);
+            } else {
+                $cart->games()->attach($gameId, ['quantity' => $quantity]);
+            }
         } else {
-            $cart->games()->attach($gameId, ['quantity' => $quantity]);
+            // Guest user logic (use session)
+            $cart = session()->get('cart', []);
+
+            if (isset($cart[$gameId])) {
+                $cart[$gameId]['quantity'] += $quantity;
+            } else {
+                $cart[$gameId] = [
+                    'game_id' => $gameId,
+                    'quantity' => $quantity
+                ];
+            }
+
+            session()->put('cart', $cart);
         }
 
         return redirect()->route('search', ['id' => $game->id])
