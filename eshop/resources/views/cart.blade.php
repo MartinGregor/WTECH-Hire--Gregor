@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+@php use Illuminate\Support\Facades\Auth; @endphp
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +18,9 @@
     <nav class="navbar sticky-top navbar-expand-md bg-body-tertiary shadow-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url('/') }}">PayPlay</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -33,7 +36,8 @@
                     </li>
                     @auth
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
                                 {{ Auth::user()->username }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -62,80 +66,59 @@
             <div class="col-md-2 text-center fw-bold">Quantity</div>
             <div class="col-md-2 text-center fw-bold">Total</div>
         </div>
-
-
-
-        <div class="row align-items-center cart-item">
-            <div class="col-md-6 d-flex align-items-center">
-                <img src="../pictures/Games/GTA.jpg" class="img-fluid cart-item-image" alt="Game Image">
-                <img src="../pictures/Logos/xbox-logo.png" class="img-fluid cart-item-platform" alt="Game Logo">
-                <span class="ms-4 fs-6 fw-bold">GTA VI</span>
-            </div>
-            <div class="col-md-2 text-center">
-                <span class="fs-6 fw-bold">59.99 €</span>
-            </div>
-            <div class="col-md-2 d-flex justify-content-center align-items-center">
-                <div class="input-group d-flex align-items-center w-auto">
-                    <button class="btn btn-outline-dark">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                    <button class="btn btn-outline-dark">-</button>
-                    <input type="text" class="form-control text-center col-1 fs-6 fw-bold" value="2">
-                    <button class="btn btn-outline-dark">+</button>
+        @auth
+            @foreach(Auth::user()->cart->games as $item)
+                <div class="row align-items-center cart-item">
+                    <div class="col-md-6 d-flex align-items-center">
+                        <img src="../pictures/Games/GTA.jpg" class="img-fluid cart-item-image" alt="Game Image">
+                        <img src="../pictures/Logos/xbox-logo.png" class="img-fluid cart-item-platform" alt="Game Logo">
+                        <span class="ms-4 fs-6 fw-bold">GTA VI</span>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <span class="fs-6 fw-bold">59.99 €</span>
+                    </div>
+                    <div class="col-md-2 d-flex justify-content-center align-items-center">
+                        <div class="input-group d-flex align-items-center w-auto">
+                            <button class="btn btn-outline-dark">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                            <button class="btn btn-outline-dark">-</button>
+                            <input type="text" class="form-control text-center col-1 fs-6 fw-bold" value="2">
+                            <button class="btn btn-outline-dark">+</button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <span class="fs-6 fw-bold">119.98 €</span>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-2 text-center">
-                <span class="fs-6 fw-bold">119.98 €</span>
-            </div>
-        </div>
-
-        <div class="row align-items-center cart-item">
-            <div class="col-md-6 d-flex align-items-center">
-                <img src="../pictures/Games/F1.jpg" class="img-fluid cart-item-image" alt="Game Image">
-                <img src="../pictures/Logos/playstation-logotype.png" class="img-fluid cart-item-platform" alt="Game Logo">
-                <span class="ms-4 fs-6 fw-bold">F1 2024</span>
-            </div>
-            <div class="col-md-2 text-center">
-                <span class="fs-6 fw-bold">59.99 €</span>
-            </div>
-            <div class="col-md-2 d-flex justify-content-center align-items-center">
-                <div class="input-group d-flex align-items-center w-auto">
-                    <button class="btn btn-outline-dark">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                    <button class="btn btn-outline-dark">-</button>
-                    <input type="text" class="form-control text-center col-1 fs-6 fw-bold" value="2">
-                    <button class="btn btn-outline-dark">+</button>
+            @endforeach
+        @else
+            @foreach(session()->get('cart', []) as $item)
+                <div class="row align-items-center cart-item">
+                    <div class="col-md-6 d-flex align-items-center">
+                        <img src="../pictures/Games/GTA.jpg" class="img-fluid cart-item-image" alt="Game Image">
+                        <img src="../pictures/Logos/xbox-logo.png" class="img-fluid cart-item-platform" alt="Game Logo">
+                        <span class="ms-4 fs-6 fw-bold">GTA VI</span>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <span class="fs-6 fw-bold">59.99 €</span>
+                    </div>
+                    <div class="col-md-2 d-flex justify-content-center align-items-center">
+                        <div class="input-group d-flex align-items-center w-auto">
+                            <button class="btn btn-outline-dark">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                            <button class="btn btn-outline-dark">-</button>
+                            <input type="text" class="form-control text-center col-1 fs-6 fw-bold" value="2">
+                            <button class="btn btn-outline-dark">+</button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <span class="fs-6 fw-bold">119.98 €</span>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-2 text-center">
-                <span class="fs-6 fw-bold">119.98 €</span>
-            </div>
-        </div>
-
-        <div class="row align-items-center cart-item">
-            <div class="col-md-6 d-flex align-items-center">
-                <img src="../pictures/Games/CBP.png" class="img-fluid cart-item-image" alt="Game Image">
-                <img src="../pictures/Logos/nintendo-switch.png" class="img-fluid cart-item-platform" alt="Game Logo">
-                <span class="ms-4 fs-6 fw-bold">Cyberpunk 2077</span>
-            </div>
-            <div class="col-md-2 text-center">
-                <span class="fs-6 fw-bold">59.99 €</span>
-            </div>
-            <div class="col-md-2 d-flex justify-content-center align-items-center">
-                <div class="input-group d-flex align-items-center w-auto">
-                    <button class="btn btn-outline-dark">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                    <button class="btn btn-outline-dark">-</button>
-                    <input type="text" class="form-control text-center col-1 fs-6 fw-bold" value="2">
-                    <button class="btn btn-outline-dark">+</button>
-                </div>
-            </div>
-            <div class="col-md-2 text-center">
-                <span class="fs-6 fw-bold">119.98 €</span>
-            </div>
-        </div>
+            @endforeach
+        @endauth
     </div>
 
     <div class="container mt-5">

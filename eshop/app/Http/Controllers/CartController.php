@@ -53,7 +53,7 @@ class CartController extends Controller
             session()->put('cart', $cart);
         }
 
-        return redirect()->route('search', ['id' => $game->id])
+        return redirect()->route('cart')
             ->with('success', 'Game added to cart successfully!');
     }
 }
