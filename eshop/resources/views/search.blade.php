@@ -16,7 +16,7 @@
 <main>
     <nav class="navbar sticky-top navbar-expand-md bg-body-tertiary shadow-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="home.html">PayPlay</a>
+            <a class="navbar-brand" href="{{ url('/') }}">PayPlay</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,7 +29,7 @@
                         <a class="nav-link active" aria-current="page" href="{{ route('search') }}">Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="cart.html">Cart</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('cart') }}">Cart</a>
                     </li>
                     @auth
                         <li class="nav-item dropdown">

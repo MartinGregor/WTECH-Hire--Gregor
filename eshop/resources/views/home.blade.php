@@ -28,7 +28,7 @@
                         <a class="nav-link active" aria-current="page" href="{{ route('search') }}">Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="cart.html">Cart</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('cart') }}">Cart</a>
                     </li>
                     @auth
                         <li class="nav-item dropdown">

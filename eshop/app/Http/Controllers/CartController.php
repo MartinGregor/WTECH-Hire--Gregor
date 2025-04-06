@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
+    public function index()
+    {
+        return view('cart');
+    }
+
     public function insertToCart(Request $request)
     {
         $gameId = $request->input('game_id');

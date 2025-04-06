@@ -22,6 +22,7 @@ Route::get('/game/{id}', [GameController::class, 'show'])->name('game.show');
 
 Route::resource('/', ShowGameController::class);
 
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('/cart/add', [CartController::class, 'insertToCart'])->name('insert.game.to.cart');
 
 //admin
