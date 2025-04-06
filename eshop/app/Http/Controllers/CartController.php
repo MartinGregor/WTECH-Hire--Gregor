@@ -134,4 +134,16 @@ class CartController extends Controller
         session()->put('shipping_note', $request->input('shipping_note'));
         return view('shipping', compact('total',));
     }
+
+    public function backToShipping()
+    {
+        $total = $this->getCartTotal();
+        return view('shipping', compact('total',));
+    }
+
+    public function goToPayment(Request $request)
+    {
+        $total = $this->getCartTotal();
+        return view('payment', compact('total',));
+    }
 }

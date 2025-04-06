@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Shipping</title>
+    <title>Details</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
@@ -22,8 +22,8 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('cart') }}" class="text-decoration-none">Cart</a></li>
                             <li class="breadcrumb-item"><a href="{{ route('payment.details') }}" class="text-decoration-none">Details</a></li>
-                            <li class="breadcrumb-item active fw-bold text-black" aria-current="page">Shipping</li>
-                            <li class="breadcrumb-item text-secondary">Payment</li>
+                            <li class="breadcrumb-item"><a href="{{ route('payment.shipping') }}" class="text-decoration-none">Shipping</a></li>
+                            <li class="breadcrumb-item active fw-bold text-black" aria-current="page">Payment</li>
                         </ol>
                     </nav>
                 </div>
@@ -37,53 +37,54 @@
                             <span class="ms-2 fs-6 fw-bold blue">Ship to&nbsp&nbsp</span>
                             <span class="ms-5 fs-6">{{session()->get('city')}}, {{session()->get('postal_code')}}, {{session()->get('address')}}, {{session()->get('country')}}</span>
                         </div>
+                        <div class="d-flex my-2">
+                            <span class="ms-2 fs-6 fw-bold blue">Method</span>
+                            <span class="ms-5 fs-6">Standard Shipping - FREE</span>
+                        </div>
                     </div>
                     <div>
                         <div class="mt-4">
-                            <span class="ms-4 fs-6 fw-bold">Shipping Method</span>
+                            <span class="ms-4 fs-6 fw-bold">Payment Method</span>
                         </div>
-                        <form method="POST" action="{{ route('payment.payment') }}">
-                            @csrf
-                        <div class="px-4">
-                            <div class="form-check d-flex justify-content-between align-items-center radio-choice">
-                                <div>
-                                    <input class="ms-1 form-check-input" type="radio" name="exampleRadios" id="standardShipping" value="option1" checked>
-                                    <label class="form-check-label ms-2" for="standardShipping">
-                                        Standard Shipping
-                                    </label>
-                                </div>
-                                <span class="me-2 fs-6 fw-bold">FREE</span>
-                            </div>
 
-                            <div class="form-check d-flex justify-content-between align-items-center radio-choice">
-                                <div>
-                                    <input class="ms-1 form-check-input" type="radio" name="exampleRadios" id="fragileShipping" value="option2">
-                                    <label class="form-check-label ms-2" for="fragileShipping">
-                                        Fragile Shipping
-                                    </label>
-                                </div>
-                                <span class="me-2 fs-6 fw-bold">9.99 €</span>
-                            </div>
+                        <div class="px-4 my-4">
+                            <ul class="nav nav-tabs d-flex" id="myTab" role="tablist">
+                                <li class="m-0 w-50 nav-item" role="presentation" >
+                                    <button class="m-0 w-50 nav-link active w-100" id="card-tab" data-bs-toggle="tab" data-bs-target="#card" type="button" role="tab" aria-controls="card" aria-selected="true">Credit Card</button>
+                                </li>
+                                <li class="m-0 w-50 nav-item" role="presentation">
+                                    <button class="m-0 w-50 nav-link w-100" id="cash-tab" data-bs-toggle="tab" data-bs-target="#cash" type="button" role="tab" aria-controls="cash" aria-selected="false">Cash</button>
+                                </li>
+                            </ul>
 
-                            <div class="form-check d-flex justify-content-between align-items-center radio-choice">
-                                <div>
-                                    <input class="ms-1 form-check-input" type="radio" name="exampleRadios" id="expressShipping" value="option3">
-                                    <label class="form-check-label ms-2" for="expressShipping">
-                                        Express Shipping
-                                    </label>
+                            <div class="tab-content mt-2" id="myTabContent">
+                                <div class="tab-pane fade show active" id="card" role="tabpanel" aria-labelledby="card-tab">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <input class="form-info form-control me-2" type="search" placeholder="Card Number" aria-label="Code">
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <input class="form-info form-control me-2" type="search" placeholder="Holder's Name (Optional)" aria-label="Code">
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <input class="form-info form-control me-2 double-info" type="search" placeholder="Expiration (MM/YY)" aria-label="Code">
+                                        <input class="form-info form-control me-2 double-info" type="search" placeholder="CVV" aria-label="Code">
+                                    </div>
                                 </div>
-                                <span class="me-2 fs-6 fw-bold">19.99 €</span>
+                                <div class="tab-pane fade p-4" id="cash" role="tabpanel" aria-labelledby="cash-tab">
+                                    <span>You have selected to pay in cash. Please have the exact amount ready upon delivery or at the counter. Thank you!</span>
+                                </div>
                             </div>
                         </div>
+
+
                         <div class="d-flex justify-content-center mt-3 gap-4">
-                            <a href="{{ route('payment.details') }}" class="btn btn-light btn-md text-black double-button">
-                                Back to Details
+                            <a href="{{'shipping'}}" class="btn btn-light btn-md text-black double-button">
+                                Back to Shipping
                             </a>
-                            <button type="submit" class="btn btn-light btn-md text-black double-button">
-                                Go to Payment
-                            </button>
+                            <a href="/" class="btn btn-light btn-md text-black double-button">
+                                Pay Now
+                            </a>
                         </div>
-                        </form>
                     </div>
                 </div>
             </div>

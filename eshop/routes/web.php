@@ -27,7 +27,9 @@ Route::post('/cart/add', [CartController::class, 'insertToCart'])->name('insert.
 Route::delete('/cart', [CartController::class, 'destroy'])->name('cart.delete');
 
 Route::get('/details', [CartController::class, 'startPayment'])->name('payment.details');
+Route::get('/shipping', [CartController::class, 'backToShipping'])->name('payment.shipping.back');
 Route::post('/shipping', [CartController::class, 'goToShipping'])->name('payment.shipping');
+Route::post('/payment', [CartController::class, 'goToPayment'])->name('payment.payment');
 
 //admin
 Route::get('/admin', [ShowAdminController::class, 'index'])->name('admin');
