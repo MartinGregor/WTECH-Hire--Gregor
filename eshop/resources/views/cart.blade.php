@@ -1,5 +1,5 @@
 @php use App\Models\Game;use Illuminate\Support\Facades\Auth; @endphp
-        <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -183,7 +183,7 @@
         </div>
         <div class="row mt-3">
             <div class="col-md-12 text-end">
-                <a href="details.html" class="btn btn-light btn-lg fs-6 fw-bold px-4 py-2 rounded-pill">
+                <a href="{{ route('payment.details') }}" class="btn btn-light btn-lg fs-6 fw-bold px-4 py-2 rounded-pill">
                     Checkout
                 </a>
             </div>

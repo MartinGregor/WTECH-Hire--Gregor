@@ -109,4 +109,13 @@ class CartController extends Controller
         }
         return redirect()->route('cart')->with('message', 'Game removed from cart!');
     }
+
+    public function startPayment()
+    {
+        if ($this->getCartTotal() > 0) {
+            return view('details');
+        } else {
+            return redirect()->back()->with('error', 'Your cart is empty.');
+        }
+    }
 }
