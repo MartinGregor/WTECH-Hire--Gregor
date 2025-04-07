@@ -30,6 +30,9 @@ Route::get('/details', [CartController::class, 'startPayment'])->name('payment.d
 Route::get('/shipping', [CartController::class, 'backToShipping'])->name('payment.shipping.back');
 Route::post('/shipping', [CartController::class, 'goToShipping'])->name('payment.shipping');
 Route::post('/payment', [CartController::class, 'goToPayment'])->name('payment.payment');
+Route::get('/payment', [CartController::class, 'completePayment'])->name('payment.complete');
+
+Route::get('/', [ShowGameController::class, 'index'])->name('home');
 
 //admin
 Route::get('/admin', [ShowAdminController::class, 'index'])->name('admin');

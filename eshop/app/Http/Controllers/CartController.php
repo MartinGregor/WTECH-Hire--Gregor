@@ -63,7 +63,6 @@ class CartController extends Controller
                 $cart->games()->attach($gameId, ['quantity' => $quantity]);
             }
         } else {
-            // Guest user logic (use session)
             $cart = session()->get('cart', []);
 
             if (isset($cart[$gameId])) {
@@ -144,6 +143,38 @@ class CartController extends Controller
     public function goToPayment(Request $request)
     {
         $total = $this->getCartTotal();
-        return view('payment', compact('total',));
+
+        $shipping = $request->input('shipping_type');
+
+        if ($shipping === 'standard') {
+            session()->put('shipping_type', 'Standard Shipping');
+            session()->put('shipping_price', 0);
+        } elseif ($shipping === 'fragile') {
+            session()->put('shipping_type', 'Fragile Shipping');
+            session()->put('shipping_price', 9.99);
+        } elseif ($shipping === 'express') {
+            session()->put('shipping_type', 'Express Shipping');
+            session()->put('shipping_price', 19.99);
+        }
+
+        return view('payment', compact('total'));
     }
+
+    public function completePayment()
+    {
+        if (Auth::check()) {
+            $user = Auth::user();
+            $cart = $user->cart()->firstOrCreate([
+                'user_id' => $user->id,
+            ]);
+            foreach ($cart->games as $game) {
+                $cart->games()->detach($game);
+            }
+        } else {
+            $cart = session()->get('cart', []);
+            session()->put('cart', []);
+        }
+        return redirect()->route('home');
+    }
+
 }

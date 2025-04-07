@@ -47,8 +47,8 @@
                         <div class="px-4">
                             <div class="form-check d-flex justify-content-between align-items-center radio-choice">
                                 <div>
-                                    <input class="ms-1 form-check-input" type="radio" name="exampleRadios" id="standardShipping" value="option1" checked>
-                                    <label class="form-check-label ms-2" for="standardShipping">
+                                    <input class="ms-1 form-check-input" type="radio" name="shipping_type" id="standard_shipping" value="standard" checked>
+                                    <label class="form-check-label ms-2" for="standard_shipping">Standard Shipping</label>
                                         Standard Shipping
                                     </label>
                                 </div>
@@ -57,8 +57,8 @@
 
                             <div class="form-check d-flex justify-content-between align-items-center radio-choice">
                                 <div>
-                                    <input class="ms-1 form-check-input" type="radio" name="exampleRadios" id="fragileShipping" value="option2">
-                                    <label class="form-check-label ms-2" for="fragileShipping">
+                                    <input class="ms-1 form-check-input" type="radio" name="shipping_type" id="fragile_shipping" value="fragile">
+                                    <label class="form-check-label ms-2" for="fragile_shipping">Fragile Shipping</label>
                                         Fragile Shipping
                                     </label>
                                 </div>
@@ -67,8 +67,8 @@
 
                             <div class="form-check d-flex justify-content-between align-items-center radio-choice">
                                 <div>
-                                    <input class="ms-1 form-check-input" type="radio" name="exampleRadios" id="expressShipping" value="option3">
-                                    <label class="form-check-label ms-2" for="expressShipping">
+                                    <input class="ms-1 form-check-input" type="radio" name="shipping_type" id="express_shipping" value="express">
+                                    <label class="form-check-label ms-2" for="express_shipping">Express Shipping</label>
                                         Express Shipping
                                     </label>
                                 </div>

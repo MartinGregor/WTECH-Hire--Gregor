@@ -39,7 +39,7 @@
                         </div>
                         <div class="d-flex my-2">
                             <span class="ms-2 fs-6 fw-bold blue">Method</span>
-                            <span class="ms-5 fs-6">Standard Shipping - FREE</span>
+                            <span class="ms-5 fs-6">{{session()->get('shipping_type')}}</span>
                         </div>
                     </div>
                     <div>
@@ -81,7 +81,7 @@
                             <a href="{{'shipping'}}" class="btn btn-light btn-md text-black double-button">
                                 Back to Shipping
                             </a>
-                            <a href="/" class="btn btn-light btn-md text-black double-button">
+                            <a href="{{route('payment.complete')}}" class="btn btn-light btn-md text-black double-button">
                                 Pay Now
                             </a>
                         </div>
@@ -114,12 +114,12 @@
                     </div>
                     <div class="d-flex justify-content-between">
                         <span class="ms-4 fs-6 fw-bold">Shipping</span>
-                        <span class="ms-4 fs-6">Calculated at the Payment</span>
+                        <span class="ms-4 fs-6 fw-bold">{{session()->get('shipping_price')}} €</span>
                     </div>
                 </div>
                 <div class="shelf d-flex justify-content-between">
                     <span class="ms-3 fs-4 fw-bold">Total</span>
-                    <span class="fs-4 fw-bold">{{$total}} €</span>
+                    <span class="fs-4 fw-bold">{{$total + session()->get('shipping_price')}} €</span>
                 </div>
             </div>
         </div>
