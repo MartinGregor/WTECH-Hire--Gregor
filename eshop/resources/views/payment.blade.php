@@ -1,4 +1,7 @@
-@php use App\Models\Game;use Illuminate\Support\Facades\Auth; @endphp
+@php
+    use App\Models\Game;
+    use Illuminate\Support\Facades\Auth;
+@endphp
     <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,50 +45,53 @@
                             <span class="ms-5 fs-6">{{session()->get('shipping_type')}}</span>
                         </div>
                     </div>
-                    <div>
-                        <div class="mt-4">
-                            <span class="ms-4 fs-6 fw-bold">Payment Method</span>
-                        </div>
 
-                        <div class="px-4 my-4">
-                            <ul class="nav nav-tabs d-flex" id="myTab" role="tablist">
-                                <li class="m-0 w-50 nav-item" role="presentation" >
-                                    <button class="m-0 w-50 nav-link active w-100" id="card-tab" data-bs-toggle="tab" data-bs-target="#card" type="button" role="tab" aria-controls="card" aria-selected="true">Credit Card</button>
-                                </li>
-                                <li class="m-0 w-50 nav-item" role="presentation">
-                                    <button class="m-0 w-50 nav-link w-100" id="cash-tab" data-bs-toggle="tab" data-bs-target="#cash" type="button" role="tab" aria-controls="cash" aria-selected="false">Cash</button>
-                                </li>
-                            </ul>
+                    <form id="paymentForm" method="POST" action="{{ route('payment.complete') }}" class="needs-validation" novalidate>
+                        @csrf
+                        <div>
+                            <div class="mt-4">
+                                <span class="ms-4 fs-6 fw-bold">Payment Method</span>
+                            </div>
 
-                            <div class="tab-content mt-2" id="myTabContent">
-                                <div class="tab-pane fade show active" id="card" role="tabpanel" aria-labelledby="card-tab">
-                                    <div class="d-flex align-items-center mb-2">
-                                        <input class="form-info form-control me-2" type="search" placeholder="Card Number" aria-label="Code" required>
+                            <div class="px-4 my-4">
+                                <ul class="nav nav-tabs d-flex" id="myTab" role="tablist">
+                                    <li class="m-0 w-50 nav-item" role="presentation">
+                                        <button class="m-0 w-50 nav-link active payment-tab-link w-100" id="card-tab" data-bs-toggle="tab" data-bs-target="#card" type="button" role="tab" aria-controls="card" aria-selected="true" value="card">Credit Card</button>
+                                    </li>
+                                    <li class="m-0 w-50 nav-item" role="presentation">
+                                        <button class="m-0 w-50 nav-link payment-tab-link w-100" id="cash-tab" data-bs-toggle="tab" data-bs-target="#cash" type="button" role="tab" aria-controls="cash" aria-selected="false" value="cash">Cash</button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content mt-2" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="card" role="tabpanel" aria-labelledby="card-tab">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <input class="form-info form-control me-2" type="tel" placeholder="Card Number" aria-label="Card Number" required data-validation="card">
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <input class="form-info form-control me-2" type="text" placeholder="Holder's Name" aria-label="Holder's Name" required data-validation="card">
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <input class="form-info form-control me-2 double-info" type="text" placeholder="Expiration (MM/YY)" aria-label="Expiration" required data-validation="card">
+                                            <input class="form-info form-control me-2 double-info" type="tel" placeholder="CVV" aria-label="CVV" required data-validation="card">
+                                        </div>
                                     </div>
-                                    <div class="d-flex align-items-center mb-2">
-                                        <input class="form-info form-control me-2" type="search" placeholder="Holder's Name (Optional)" aria-label="Code" required>
+                                    <div class="tab-pane fade p-4" id="cash" role="tabpanel" aria-labelledby="cash-tab">
+                                        <span>You have selected to pay in cash. Please have the exact amount ready upon delivery or at the counter. Thank you!</span>
                                     </div>
-                                    <div class="d-flex align-items-center">
-                                        <input class="form-info form-control me-2 double-info" type="search" placeholder="Expiration (MM/YY)" aria-label="Code" required>
-                                        <input class="form-info form-control me-2 double-info" type="search" placeholder="CVV" aria-label="Code" required>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade p-4" id="cash" role="tabpanel" aria-labelledby="cash-tab">
-                                    <span>You have selected to pay in cash. Please have the exact amount ready upon delivery or at the counter. Thank you!</span>
                                 </div>
                             </div>
-                        </div>
 
-
-                        <div class="d-flex justify-content-center mt-3 gap-4">
-                            <a href="{{'shipping'}}" class="btn btn-light btn-md text-black double-button">
-                                Back to Shipping
-                            </a>
-                            <a href="{{route('payment.complete')}}" class="btn btn-light btn-md text-black double-button">
-                                Pay Now
-                            </a>
+                            <div class="d-flex justify-content-center mt-3 gap-4">
+                                <a href="{{'shipping'}}" class="btn btn-light btn-md text-black double-button">
+                                    Back to Shipping
+                                </a>
+                                <button type="submit" class="btn btn-light btn-md text-black double-button">
+                                    Pay Now
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
 
@@ -106,11 +112,10 @@
                     @endauth
                 </div>
 
-
                 <div class="shelf px-4">
                     <div class="d-flex justify-content-between">
                         <span class="ms-4 fs-6 fw-bold">Subtotal</span>
-                        <span class=" fs-6 fw-bold">{{$total}} €</span>
+                        <span class="fs-6 fw-bold">{{$total}} €</span>
                     </div>
                     <div class="d-flex justify-content-between">
                         <span class="ms-4 fs-6 fw-bold">Shipping</span>
@@ -126,22 +131,56 @@
     </div>
 </main>
 
-<footer class="py-0 my-4 mb-0">
-    <div class="bg-dark">
-        <div class="container">
-            <footer class="py-4 bg-dark">
-                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-light">About</a></li>
-                </ul>
-                <p class="text-center text-light">© 2025 PayPlay</p>
-            </footer>
+<div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="paymentModalLabel">Payment Successful</h5>
+            </div>
+            <div class="modal-body">
+                <p>Your payment has been successfully completed! Thank you for your purchase. You will receive a confirmation email shortly.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="confirmPaymentButton">Return to Home Page</button>
+            </div>
         </div>
     </div>
-</footer>
+</div>
 
-</body>
-</html>
+<script>
+    (() => {
+        'use strict'
+        const forms = document.querySelectorAll('.needs-validation');
+        const paymentForm = document.getElementById('paymentForm');
+        const confirmPaymentButton = document.getElementById('confirmPaymentButton');
+        const modalElement = document.getElementById('paymentModal');
+        const modal = new bootstrap.Modal(modalElement, {
+            backdrop: 'static',
+            keyboard: false
+        });
+        const cardTab = document.getElementById('card-tab');
+        const cashTab = document.getElementById('cash-tab');
+        const cardFields = paymentForm.querySelectorAll('[data-validation="card"]');
+        function shouldValidateCardFields() {
+            return cardTab.classList.contains('active');
+        }
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (shouldValidateCardFields() && !form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                } else if (!shouldValidateCardFields()) {
+                    event.preventDefault();
+                    modal.show();
+                } else {
+                    event.preventDefault();
+                    modal.show();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+        confirmPaymentButton.addEventListener('click', function() {
+            paymentForm.submit();
+        });
+    })()
+</script>
