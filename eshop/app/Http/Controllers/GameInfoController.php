@@ -64,7 +64,9 @@ class GameInfoController extends Controller
             'price' => 0.0,
             'description' => 'Default Description',
             'platform' => 'PC',
-            'logo' => 'images/game_logos/DEFAULT.png'
+            'logo' => 'images/game_logos/DEFAULT.png',
+            'pg' => 'PG-3',
+            'style' => 'Singleplayer'
         ]);
 
         // Redirect to the edit page of the newly created game

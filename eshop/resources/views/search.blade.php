@@ -62,22 +62,22 @@
                 <input type="radio" class="btn-check" name="platform" id="platform-xbox" autocomplete="off" value="Xbox" {{ request('platform') == 'Xbox' ? 'checked' : '' }}>
                 <label class="btn btn-outline-dark flex-fill text-center" for="platform-xbox">Xbox</label>
 
-                <input type="radio" class="btn-check" name="platform" id="platform-playstation" autocomplete="off" {{ request('platform') == 'Play Station' ? 'checked' : '' }}>
+                <input type="radio" class="btn-check" name="platform" id="platform-playstation" autocomplete="off" value="Play Station" {{ request('platform') == 'Play Station' ? 'checked' : '' }}>
                 <label class="btn btn-outline-dark flex-fill text-center" for="platform-playstation">PlayStation</label>
 
-                <input type="radio" class="btn-check" name="platform" id="platform-wii" autocomplete="off" {{ request('platform') == 'Wii' ? 'checked' : '' }}>
+                <input type="radio" class="btn-check" name="platform" id="platform-wii" autocomplete="off" value="Wii" {{ request('platform') == 'Wii' ? 'checked' : '' }}>
                 <label class="btn btn-outline-dark flex-fill text-center" for="platform-wii">Wii</label>
 
-                <input type="radio" class="btn-check" name="platform" id="platform-nintendo" autocomplete="off" {{ request('platform') == 'Nintendo' ? 'checked' : '' }}>
+                <input type="radio" class="btn-check" name="platform" id="platform-nintendo" autocomplete="off" value="Nintendo" {{ request('platform') == 'Nintendo' ? 'checked' : '' }}>
                 <label class="btn btn-outline-dark flex-fill text-center" for="platform-nintendo">Nintendo</label>
 
-                <input type="radio" class="btn-check" name="platform" id="platform-pc" autocomplete="off" {{ request('platform') == 'PC' ? 'checked' : '' }}>
+                <input type="radio" class="btn-check" name="platform" id="platform-pc" autocomplete="off" value="PC" {{ request('platform', 'PC') == 'PC' ? 'checked' : '' }}>
                 <label class="btn btn-outline-dark flex-fill text-center" for="platform-pc">PC</label>
             </div>
 
 
             <!-- Style -->
-            <div class="col-12 col-sm-6 col-md-2 filter-group">
+            <div class="col-12 col-sm-6 col-md-3 filter-group">
                 <div class="input-group">
                     <span class="input-group-text bg-dark text-light">Game Style</span>
                     <select class="form-select" name="style">
@@ -94,7 +94,7 @@
             <!-- Pegi -->
             <div class="col-12 col-sm-6 col-md-2 filter-group">
                 <div class="input-group">
-                    <span class="input-group-text bg-dark text-light">Pegi</span>
+                    <span class="input-group-text bg-dark text-light">PG</span>
                     <select class="form-select" name="pg">
                         <option value="ALL" {{ request('pg') == 'ALL' ? 'selected' : '' }}>ALL</option>
                         <option value="PG-3" {{ request('pg') == 'PG-3' ? 'selected' : '' }}>PG-3</option>
@@ -107,7 +107,7 @@
             </div>
 
             <!-- Genre -->
-            <div class="col-12 col-sm-6 col-md-2 filter-group">
+            <div class="col-12 col-sm-6 col-md-3 filter-group">
                 <div class="input-group">
                     <span class="input-group-text bg-dark text-light">Genre</span>
                     <select class="form-select" name="category">
@@ -122,37 +122,38 @@
             </div>
 
             <!-- Price Range -->
-            <div class="col-12 col-sm-6 col-md-3 filter-group">
+            <div class="col-12 col-sm-6 col-md-4 filter-group">
                 <div class="input-group">
                     <span class="input-group-text bg-dark text-light">Price</span>
                     <input class="form-control" type="number" name="min_price" value="{{ request('min_price') }}" placeholder="Min">
                     <span class="input-group-text bg-dark text-light">-</span>
                     <input class="form-control" type="number" name="max_price" value="{{ request('max_price') }}" placeholder="Max">
+                    <span class="input-group-text bg-dark text-light">€</span>
                 </div>
             </div>
 
             <!-- Game Title -->
-            <div class="col-12 col-sm-6 col-md-1 filter-group">
+            <div class="col-12 col-sm-6 col-md-8 filter-group">
                 <div class="input-group">
                     <input class="form-control" type="text" name="title" value="{{ request('title') }}" placeholder="Search...">
                 </div>
             </div>
 
+            <!-- Search Button -->
+            <div class="col-12 col-sm-6 col-md-2 filter-group">
+                <button class="btn btn-light btn-outline-dark w-100 rounded-pill" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
             <!-- Sorting -->
-            <div class="col-12 col-sm-6 col-md-1 filter-group">
+            <div class="col-12 col-sm-6 col-md-2 filter-group">
                 <select class="form-select" name="sort">
                     <option value="Price⇧" {{ request('sort') == 'Price⇧' ? 'selected' : '' }}>Price⇧</option>
                     <option value="Price⇩" {{ request('sort') == 'Price⇩' ? 'selected' : '' }}>Price⇩</option>
                     <option value="Date⇧" {{ request('sort') == 'Date⇧' ? 'selected' : '' }}>Date⇧</option>
                     <option value="Date⇩" {{ request('sort') == 'Date⇩' ? 'selected' : '' }}>Date⇩</option>
                 </select>
-            </div>
-
-            <!-- Search Button -->
-            <div class="col-12 col-sm-6 col-md-1 filter-group">
-                <button class="btn btn-light btn-outline-dark w-100 rounded-pill" type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
             </div>
 
         </form>
@@ -232,3 +233,37 @@
 </footer>
 </body>
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const platformRadios = document.querySelectorAll('input[name="platform"]');
+        const form = document.querySelector('form');
+
+        // Automatically submit the form on initial load if no platform is selected (i.e. first time)
+        const urlParams = new URLSearchParams(window.location.search);
+        if (!urlParams.has('platform')) {
+            form.submit();
+        }
+
+        // If a user changes the platform manually
+        platformRadios.forEach(radio => {
+            radio.addEventListener('change', function () {
+                // Clear other filters before submitting
+                const filterFields = ['style', 'pg', 'category', 'min_price', 'max_price', 'title', 'sort'];
+
+                filterFields.forEach(name => {
+                    const field = form.querySelector(`[name="${name}"]`);
+                    if (field) {
+                        if (field.tagName === 'SELECT') {
+                            field.value = 'ALL';
+                        } else {
+                            field.value = '';
+                        }
+                    }
+                });
+
+                form.submit();
+            });
+        });
+    });
+</script>

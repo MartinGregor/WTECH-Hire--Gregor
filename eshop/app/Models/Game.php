@@ -17,6 +17,8 @@ class Game extends Model
         'description',
         'platform',
         'logo',
+        'pg',
+        'style',
     ];
 
     public function genres()

@@ -23,7 +23,7 @@ class SearchController extends Controller
 
         // PEGI filter
         if ($request->filled('pg') && $request->pg !== 'ALL') {
-            $query->where('pegi', $request->pg);
+            $query->where('pg', $request->pg);
         }
 
         // Genre filter (with genre relationship)
