@@ -127,7 +127,9 @@
                         ($game->platform == 'PC' ? 'computer.png' :
                         ($game->platform == 'Wii' ? 'wii.png' : 'computer.png')))))) }}" alt="Platform Logo">
                 </div>
-                <h5 class="text-white mb-3">Categories:
+                <h5 class="text-white mb-3 me-2">Age restrictions: {{ $game->pg }}</h5>
+                <h5 class="text-white mb-3 me-2">Gameplay style: {{ $game->style }}</h5>
+                <h5 class="text-white mb-3">Genres:
                     @foreach ($game->genres as $genre)
                         {{ $genre->name }}@if(!$loop->last), @endif
                     @endforeach

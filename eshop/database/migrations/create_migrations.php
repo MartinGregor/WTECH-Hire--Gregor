@@ -25,6 +25,8 @@ return new class extends Migration
             $table->decimal('price', 10, 2);
             $table->text('description')->nullable();
             $table->enum('platform', ['PC', 'Play Station', 'Xbox', 'Nintendo', 'Wii']);
+            $table->enum('style', ['Singleplayer', 'Multiplayer', 'Coop', 'PvP', 'PvE']);
+            $table->enum('pg', ['PG-3', 'PG-7', 'PG-12', 'PG-16', 'PG-18']);
             $table->string('logo')->nullable();
             $table->timestamps();
         });

@@ -57,25 +57,59 @@
 
     <div class="container d-flex justify-content-center align-items-center search-bar">
         <form method="GET" action="{{ route('search') }}" class="row g-2 w-100">
-            <!-- Platform -->
-            <div class="col-12 col-sm-6 col-md-2">
+
+            <div class="btn-group d-flex w-100" role="group" aria-label="Platform radio toggle button group">
+                <input type="radio" class="btn-check" name="platform" id="platform-xbox" autocomplete="off" value="Xbox" {{ request('platform') == 'Xbox' ? 'checked' : '' }}>
+                <label class="btn btn-outline-dark flex-fill text-center" for="platform-xbox">Xbox</label>
+
+                <input type="radio" class="btn-check" name="platform" id="platform-playstation" autocomplete="off" {{ request('platform') == 'Play Station' ? 'checked' : '' }}>
+                <label class="btn btn-outline-dark flex-fill text-center" for="platform-playstation">PlayStation</label>
+
+                <input type="radio" class="btn-check" name="platform" id="platform-wii" autocomplete="off" {{ request('platform') == 'Wii' ? 'checked' : '' }}>
+                <label class="btn btn-outline-dark flex-fill text-center" for="platform-wii">Wii</label>
+
+                <input type="radio" class="btn-check" name="platform" id="platform-nintendo" autocomplete="off" {{ request('platform') == 'Nintendo' ? 'checked' : '' }}>
+                <label class="btn btn-outline-dark flex-fill text-center" for="platform-nintendo">Nintendo</label>
+
+                <input type="radio" class="btn-check" name="platform" id="platform-pc" autocomplete="off" {{ request('platform') == 'PC' ? 'checked' : '' }}>
+                <label class="btn btn-outline-dark flex-fill text-center" for="platform-pc">PC</label>
+            </div>
+
+
+            <!-- Style -->
+            <div class="col-12 col-sm-6 col-md-2 filter-group">
                 <div class="input-group">
-                    <span class="input-group-text bg-dark text-light">Platform</span>
-                    <select class="form-select" name="platform">
-                        <option value="ALL" {{ request('platform') == 'ALL' ? 'selected' : '' }}>ALL</option>
-                        <option value="Xbox" {{ request('platform') == 'Xbox' ? 'selected' : '' }}>Xbox</option>
-                        <option value="Play Station" {{ request('platform') == 'Play Station' ? 'selected' : '' }}>PlayStation</option>
-                        <option value="Wii" {{ request('platform') == 'Wii' ? 'selected' : '' }}>Wii</option>
-                        <option value="Nintendo" {{ request('platform') == 'Nintendo' ? 'selected' : '' }}>Nintendo</option>
-                        <option value="PC" {{ request('platform') == 'PC' ? 'selected' : '' }}>PC</option>
+                    <span class="input-group-text bg-dark text-light">Game Style</span>
+                    <select class="form-select" name="style">
+                        <option value="ALL" {{ request('style') == 'ALL' ? 'selected' : '' }}>ALL</option>
+                        <option value="Singleplayer" {{ request('style') == 'Singleplayer' ? 'selected' : '' }}>Singleplayer</option>
+                        <option value="Multiplayer" {{ request('style') == 'Multiplayer' ? 'selected' : '' }}>Multiplayer</option>
+                        <option value="Coop" {{ request('style') == 'Coop' ? 'selected' : '' }}>Coop</option>
+                        <option value="PvP" {{ request('style') == 'PvP' ? 'selected' : '' }}>PvP</option>
+                        <option value="PvE" {{ request('style') == 'PvE' ? 'selected' : '' }}>PvE</option>
                     </select>
                 </div>
             </div>
 
-            <!-- Category -->
-            <div class="col-12 col-sm-6 col-md-2">
+            <!-- Pegi -->
+            <div class="col-12 col-sm-6 col-md-2 filter-group">
                 <div class="input-group">
-                    <span class="input-group-text bg-dark text-light">Category</span>
+                    <span class="input-group-text bg-dark text-light">Pegi</span>
+                    <select class="form-select" name="pg">
+                        <option value="ALL" {{ request('pg') == 'ALL' ? 'selected' : '' }}>ALL</option>
+                        <option value="PG-3" {{ request('pg') == 'PG-3' ? 'selected' : '' }}>PG-3</option>
+                        <option value="PG-7" {{ request('pg') == 'PG-7' ? 'selected' : '' }}>PG-7</option>
+                        <option value="PG-12" {{ request('pg') == 'PG-12' ? 'selected' : '' }}>PG-12</option>
+                        <option value="PG-16" {{ request('pg') == 'PG-16' ? 'selected' : '' }}>PG-16</option>
+                        <option value="PG-18" {{ request('pg') == 'PG-18' ? 'selected' : '' }}>PG-18</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Genre -->
+            <div class="col-12 col-sm-6 col-md-2 filter-group">
+                <div class="input-group">
+                    <span class="input-group-text bg-dark text-light">Genre</span>
                     <select class="form-select" name="category">
                         <option value="ALL" {{ request('category') == 'ALL' ? 'selected' : '' }}>ALL</option>
                         @foreach(App\Models\Genre::all() as $genre)
@@ -88,7 +122,7 @@
             </div>
 
             <!-- Price Range -->
-            <div class="col-12 col-sm-6 col-md-3">
+            <div class="col-12 col-sm-6 col-md-3 filter-group">
                 <div class="input-group">
                     <span class="input-group-text bg-dark text-light">Price</span>
                     <input class="form-control" type="number" name="min_price" value="{{ request('min_price') }}" placeholder="Min">
@@ -98,14 +132,14 @@
             </div>
 
             <!-- Game Title -->
-            <div class="col-12 col-sm-6 col-md-3">
+            <div class="col-12 col-sm-6 col-md-1 filter-group">
                 <div class="input-group">
                     <input class="form-control" type="text" name="title" value="{{ request('title') }}" placeholder="Search...">
                 </div>
             </div>
 
             <!-- Sorting -->
-            <div class="col-12 col-sm-6 col-md-1">
+            <div class="col-12 col-sm-6 col-md-1 filter-group">
                 <select class="form-select" name="sort">
                     <option value="Price⇧" {{ request('sort') == 'Price⇧' ? 'selected' : '' }}>Price⇧</option>
                     <option value="Price⇩" {{ request('sort') == 'Price⇩' ? 'selected' : '' }}>Price⇩</option>
@@ -115,11 +149,12 @@
             </div>
 
             <!-- Search Button -->
-            <div class="col-12 col-sm-6 col-md-1">
+            <div class="col-12 col-sm-6 col-md-1 filter-group">
                 <button class="btn btn-light btn-outline-dark w-100 rounded-pill" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
             </div>
+
         </form>
     </div>
 
@@ -195,7 +230,5 @@
         </div>
     </div>
 </footer>
-
-
 </body>
 </html>

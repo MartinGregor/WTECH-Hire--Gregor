@@ -48,6 +48,8 @@ class GameFactory extends Factory
             'price' => $this->faker->randomFloat(2, 10, 100),
             'description' => $this->faker->paragraph,
             'platform' => $this->faker->randomElement(['PC', 'Play Station', 'Xbox', 'Nintendo', 'Wii']),
+            'style' => $this->faker->randomElement(['Singleplayer', 'Multiplayer', 'Coop', 'PvP', 'PvE']),
+            'pg' => $this->faker->randomElement(['PG-3', 'PG-7', 'PG-12', 'PG-16', 'PG-18']),
             'logo' => $this->faker->randomElement($logos),
         ];
     }
