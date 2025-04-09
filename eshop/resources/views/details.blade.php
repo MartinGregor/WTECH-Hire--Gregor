@@ -33,7 +33,7 @@
                     <div class="mt-4">
                         <span class="ms-4 fs-6 fw-bold">Contact</span>
                         <div class="px-4">
-                            <input class="p-2 mb-3 single-info form-control me-2" id="contact" name="contact" type="search" placeholder="Email" aria-label="Code" value="{{session()->get('contact')}}">
+                            <input class="p-2 mb-3 single-info form-control me-2" id="contact" name="contact" type="search" placeholder="Email" aria-label="Code" value="{{session()->get('contact')}}" required>
                         </div>
                     </div>
                 </div>
@@ -43,22 +43,22 @@
                     </div>
                     <div class="px-4">
                         <div class="d-flex align-items-center">
-                            <input class="p-2 mb-3 double-info form-control me-2" id="name" name="name" type="search" placeholder="Name" aria-label="Code" value="{{session()->get('name')}}">
-                            <input class="p-2 mb-3 double-info form-control me-2" id="last_name" name="last_name" type="search" placeholder="Last Name" aria-label="Code" value="{{session()->get('last_name')}}">
+                            <input class="p-2 mb-3 double-info form-control me-2" id="name" name="name" type="search" placeholder="Name" aria-label="Code" value="{{session()->get('name')}}" required>
+                            <input class="p-2 mb-3 double-info form-control me-2" id="last_name" name="last_name" type="search" placeholder="Last Name" aria-label="Code" value="{{session()->get('last_name')}}" required>
                         </div>
                         <div class="d-flex align-items-center">
-                            <input class="p-2 mb-3 form-control me-2" id="phone_number" name="phone_number" type="search" placeholder="Phone Number" aria-label="Code" value="{{session()->get('phone_number')}}">
+                            <input class="p-2 mb-3 form-control me-2" id="phone_number" name="phone_number" type="search" placeholder="Phone Number" aria-label="Code" value="{{session()->get('phone_number')}}" required>
                         </div>
                         <div class="d-flex align-items-center">
                             <input class="p-2 mb-3 form-control me-2" id="shipping_note" name="shipping_note" type="search" placeholder="Shipping Note" aria-label="Code" value="{{session()->get('shipping_note')}}">
                         </div>
                         <div class="d-flex align-items-center">
-                            <input class="p-2 mb-3 triple-info form-control me-2" id="city" name="city" type="search" placeholder="City" aria-label="Code" value="{{session()->get('city')}}">
-                            <input class="p-2 mb-3 triple-info form-control me-2" id="postal_code" name="postal_code" type="search" placeholder="PostalCode" aria-label="Code" value="{{session()->get('postal_code')}}">
-                            <input class="p-2 mb-3 triple-info form-control me-2" id="address" name="address" type="search" placeholder="Address" aria-label="Code" value="{{session()->get('address')}}">
+                            <input class="p-2 mb-3 triple-info form-control me-2" id="city" name="city" type="search" placeholder="City" aria-label="Code" value="{{session()->get('city')}}" required>
+                            <input class="p-2 mb-3 triple-info form-control me-2" id="postal_code" name="postal_code" type="search" placeholder="PostalCode" aria-label="Code" value="{{session()->get('postal_code')}}" required>
+                            <input class="p-2 mb-3 triple-info form-control me-2" id="address" name="address" type="search" placeholder="Address" aria-label="Code" value="{{session()->get('address')}}" required>
                         </div>
                         <div class="d-flex align-items-center">
-                            <input class="p-2 mb-3 form-control me-2" id="country" name="country" type="search" placeholder="Country" aria-label="Code" value="{{session()->get('country')}}">
+                            <input class="p-2 mb-3 form-control me-2" id="country" name="country" type="search" placeholder="Country" aria-label="Code" value="{{session()->get('country')}}" required>
                         </div>
                         <div class="d-flex justify-content-center mt-2 gap-4">
                             <a href="{{ route('cart') }}" class="btn btn-light btn-md text-black double-button">

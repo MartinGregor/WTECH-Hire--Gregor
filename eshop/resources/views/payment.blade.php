@@ -60,14 +60,14 @@
                             <div class="tab-content mt-2" id="myTabContent">
                                 <div class="tab-pane fade show active" id="card" role="tabpanel" aria-labelledby="card-tab">
                                     <div class="d-flex align-items-center mb-2">
-                                        <input class="form-info form-control me-2" type="search" placeholder="Card Number" aria-label="Code">
+                                        <input class="form-info form-control me-2" type="search" placeholder="Card Number" aria-label="Code" required>
                                     </div>
                                     <div class="d-flex align-items-center mb-2">
-                                        <input class="form-info form-control me-2" type="search" placeholder="Holder's Name (Optional)" aria-label="Code">
+                                        <input class="form-info form-control me-2" type="search" placeholder="Holder's Name (Optional)" aria-label="Code" required>
                                     </div>
                                     <div class="d-flex align-items-center">
-                                        <input class="form-info form-control me-2 double-info" type="search" placeholder="Expiration (MM/YY)" aria-label="Code">
-                                        <input class="form-info form-control me-2 double-info" type="search" placeholder="CVV" aria-label="Code">
+                                        <input class="form-info form-control me-2 double-info" type="search" placeholder="Expiration (MM/YY)" aria-label="Code" required>
+                                        <input class="form-info form-control me-2 double-info" type="search" placeholder="CVV" aria-label="Code" required>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade p-4" id="cash" role="tabpanel" aria-labelledby="cash-tab">
