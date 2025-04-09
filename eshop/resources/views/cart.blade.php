@@ -99,7 +99,7 @@
                                 @method('POST')
                                 <input type="hidden" name="game_id" value="{{ $item->id }}">
                                 <input type="hidden" name="quantity" value="{{-1}}">
-                                <button type="submit" class="btn btn-outline-dark">+</button>
+                                <button type="submit" class="btn btn-outline-dark">-</button>
                             </form>
                             <input type="text" class="form-control text-center col-1 fs-6 fw-bold"
                                    value="{{ $item->pivot->quantity }}" readonly>
