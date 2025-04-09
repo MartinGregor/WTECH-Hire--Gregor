@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Game;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -38,6 +39,29 @@ class LoginController extends Controller
         if (Auth::user()->role == 'admin') {
             return redirect()->route('admin');  // Use the correct route name 'admin'
         }
+
+        $user = Auth::user();
+        $userCart = $user->cart()->firstOrCreate([
+            'user_id' => $user->id,
+        ]);
+
+        $cart = session()->get('cart', []);
+        foreach ($cart as $item) {
+            $game = Game::find($item['game_id']);
+
+            $existingGame = $userCart->games()->where('game_id', $game->id)->first();
+
+            if ($existingGame) {
+                $newQuantity = $existingGame->pivot->quantity + $item['quantity'];
+                $userCart->games()->updateExistingPivot($game->id, [
+                    'quantity' => $newQuantity
+                ]);
+            }
+            else {
+                $userCart->games()->attach($game->id, ['quantity' => $item['quantity']]);
+            }
+        }
+        session()->forget('cart');
 
         return redirect('/');
     }
