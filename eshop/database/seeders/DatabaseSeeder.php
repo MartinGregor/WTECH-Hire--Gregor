@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
         }
 
         // Seed games
-        $games = Game::factory()->count(100)->create();
+        $games = Game::factory()->count(1000)->create();
 
         // Assign 3 random genres to each game
         foreach ($games as $game) {

@@ -224,6 +224,42 @@
                         @endfor
                     </div>
 
+                    <div class="row">
+                        <!-- Style Game -->
+                        <div class="col-md-6">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text bg-dark text-light" for="style">Style</label>
+                                <select class="form-select" id="style" name="style">
+                                    @php
+                                        $styles = ['Singleplayer', 'Multiplayer', 'Coop', 'PvP', 'PvE'];
+                                    @endphp
+                                    @foreach ($styles as $style)
+                                        <option value="{{ $style }}" {{ old('style', $game->style) === $style ? 'selected' : '' }}>
+                                            {{ $style }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- PG -->
+                        <div class="col-md-6">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text bg-dark text-light" for="pg">PG</label>
+                                <select class="form-select" id="pg" name="pg">
+                                    @php
+                                        $pgs = ['PG-3', 'PG-7', 'PG-12', 'PG-16', 'PG-18'];
+                                    @endphp
+                                    @foreach ($pgs as $pg)
+                                        <option value="{{ $pg }}" {{ old('pg', $game->pg) === $pg ? 'selected' : '' }}>
+                                            {{ $pg }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Game Description -->
                     <textarea class="form-control mb-3" name="description" placeholder="Game Description">{{ old('description', $game->description) }}</textarea>
 
