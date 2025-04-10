@@ -9,6 +9,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\ShowAdminController;
 use App\Http\Controllers\AdminEditController;
+use App\Http\Controllers\FullTextController;
 
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
@@ -18,6 +19,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/games', [ShowGameController::class, 'index'])->name('game.index');
 Route::get('/search', [SearchController::class, 'index'])->name('search');
+Route::get('/search-text', [FullTextController::class, 'index'])->name('fulltextsearch');
 Route::get('/game/{id}', [GameController::class, 'show'])->name('game.show');
 
 Route::resource('/', ShowGameController::class);

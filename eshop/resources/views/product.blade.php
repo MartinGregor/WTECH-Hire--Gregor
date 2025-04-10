@@ -12,7 +12,7 @@
 </head>
 <body>
 <main>
-    <nav class="navbar sticky-top navbar-expand-md bg-body-tertiary shadow-lg">
+    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary shadow-lg" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">PayPlay</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,6 +20,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <form class="d-flex" role="search" method="GET" action="{{ route('fulltextsearch') }}">
+                        <input name="title" class="form-control me-1" type="search" placeholder="Search..." aria-label="Search">
+                        <button class="btn btn-outline-light d-none" type="submit">Text-Search</button>
+                    </form>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
                     </li>

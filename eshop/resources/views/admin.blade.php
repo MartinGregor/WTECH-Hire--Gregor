@@ -155,21 +155,50 @@
                 <ul class="pagination justify-content-center">
                     {{-- Previous Page Link --}}
                     <li class="page-item {{ $games->onFirstPage() ? 'disabled' : '' }}">
-                        <a class="page-link text-black rounded-pill rounded-end" href="{{ $games->previousPageUrl() }}" aria-label="Previous">
+                        <a class="page-link text-black rounded-pill rounded-end" href="{{ $games->previousPageUrl() }}&title={{ request('title') }}" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
 
                     {{-- Page Numbers --}}
-                    @for ($i = 1; $i <= $games->lastPage(); $i++)
-                        <li class="page-item {{ $i == $games->currentPage() ? 'active' : '' }}">
-                            <a class="page-link text-black {{ $i == $games->currentPage() ? 'bg-dark text-white' : '' }}" href="{{ $games->url($i) }}">{{ $i }}</a>
+                    @php
+                        $currentPage = $games->currentPage();
+                        $totalPages = $games->lastPage();
+                        $pageRange = 3; // Number of pages to display before and after the current page
+                        $startPage = max(1, $currentPage - $pageRange);
+                        $endPage = min($totalPages, $currentPage + $pageRange);
+                    @endphp
+
+                    {{-- First Page --}}
+                    @if ($startPage > 1)
+                        <li class="page-item">
+                            <a class="page-link text-black" href="{{ $games->url(1) }}&title={{ request('title') }}">1</a>
+                        </li>
+                        @if ($startPage > 2)
+                            <li class="page-item disabled"><span class="page-link">...</span></li>
+                        @endif
+                    @endif
+
+                    {{-- Page Numbers --}}
+                    @for ($i = $startPage; $i <= $endPage; $i++)
+                        <li class="page-item {{ $i == $currentPage ? 'active' : '' }}">
+                            <a class="page-link text-black {{ $i == $currentPage ? 'bg-dark text-white' : '' }}" href="{{ $games->url($i) }}&title={{ request('title') }}">{{ $i }}</a>
                         </li>
                     @endfor
 
+                    {{-- Last Page --}}
+                    @if ($endPage < $totalPages)
+                        @if ($endPage < $totalPages - 1)
+                            <li class="page-item disabled"><span class="page-link">...</span></li>
+                        @endif
+                        <li class="page-item">
+                            <a class="page-link text-black" href="{{ $games->url($totalPages) }}&title={{ request('title') }}">{{ $totalPages }}</a>
+                        </li>
+                    @endif
+
                     {{-- Next Page Link --}}
                     <li class="page-item {{ $games->hasMorePages() ? '' : 'disabled' }}">
-                        <a class="page-link text-black rounded-pill rounded-start" href="{{ $games->nextPageUrl() }}" aria-label="Next">
+                        <a class="page-link text-black rounded-pill rounded-start" href="{{ $games->nextPageUrl() }}&title={{ request('title') }}" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>

@@ -135,13 +135,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="paymentModalLabel">Payment Successful</h5>
+                <h5 class="modal-title" id="paymentModalLabel">Order Successful</h5>
             </div>
             <div class="modal-body">
-                <p>Your payment has been successfully completed! Thank you for your purchase. You will receive a confirmation email shortly.</p>
+                <p>Your order was successfully completed! You will receive a confirmation email shortly with further information on email: {{session()->get('contact')}}</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="confirmPaymentButton">Return to Home Page</button>
+                <button type="button" class="btn btn-primary border-5" id="confirmPaymentButton">Return to Home Page</button>
             </div>
         </div>
     </div>

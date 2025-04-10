@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>Search</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 
@@ -16,7 +16,7 @@
 <main>
     <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary shadow-lg" data-bs-theme="dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">PayPlay</a>
+            <a class="navbar-brand" href="{{ url('/') }}">PayPlay</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,7 +27,7 @@
                         <button class="btn btn-outline-light d-none" type="submit">Text-Search</button>
                     </form>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{ route('search') }}">Search</a>
@@ -59,63 +59,10 @@
         </div>
     </nav>
 
-    <div class="intro container my-5 d-flex justify-content-center align-items-center">
-        <div class="text-center">
-            <h1 class="mb-3 text-white">PayPlay</h1>
-            <h5 class="mb-3 text-white">Welcome to PayPlay, the ultimate destination for every gamer out there!
-                Whether you love epic RPG adventures,
-                heart-racing shooters, or strategic masterpieces, we’ve got the perfect game for you.</h5>
-            <a href="#newAdventures">
-                <button type="button" class="btn btn-light btn-lg text-black px-4 py-2 rounded-pill">
-                    Unlock New Worlds
-                </button>
-            </a>
-        </div>
-    </div>
-
-
-
-    <div id="newAdventures" class="container my-5 d-flex justify-content-center align-items-center scroll-caption-area">
-        <div class="text-center">
-            <h2 class="mb-3 text-white fw-bold">New Adventures</h2>
-            <h5 class="mb-3 text-white">New worlds waiting to be discovered</h5>
-        </div>
-    </div>
 
     <div class="container mt-5 px-lg-5">
         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-1 g-4">
-            @foreach($games1 as $game)
-                <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <a href="{{ route('game.show', ['id' => $game->id]) }}">
-                    <div class="card h-100">
-                        <img src="{{ $game->logo }}" class="card-img-top" alt="{{ $game->title }}">
-                        <div class="card-img-overlay">
-                            <img src="{{ asset('images/Logos/' .
-                                ($game->platform == 'Play Station' ? 'playstation-logotype.png' :
-                                ($game->platform == 'Xbox' ? 'xbox-logo.png' :
-                                ($game->platform == 'Nintendo' ? 'nintendo-switch.png' :
-                                ($game->platform == 'PC' ? 'computer.png' :
-                                ($game->platform == 'Wii' ? 'wii.png' : 'computer.png')))))) }}"
-                                 class="overlay-img" alt="Platform Logo">
-                            <div class="price-tag">{{ number_format($game->price, 2) }} €</div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-            @endforeach
-        </div>
-    </div>
-
-    <div class="container my-5 d-flex justify-content-center align-items-center caption-area">
-        <div class="text-center">
-            <h2 class="mb-3 text-white fw-bold">Our Recommendations</h2>
-            <h5 class="mb-3 text-white">Games Recommended by us</h5>
-        </div>
-    </div>
-
-    <div class="container mt-5 px-lg-5">
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-1 g-4">
-            @foreach($games2 as $game)
+            @foreach($games as $game)
                 <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
                     <a href="{{ route('game.show', ['id' => $game->id]) }}">
                         <div class="card h-100">
@@ -137,36 +84,62 @@
         </div>
     </div>
 
-    <div class="container my-5 d-flex justify-content-center align-items-center caption-area">
-        <div class="text-center">
-            <h2 class="mb-3 text-white fw-bold">Most Popular Worlds</h2>
-            <h5 class="mb-3 text-white">Worlds entered by most players</h5>
-        </div>
-    </div>
+    <div class="container mt-5 px-lg-5 d-flex justify-content-center">
+        @if ($games->lastPage() > 1)
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    {{-- Previous Page Link --}}
+                    <li class="page-item {{ $games->onFirstPage() ? 'disabled' : '' }}">
+                        <a class="page-link text-black rounded-pill rounded-end" href="{{ $games->previousPageUrl() }}&title={{ request('title') }}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
 
+                    {{-- Page Numbers --}}
+                    @php
+                        $currentPage = $games->currentPage();
+                        $totalPages = $games->lastPage();
+                        $pageRange = 3; // Number of pages to display before and after the current page
+                        $startPage = max(1, $currentPage - $pageRange);
+                        $endPage = min($totalPages, $currentPage + $pageRange);
+                    @endphp
 
-    <div class="container mt-5 px-lg-5">
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-1 g-4">
-            @foreach($games3 as $game)
-                <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                    <a href="{{ route('game.show', ['id' => $game->id]) }}">
-                        <div class="card h-100">
-                            <img src="{{ $game->logo }}" class="card-img-top" alt="{{ $game->title }}">
-                            <div class="card-img-overlay">
-                                <img src="{{ asset('images/Logos/' .
-                                ($game->platform == 'Play Station' ? 'playstation-logotype.png' :
-                                ($game->platform == 'Xbox' ? 'xbox-logo.png' :
-                                ($game->platform == 'Nintendo' ? 'nintendo-switch.png' :
-                                ($game->platform == 'PC' ? 'computer.png' :
-                                ($game->platform == 'Wii' ? 'wii.png' : 'computer.png')))))) }}"
-                                     class="overlay-img" alt="Platform Logo">
-                                <div class="price-tag">{{ number_format($game->price, 2) }} €</div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            @endforeach
-        </div>
+                    {{-- First Page --}}
+                    @if ($startPage > 1)
+                        <li class="page-item">
+                            <a class="page-link text-black" href="{{ $games->url(1) }}&title={{ request('title') }}">1</a>
+                        </li>
+                        @if ($startPage > 2)
+                            <li class="page-item disabled"><span class="page-link">...</span></li>
+                        @endif
+                    @endif
+
+                    {{-- Page Numbers --}}
+                    @for ($i = $startPage; $i <= $endPage; $i++)
+                        <li class="page-item {{ $i == $currentPage ? 'active' : '' }}">
+                            <a class="page-link text-black {{ $i == $currentPage ? 'bg-dark text-white' : '' }}" href="{{ $games->url($i) }}&title={{ request('title') }}">{{ $i }}</a>
+                        </li>
+                    @endfor
+
+                    {{-- Last Page --}}
+                    @if ($endPage < $totalPages)
+                        @if ($endPage < $totalPages - 1)
+                            <li class="page-item disabled"><span class="page-link">...</span></li>
+                        @endif
+                        <li class="page-item">
+                            <a class="page-link text-black" href="{{ $games->url($totalPages) }}&title={{ request('title') }}">{{ $totalPages }}</a>
+                        </li>
+                    @endif
+
+                    {{-- Next Page Link --}}
+                    <li class="page-item {{ $games->hasMorePages() ? '' : 'disabled' }}">
+                        <a class="page-link text-black rounded-pill rounded-start" href="{{ $games->nextPageUrl() }}&title={{ request('title') }}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        @endif
     </div>
 </main>
 
@@ -186,7 +159,5 @@
         </div>
     </div>
 </footer>
-
-
 </body>
 </html>
