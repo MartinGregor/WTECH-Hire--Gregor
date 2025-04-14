@@ -50,5 +50,4 @@ Route::post('/game/video/{id}', [MediaController::class, 'uploadVideoLink'])->na
 use App\Http\Controllers\GameInfoController;
 Route::delete('/game/{id}', [GameInfoController::class, 'destroy'])->name('game.delete');
 Route::put('game/{id}/update', [GameInfoController::class, 'update'])->name('game.update');
-
 Route::post('/admin/add-default-game', [GameInfoController::class, 'storeDefaultGame'])->name('game.store.default');

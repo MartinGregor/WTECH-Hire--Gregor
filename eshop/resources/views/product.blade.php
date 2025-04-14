@@ -179,17 +179,13 @@
 </html>
 
 <script>
-    document.querySelector('.btn-outline-light:first-of-type').addEventListener('click', function() {
-        let quantityInput = document.getElementById('quantity-input');
+    function changeQuantity(change) {
+        const quantityInput = document.getElementById('quantity-input');
         let currentValue = parseInt(quantityInput.value);
-        if (currentValue > 1) {
-            quantityInput.value = currentValue - 1;
+        if (!isNaN(currentValue)) {
+            let newValue = currentValue + change;
+            if (newValue < 1) newValue = 1;
+            quantityInput.value = newValue;
         }
-    });
-
-    document.querySelector('.btn-outline-light:last-of-type').addEventListener('click', function() {
-        let quantityInput = document.getElementById('quantity-input');
-        let currentValue = parseInt(quantityInput.value);
-        quantityInput.value = currentValue + 1;
-    });
+    }
 </script>
