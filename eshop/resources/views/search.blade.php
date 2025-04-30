@@ -266,22 +266,25 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const platformRadios = document.querySelectorAll('input[name="platform"]');
-        const form = document.querySelector('form');
+        const searchForm = document.querySelector('form[action="{{ route('search') }}"]'); // Zabezpečíme, že sa bude manipulovať len s vyhľadávacím formulárom
 
-        // Automatically submit the form on initial load if no platform is selected (i.e. first time)
+        // Skontrolujeme, či je to naozaj vyhľadávací formulár
+        if (!searchForm) return; // Ak formulár neexistuje, ukončíme skript
+
+        // Automaticky odošleme formulár pri načítaní stránky, ak neexistuje vybraná platforma (prvýkrát)
         const urlParams = new URLSearchParams(window.location.search);
         if (!urlParams.has('platform')) {
-            form.submit();
+            searchForm.submit();
         }
 
-        // If a user changes the platform manually
+        // Ak používateľ zmení platformu, vymaže ostatné filtre pred odoslaním
         platformRadios.forEach(radio => {
             radio.addEventListener('change', function () {
-                // Clear other filters before submitting
+                // Vymažeme ostatné filtre pred odoslaním
                 const filterFields = ['style', 'pg', 'category', 'min_price', 'max_price', 'title', 'sort'];
 
                 filterFields.forEach(name => {
-                    const field = form.querySelector(`[name="${name}"]`);
+                    const field = searchForm.querySelector(`[name="${name}"]`);
                     if (field) {
                         if (field.tagName === 'SELECT') {
                             field.value = 'ALL';
@@ -291,8 +294,9 @@
                     }
                 });
 
-                form.submit();
+                searchForm.submit();
             });
         });
     });
+
 </script>

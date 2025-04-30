@@ -11,6 +11,8 @@ class SearchController extends Controller
     {
         $query = Game::query();
 
+        $query->whereRaw('LOWER(title) NOT LIKE ?', ['%default%']);
+
         // Platform filter
         if ($request->filled('platform') && $request->platform !== 'ALL') {
             $query->where('platform', $request->platform);
